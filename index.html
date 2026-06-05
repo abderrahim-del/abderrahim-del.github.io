@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abderrahim Echaibi – IT Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #0a0c10;
+      --surface:  #111318;
+      --border:   #1e2230;
+      --accent:   #00e5a0;
+      --accent2:  #0072ff;
+      --text:     #e8eaf0;
+      --muted:    #6b7280;
+      --mono:     'Space Mono', monospace;
+      --sans:     'Syne', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: .35;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 4rem;
+      border-bottom: 1px solid var(--border);
+      background: rgba(10,12,16,.85);
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: .85rem;
+      color: var(--accent);
+      letter-spacing: .1em;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 8rem 4rem 4rem;
+      position: relative;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1100px;
+      width: 100%;
+      align-items: center;
+    }
+    .hero-tag {
+      font-family: var(--mono);
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 28px; height: 1px;
+      background: var(--accent);
+    }
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.02em;
+    }
+    h1 span { color: var(--accent); }
+    .hero-sub {
+      margin-top: 1.4rem;
+      font-family: var(--mono);
+      font-size: .85rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .hero-cta {
+      margin-top: 2.4rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .7rem 1.6rem;
+      border-radius: 2px;
+      font-family: var(--mono);
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-decoration: none;
+      transition: all .25s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+    }
+    .btn-primary:hover { background: #00c989; transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    .btn-outline:hover { background: rgba(0,229,160,.08); }
+
+    /* Right side: terminal card */
+    .terminal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      font-family: var(--mono);
+      font-size: .8rem;
+      animation: fadeUp .8s ease both .3s;
+    }
+    .terminal-bar {
+      background: var(--border);
+      padding: .6rem 1rem;
+      display: flex;
+      gap: .45rem;
+      align-items: center;
+    }
+    .dot { width: 11px; height: 11px; border-radius: 50%; }
+    .dot.r { background: #ff5f57; }
+    .dot.y { background: #febc2e; }
+    .dot.g { background: #28c840; }
+    .terminal-body { padding: 1.4rem 1.6rem; line-height: 2; color: #9ca3af; }
+    .terminal-body .prompt { color: var(--accent); }
+    .terminal-body .value  { color: var(--text); }
+    .terminal-body .comment{ color: #4b5563; }
+
+    /* ── SECTIONS ── */
+    section { padding: 6rem 4rem; max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-family: var(--mono);
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin-bottom: 2.8rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+      max-width: 200px;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin-bottom: .6rem;
+    }
+
+    /* ── SKILLS GRID ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 1rem;
+      margin-top: 2.4rem;
+    }
+    .skill-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.4rem;
+      transition: border-color .25s, transform .25s;
+    }
+    .skill-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+    .skill-icon {
+      font-size: 1.5rem;
+      margin-bottom: .7rem;
+    }
+    .skill-title {
+      font-weight: 700;
+      font-size: .95rem;
+      margin-bottom: .4rem;
+    }
+    .skill-desc {
+      font-family: var(--mono);
+      font-size: .72rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.2rem;
+      margin-top: 2.4rem;
+    }
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+      transition: border-color .25s, transform .25s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .project-card:hover {
+      border-color: var(--accent2);
+      transform: translateY(-3px);
+    }
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .project-icon { font-size: 1.6rem; }
+    .project-link-icon {
+      font-family: var(--mono);
+      font-size: .7rem;
+      color: var(--muted);
+      padding: .25rem .5rem;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+    }
+    .project-title { font-weight: 700; font-size: 1rem; }
+    .project-desc {
+      font-family: var(--mono);
+      font-size: .74rem;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .tag {
+      font-family: var(--mono);
+      font-size: .65rem;
+      padding: .2rem .55rem;
+      border-radius: 2px;
+      background: rgba(0,229,160,.08);
+      color: var(--accent);
+      border: 1px solid rgba(0,229,160,.15);
+    }
+
+    /* ── CERTS ── */
+    .certs-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 2.4rem;
+    }
+    .cert-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.3rem 1.4rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: border-color .25s;
+    }
+    .cert-card:hover { border-color: var(--accent2); }
+    .cert-badge {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: rgba(0,114,255,.15);
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .cert-name { font-weight: 700; font-size: .88rem; }
+    .cert-issuer {
+      font-family: var(--mono);
+      font-size: .7rem;
+      color: var(--muted);
+      margin-top: .2rem;
+    }
+    .cert-date {
+      font-family: var(--mono);
+      font-size: .65rem;
+      color: var(--accent);
+      margin-top: .35rem;
+    }
+
+    /* ── CONTACT ── */
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 2.4rem;
+    }
+    .contact-info p {
+      font-family: var(--mono);
+      font-size: .8rem;
+      color: var(--muted);
+      line-height: 2;
+    }
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .contact-info a:hover { text-decoration: underline; }
+    .contact-links { display: flex; flex-direction: column; gap: .8rem; justify-content: center; }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      padding: .9rem 1.2rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: .78rem;
+      transition: border-color .2s, background .2s;
+    }
+    .contact-link:hover {
+      border-color: var(--accent);
+      background: rgba(0,229,160,.05);
+    }
+    .contact-link-icon { font-size: 1.2rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--mono);
+      font-size: .7rem;
+      color: var(--muted);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-text { animation: fadeUp .7s ease both .1s; }
+    .terminal   { animation: fadeUp .7s ease both .35s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+      .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      section { padding: 4rem 1.5rem; }
+      .contact-box { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: .8rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">ae@portfolio:~$</span>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projekte</a></li>
+    <li><a href="#certs">Zertifikate</a></li>
+    <li><a href="#contact">Kontakt</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero" style="padding-top:0; max-width:100%;">
+  <div class="hero-grid">
+
+    <div class="hero-text">
+      <div class="hero-tag">IT Portfolio</div>
+      <h1>Abderrahim<br><span>Echaibi</span></h1>
+      <p class="hero-sub">
+        Netzwerk · Linux · IT-Security<br>
+        Microsoft 365 · Cisco
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">Projekte ansehen →</a>
+        <a href="#contact" class="btn btn-outline">Kontakt aufnehmen</a>
+      </div>
+    </div>
+
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="dot r"></span>
+        <span class="dot y"></span>
+        <span class="dot g"></span>
+      </div>
+      <div class="terminal-body">
+        <div><span class="prompt">$ </span><span class="value">whoami</span></div>
+        <div><span class="comment"># Abderrahim Echaibi</span></div>
+        <br>
+        <div><span class="prompt">$ </span><span class="value">cat profil.txt</span></div>
+        <div><span class="comment"># Standort:    Worpswede, Deutschland</span></div>
+        <div><span class="comment"># Sprachen:    Arabisch (C2), Deutsch (C1)</span></div>
+        <br>
+        <div><span class="prompt">$ </span><span class="value">ls ./skills/</span></div>
+        <div><span class="value">TCP-IP&nbsp; OSI&nbsp; Linux&nbsp; Cisco&nbsp; VLANs</span></div>
+        <div><span class="value">UFW&nbsp; Apache&nbsp; GitHub&nbsp; DSGVO&nbsp; Win11</span></div>
+        <br>
+        <div><span class="prompt">$ </span><span class="comment">█</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">01 — Technische Kenntnisse</div>
+  <h2>Meine Skills</h2>
+
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <div class="skill-icon">🌐</div>
+      <div class="skill-title">Netzwerktechnik</div>
+      <div class="skill-desc">TCP/IP · OSI-Modell · IPv4/IPv6 · Subnetting · VLANs · DHCP · DNS</div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">🐧</div>
+      <div class="skill-title">Linux (Ubuntu)</div>
+      <div class="skill-desc">Bash / CLI · Apache-Webserver · UFW Firewall · Dateisystem · Dienstverwaltung</div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">🔒</div>
+      <div class="skill-title">IT-Security</div>
+      <div class="skill-desc">DSGVO Grundlagen · Digitale Privatsphäre · Firewall-Konfiguration · Cisco Security</div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">🖥️</div>
+      <div class="skill-title">Windows 10/11</div>
+      <div class="skill-desc">Administration · Netzwerkeinstellungen · Active Directory Grundlagen</div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">📡</div>
+      <div class="skill-title">Cisco Packet Tracer</div>
+      <div class="skill-desc">Netzwerk-Simulation · Router & Switch Konfiguration · DHCP-Server · PDU-Analyse</div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">☁️</div>
+      <div class="skill-title">Microsoft 365</div>
+      <div class="skill-desc">Cloud-Konzepte (IaaS/PaaS/SaaS) · Exchange Online · SharePoint · MFA · Conditional Access</div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">💻</div>
+      <div class="skill-title">Web & Code</div>
+      <div class="skill-desc">HTML · CSS · GitHub</div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">🗂️</div>
+      <div class="skill-title">Versionskontrolle</div>
+      <div class="skill-desc">Git · GitHub · Repository-Verwaltung · Dokumentation von Projekten</div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">📊</div>
+      <div class="skill-title">Microsoft Excel</div>
+      <div class="skill-desc">Tabellen · Formeln & Funktionen · Diagramme · Datenanalyse · Pivot-Tabellen</div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">📑</div>
+      <div class="skill-title">Microsoft PowerPoint</div>
+      <div class="skill-desc">Präsentationen erstellen · Layouts & Design · Animationen · Folienmaster</div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-icon">📝</div>
+      <div class="skill-title">Microsoft Word</div>
+      <div class="skill-desc">Dokumentenerstellung · Formatvorlagen · Tabellen · Serienbriefe · Berichte</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">02 — GitHub Projekte</div>
+  <h2>Meine Projekte</h2>
+
+  <div class="projects-grid">
+
+    <a href="https://github.com/abderrahim-del" target="_blank" class="project-card">
+      <div class="project-top">
+        <span class="project-icon">🖥️</span>
+        <span class="project-link-icon">↗ GitHub</span>
+      </div>
+      <div class="project-title">Linux Server Setup</div>
+      <div class="project-desc">Ubuntu-Server mit Apache-Webserver und UFW-Firewall eingerichtet. Dienste konfiguriert, Ports verwaltet, Systemsicherheit optimiert.</div>
+      <div class="tags">
+        <span class="tag">Ubuntu</span>
+        <span class="tag">Apache</span>
+        <span class="tag">UFW</span>
+        <span class="tag">Linux CLI</span>
+      </div>
+    </a>
+
+    <a href="https://github.com/abderrahim-del" target="_blank" class="project-card">
+      <div class="project-top">
+        <span class="project-icon">📡</span>
+        <span class="project-link-icon">↗ GitHub</span>
+      </div>
+      <div class="project-title">Cisco Packet Tracer Labs</div>
+      <div class="project-desc">Netzwerk-Simulationen: DHCP-Konfiguration, Router-Setup, VLAN-Segmentierung und PDU-Analyse mit Cisco Packet Tracer.</div>
+      <div class="tags">
+        <span class="tag">Cisco</span>
+        <span class="tag">Networking</span>
+        <span class="tag">DHCP</span>
+        <span class="tag">VLANs</span>
+      </div>
+    </a>
+
+    <a href="https://github.com/abderrahim-del" target="_blank" class="project-card">
+      <div class="project-top">
+        <span class="project-icon">🔒</span>
+        <span class="project-link-icon">↗ GitHub</span>
+      </div>
+      <div class="project-title">IT-Security Dokumentation</div>
+      <div class="project-desc">Dokumentation zu IT-Sicherheitsthemen: DSGVO, digitale Privatsphäre, Firewall-Regeln und Netzwerksicherheit.</div>
+      <div class="tags">
+        <span class="tag">IT-Security</span>
+        <span class="tag">DSGVO</span>
+        <span class="tag">Dokumentation</span>
+      </div>
+    </a>
+
+    <a href="https://github.com/abderrahim-del" target="_blank" class="project-card">
+      <div class="project-top">
+        <span class="project-icon">📚</span>
+        <span class="project-link-icon">↗ GitHub</span>
+      </div>
+      <div class="project-title">Netzwerk-Grundlagen</div>
+      <div class="project-desc">Zusammenfassung und Übungsaufgaben zu OSI-Modell, IPv4/IPv6-Adressierung, Subnetting und Protokollen.</div>
+      <div class="tags">
+        <span class="tag">OSI</span>
+        <span class="tag">IPv4</span>
+        <span class="tag">IPv6</span>
+        <span class="tag">Subnetting</span>
+      </div>
+    </a>
+
+    <a href="https://github.com/abderrahim-del" target="_blank" class="project-card">
+      <div class="project-top">
+        <span class="project-icon">🌐</span>
+        <span class="project-link-icon">↗ GitHub</span>
+      </div>
+      <div class="project-title">Portfolio Website</div>
+      <div class="project-desc">Diese Portfolio-Website — erstellt mit reinem HTML & CSS. Responsive Design, Terminal-Ästhetik, GitHub Pages Hosting.</div>
+      <div class="tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">GitHub Pages</span>
+      </div>
+    </a>
+
+    <a href="https://github.com/abderrahim-del" target="_blank" class="project-card">
+      <div class="project-top">
+        <span class="project-icon">📊</span>
+        <span class="project-link-icon">↗ GitHub</span>
+      </div>
+      <div class="project-title">IT-Lern-Tracker</div>
+      <div class="project-desc">HTML-basierter Lernfortschritt-Tracker für IT-Themen. Zertifikate, Kurse und Kenntnisse übersichtlich dokumentiert.</div>
+      <div class="tags">
+        <span class="tag">HTML</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Lernprojekt</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- CERTS -->
+<section id="certs">
+  <div class="section-label">03 — Zertifikate</div>
+  <h2>Qualifikationen</h2>
+
+  <div class="certs-list">
+
+    <div class="cert-card">
+      <div class="cert-badge">🌐</div>
+      <div>
+        <div class="cert-name">Cisco Networking Basics</div>
+        <div class="cert-issuer">Cisco Networking Academy</div>
+        <div class="cert-date">April 2026 · ID: 7facd91f</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-badge">📡</div>
+      <div>
+        <div class="cert-name">Cisco Packet Tracer</div>
+        <div class="cert-issuer">Cisco Networking Academy</div>
+        <div class="cert-date">März 2026 · ID: 5670ec82</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-badge">☁️</div>
+      <div>
+        <div class="cert-name">Microsoft 365 Fundamentals</div>
+        <div class="cert-issuer">LinkedIn Learning</div>
+        <div class="cert-date">2026</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-badge">🔒</div>
+      <div>
+        <div class="cert-name">Digitale Privatsphäre</div>
+        <div class="cert-issuer">openHPI (Hasso-Plattner-Institut)</div>
+        <div class="cert-date">März 2024</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-badge">🇩🇪</div>
+      <div>
+        <div class="cert-name">TELC Deutsch C1</div>
+        <div class="cert-issuer">TELC – The European Language Certificates</div>
+        <div class="cert-date">März 2026</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-badge">🎓</div>
+      <div>
+        <div class="cert-name">Abitur (als MSA anerkannt)</div>
+        <div class="cert-issuer">Marokko · Anerkennung Bremen</div>
+        <div class="cert-date">Juni 2022 · Anerkannt Feb. 2026</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">04 — Kontakt</div>
+  <h2>Schreib mir</h2>
+
+  <div class="contact-box">
+    <div class="contact-info">
+      <p>
+        Ich freue mich über deine Nachricht!<br><br>
+        📍 Worpswede / Bremen-Region<br>
+        ✉ <a href="mailto:echaibi.abderrahim@gmail.com">echaibi.abderrahim@gmail.com</a><br>
+        📞 <a href="tel:+4901706989637">0170 698 9637</a>
+      </p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:echaibi.abderrahim@gmail.com" class="contact-link">
+        <span class="contact-link-icon">✉</span>
+        E-Mail schreiben
+      </a>
+      <a href="https://github.com/abderrahim-del" target="_blank" class="contact-link">
+        <span class="contact-link-icon">🐙</span>
+        GitHub Profil ansehen
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Abderrahim Echaibi</span>
+  <span>Gebaut mit HTML & CSS · Gehostet auf GitHub Pages</span>
+</footer>
+
+</body>
+</html>
