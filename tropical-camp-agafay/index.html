@@ -159,14 +159,23 @@
     .activities { background: var(--sand-2); }
     .act-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
     .act {
-      background: var(--white); border-radius: var(--radius); padding: 2rem 1.7rem;
+      background: var(--white); border-radius: var(--radius); padding: 0;
+      display: flex; flex-direction: column;
       box-shadow: 0 10px 30px -20px rgba(40,25,10,.45); transition: transform .3s, box-shadow .3s;
       position: relative; overflow: hidden;
     }
     .act::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--terra)); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
     .act:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
     .act:hover::after { transform: scaleX(1); }
-    .act-icon { width: 58px; height: 58px; border-radius: 16px; display: grid; place-items: center; background: var(--sand); font-size: 1.8rem; margin-bottom: 1.2rem; }
+    .act-img { aspect-ratio: 4/3; overflow: hidden; }
+    .act-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+    .act:hover .act-img img { transform: scale(1.06); }
+    .act-body { padding: 0 1.7rem 2rem; position: relative; }
+    .act-icon {
+      width: 58px; height: 58px; border-radius: 16px; display: grid; place-items: center;
+      background: var(--white); font-size: 1.8rem; margin: -29px 0 1rem;
+      box-shadow: 0 8px 20px -8px rgba(40,25,10,.45); position: relative;
+    }
     .act h3 { font-size: 1.6rem; margin-bottom: .5rem; }
     .act p { color: var(--muted); font-size: .98rem; }
 
@@ -181,8 +190,10 @@
     .step p { color: rgba(255,255,255,.7); font-size: .95rem; }
 
     /* ── GALLERY ── */
-    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-    .g-item { position: relative; overflow: hidden; border-radius: var(--radius); cursor: zoom-in; aspect-ratio: 3/4; border: 0; padding: 0; background: var(--night); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 270px; grid-auto-flow: dense; gap: 1rem; }
+    .g-item { position: relative; overflow: hidden; border-radius: var(--radius); cursor: zoom-in; border: 0; padding: 0; background: var(--night); }
+    .g-item.big { grid-column: span 2; grid-row: span 2; }
+    .g-item.wide { grid-column: span 2; }
     .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s, opacity .3s; }
     .g-item:hover img { transform: scale(1.06); opacity: .9; }
     .g-item figcaption {
@@ -202,6 +213,40 @@
     .lb-close { top: 16px; right: 16px; }
     .lb-prev { left: 16px; top: 50%; transform: translateY(-50%); }
     .lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
+
+    /* ── LIVE MUSIC ── */
+    .music { background: var(--night); color: var(--white); overflow: hidden; }
+    .music-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+    .video-wrap {
+      position: relative; width: min(100%, 360px); margin-inline: auto; aspect-ratio: 9/16;
+      border-radius: 26px; overflow: hidden; background: #000;
+      box-shadow: 0 30px 70px -20px rgba(217,164,65,.45), 0 0 0 1px rgba(255,255,255,.08);
+    }
+    .video-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .sound-btn {
+      position: absolute; right: 14px; bottom: 14px; display: flex; align-items: center; gap: .45rem;
+      background: rgba(20,17,15,.65); color: var(--white); border: 1px solid rgba(255,255,255,.3);
+      border-radius: 999px; padding: .55rem .95rem; font: 500 .85rem var(--sans); cursor: pointer;
+      backdrop-filter: blur(6px);
+    }
+    .sound-btn:hover { background: rgba(217,164,65,.85); color: var(--night); }
+    .sound-btn svg { width: 18px; height: 18px; }
+    .live-tag {
+      position: absolute; left: 14px; top: 14px; display: inline-flex; align-items: center; gap: .45rem;
+      background: rgba(192,98,47,.92); color: var(--white); border-radius: 999px; padding: .35rem .8rem;
+      font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600;
+    }
+    .live-tag::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--white); animation: pulse 1.4s infinite; }
+    @keyframes pulse { 50% { opacity: .25; } }
+    .music .eyebrow { color: var(--gold-2); }
+    .music h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 1.2rem; }
+    .music h2 em { color: var(--gold-2); }
+    .music-text > p { color: rgba(255,255,255,.75); font-size: 1.08rem; margin-bottom: 1.8rem; }
+    .music-list { list-style: none; display: grid; gap: 1rem; margin-bottom: 2.2rem; }
+    .music-list li { display: flex; gap: 1rem; align-items: flex-start; }
+    .music-list .m-ico { width: 46px; height: 46px; border-radius: 14px; background: rgba(217,164,65,.15); display: grid; place-items: center; font-size: 1.4rem; flex-shrink: 0; }
+    .music-list b { display: block; font-family: var(--serif); font-size: 1.35rem; font-weight: 600; line-height: 1.2; }
+    .music-list span { color: rgba(255,255,255,.65); font-size: .95rem; }
 
     /* ── REVIEWS ── */
     .reviews { background: var(--sand-2); }
@@ -288,7 +333,7 @@
     @media (max-width: 1024px) {
       .act-grid, .rev-grid { grid-template-columns: repeat(2, 1fr); }
       .timeline { grid-template-columns: repeat(2, 1fr); gap: 2rem 1.4rem; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 240px; }
     }
     @media (max-width: 880px) {
       .burger { display: block; }
@@ -300,7 +345,7 @@
       .nav-links.open { transform: none; }
       .nav-links a { font-size: 1.15rem; }
       .nav-book { display: none; }
-      .about-grid, .booking-grid { grid-template-columns: 1fr; }
+      .about-grid, .booking-grid, .music-grid { grid-template-columns: 1fr; }
       .about-media { max-width: 520px; margin: 0 auto 2.5rem; width: 100%; }
       .about-media .float { right: -2%; }
     }
@@ -308,7 +353,7 @@
       .brand span { font-size: 1.1rem; }
       .brand img { width: 44px; height: 44px; }
       .act-grid, .rev-grid, .timeline { grid-template-columns: 1fr; }
-      .gallery-grid { gap: .6rem; }
+      .gallery-grid { gap: .6rem; grid-auto-rows: 190px; }
       .form-row { grid-template-columns: 1fr; gap: 0; }
       .stats { gap: .6rem; }
       .stat { padding: .9rem .4rem; }
@@ -335,6 +380,7 @@
         <li><a href="#about" data-i18n="nav.about">Le camp</a></li>
         <li><a href="#activites" data-i18n="nav.activities">Activités</a></li>
         <li><a href="#galerie" data-i18n="nav.gallery">Galerie</a></li>
+        <li><a href="#musique" data-i18n="nav.music">Soirées</a></li>
         <li><a href="#avis" data-i18n="nav.reviews">Avis</a></li>
         <li><a href="#reservation" data-i18n="nav.contact">Contact</a></li>
       </ul>
@@ -376,6 +422,7 @@
           <span>★★★★★ <b data-i18n="hero.badge1">Avis 5 étoiles</b></span>
           <span>🚐 <span data-i18n="hero.badge2">Transfert depuis Marrakech</span></span>
           <span>🌅 <span data-i18n="hero.badge3">Sunset inoubliable</span></span>
+          <span>🎶 <span data-i18n="hero.badge4">Musique live chaque soir</span></span>
         </div>
       </div>
     </div>
@@ -412,12 +459,12 @@
         <p data-i18n="act.text">Aventure, détente ou gastronomie — composez votre journée parfaite dans le désert d'Agafay.</p>
       </div>
       <div class="act-grid">
-        <article class="act reveal"><div class="act-icon">🏊</div><h3 data-i18n="act.pool.t">Piscine</h3><p data-i18n="act.pool.d">Une grande piscine à débordement avec vue panoramique sur le désert et l'Atlas. Transats, parasols et rafraîchissements.</p></article>
-        <article class="act reveal"><div class="act-icon">🏍️</div><h3 data-i18n="act.quad.t">Quads</h3><p data-i18n="act.quad.d">Partez à l'assaut des pistes du désert de pierre avec nos guides. Sensations garanties, débutants bienvenus.</p></article>
-        <article class="act reveal"><div class="act-icon">🐪</div><h3 data-i18n="act.camel.t">Balades à dos de chameau</h3><p data-i18n="act.camel.d">Une promenade paisible et authentique au rythme des dromadaires, idéale au coucher du soleil.</p></article>
-        <article class="act reveal"><div class="act-icon">🌅</div><h3 data-i18n="act.sunset.t">Sunset</h3><p data-i18n="act.sunset.d">Le moment magique d'Agafay : le ciel s'embrase de rouge et d'or au-dessus des collines. Un spectacle à couper le souffle.</p></article>
-        <article class="act reveal"><div class="act-icon">🍽️</div><h3 data-i18n="act.dinner.t">Dîner marocain</h3><p data-i18n="act.dinner.d">Tajines, couscous et thé à la menthe servis dans notre restaurant berbère traditionnel ou sous les étoiles.</p></article>
-        <article class="act reveal"><div class="act-icon">🔥</div><h3 data-i18n="act.show.t">Spectacle & feu de camp</h3><p data-i18n="act.show.d">Spectacle de feu, musique live et veillée autour du feu de camp pour clôturer la journée en beauté.</p></article>
+        <article class="act reveal"><div class="act-img"><img src="images/piscine-coucher.jpg" alt="Piscine face au désert au coucher du soleil" loading="lazy" /></div><div class="act-body"><div class="act-icon">🏊</div><h3 data-i18n="act.pool.t">Piscine</h3><p data-i18n="act.pool.d">Une grande piscine avec vue panoramique sur le désert et l'Atlas. Transats, parasols et rafraîchissements.</p></div></article>
+        <article class="act reveal"><div class="act-img"><img src="images/quads.jpg" alt="Quads et buggys dans le désert d'Agafay" loading="lazy" style="object-position:center 70%" /></div><div class="act-body"><div class="act-icon">🏍️</div><h3 data-i18n="act.quad.t">Quads</h3><p data-i18n="act.quad.d">Partez à l'assaut des pistes du désert de pierre avec nos guides. Sensations garanties, débutants bienvenus.</p></div></article>
+        <article class="act reveal"><div class="act-img"><img src="images/chameaux.jpg" alt="Caravane de chameaux au coucher du soleil" loading="lazy" /></div><div class="act-body"><div class="act-icon">🐪</div><h3 data-i18n="act.camel.t">Balades à dos de chameau</h3><p data-i18n="act.camel.d">Une promenade paisible et authentique au rythme des dromadaires, idéale au coucher du soleil.</p></div></article>
+        <article class="act reveal"><div class="act-img"><img src="images/sunset-camp.jpg" alt="Coucher de soleil sur le camp" loading="lazy" style="object-position:center 55%" /></div><div class="act-body"><div class="act-icon">🌅</div><h3 data-i18n="act.sunset.t">Sunset</h3><p data-i18n="act.sunset.d">Le moment magique d'Agafay : le ciel s'embrase de rouge et d'or au-dessus des collines. Un spectacle à couper le souffle.</p></div></article>
+        <article class="act reveal"><div class="act-img"><img src="images/restaurant.jpg" alt="Restaurant berbère traditionnel" loading="lazy" /></div><div class="act-body"><div class="act-icon">🍽️</div><h3 data-i18n="act.dinner.t">Dîner marocain</h3><p data-i18n="act.dinner.d">Tajines, couscous et thé à la menthe servis dans notre restaurant berbère traditionnel ou sous les étoiles.</p></div></article>
+        <article class="act reveal"><div class="act-img"><img src="images/soiree-musique.jpg" alt="Soirée musicale autour du feu de camp" loading="lazy" style="object-position:center 60%" /></div><div class="act-body"><div class="act-icon">🎶</div><h3 data-i18n="act.show.t">Musique live & feu de camp</h3><p data-i18n="act.show.d">Chaque soir : musique live, spectacle de feu et veillée autour du feu de camp sous les étoiles.</p></div></article>
       </div>
     </div>
   </section>
@@ -447,16 +494,49 @@
         <h2 data-i18n="gal.title">Plongez dans l'ambiance</h2>
       </div>
       <div class="gallery-grid">
-        <figure class="g-item reveal" data-index="0"><img src="images/piscine-sunset.jpg" alt="Piscine au coucher du soleil" loading="lazy" /><figcaption data-i18n="gal.c1">Piscine au sunset</figcaption></figure>
-        <figure class="g-item reveal" data-index="1"><img src="images/feu-spectacle.jpg" alt="Spectacle de feu le soir" loading="lazy" /><figcaption data-i18n="gal.c2">Spectacle de feu</figcaption></figure>
-        <figure class="g-item reveal" data-index="2"><img src="images/restaurant.jpg" alt="Restaurant berbère" loading="lazy" /><figcaption data-i18n="gal.c3">Restaurant berbère</figcaption></figure>
-        <figure class="g-item reveal" data-index="3"><img src="images/feu-de-camp.jpg" alt="Feu de camp" loading="lazy" /><figcaption data-i18n="gal.c4">Feu de camp</figcaption></figure>
+        <figure class="g-item big reveal"><img src="images/feu-spectacle.jpg" alt="Spectacle de feu le soir" loading="lazy" /><figcaption data-i18n="gal.c2">Spectacle de feu</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/piscine-coucher.jpg" alt="Piscine au coucher du soleil" loading="lazy" /><figcaption data-i18n="gal.c1">Piscine au sunset</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/quads.jpg" alt="Quads et buggys" loading="lazy" /><figcaption data-i18n="gal.c5">Quads & buggys</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/soiree-musique.jpg" alt="Soirée musicale sous les étoiles" loading="lazy" /><figcaption data-i18n="gal.c6">Soirée sous les étoiles</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/restaurant.jpg" alt="Restaurant berbère" loading="lazy" /><figcaption data-i18n="gal.c3">Restaurant berbère</figcaption></figure>
+        <figure class="g-item wide reveal"><img src="images/chameaux.jpg" alt="Chameaux au coucher du soleil" loading="lazy" /><figcaption data-i18n="gal.c7">Chameaux au coucher du soleil</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/sunset-camp.jpg" alt="Coucher de soleil sur le camp" loading="lazy" /><figcaption data-i18n="gal.c8">Sunset au camp</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/feu-de-camp.jpg" alt="Feu de camp" loading="lazy" /><figcaption data-i18n="gal.c4">Feu de camp</figcaption></figure>
       </div>
       <div class="gallery-more">
         <a href="https://www.instagram.com/tropicalcampagafay/" target="_blank" rel="noopener" class="btn btn-dark">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
           <span data-i18n="gal.more">Plus de photos sur Instagram</span>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LIVE MUSIC EVERY EVENING ── -->
+  <section class="section music" id="musique">
+    <div class="container music-grid">
+      <div class="video-wrap reveal">
+        <video id="musicVideo" poster="images/musique-live-poster.jpg"
+          autoplay muted loop playsinline preload="metadata" aria-label="Musique live le soir au Tropical Camp">
+          <source src="videos/musique-live.mp4" type="video/mp4" />
+          <source src="videos/musique-live.webm" type="video/webm" />
+        </video>
+        <span class="live-tag">Live</span>
+        <button class="sound-btn" id="soundBtn" type="button" aria-pressed="false">
+          <svg id="soundIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg>
+          <span data-i18n="music.sound">Activer le son</span>
+        </button>
+      </div>
+      <div class="music-text reveal">
+        <span class="eyebrow" data-i18n="music.eyebrow">Chaque soir</span>
+        <h2 data-i18n-html="music.title">Musique <em>live</em> tous les soirs</h2>
+        <p data-i18n="music.text">Quand le soleil se couche, le camp s'anime : chaque soir, nos musiciens jouent en live sous les lanternes et les étoiles, autour du feu de camp. Une ambiance chaleureuse et festive que vous n'oublierez pas.</p>
+        <ul class="music-list">
+          <li><div class="m-ico">🎶</div><div><b data-i18n="music.l1.t">Musique live chaque soir</b><span data-i18n="music.l1.d">Musique, chants et percussions autour du feu.</span></div></li>
+          <li><div class="m-ico">🔥</div><div><b data-i18n="music.l2.t">Feu de camp & spectacle de feu</b><span data-i18n="music.l2.d">Une soirée magique sous un ciel étoilé.</span></div></li>
+          <li><div class="m-ico">🏮</div><div><b data-i18n="music.l3.t">Ambiance lanternes</b><span data-i18n="music.l3.d">Le camp s'illumine de centaines de lumières.</span></div></li>
+        </ul>
+        <a href="#reservation" class="btn btn-gold" data-i18n="music.cta">Réserver ma soirée</a>
       </div>
     </div>
   </section>
@@ -620,7 +700,7 @@
         'hero.badge1': 'Avis 5 étoiles', 'hero.badge2': 'Transfert depuis Marrakech', 'hero.badge3': 'Sunset inoubliable',
         'about.eyebrow': 'Bienvenue', 'about.title': 'Un camp unique entre palmiers et dunes de pierre',
         'about.p1': "Le Tropical Camp Agafay vous accueille dans un décor où l'ambiance tropicale rencontre l'authenticité berbère. Ici, le temps ralentit : on se baigne face au désert, on part à l'aventure en quad ou à dos de chameau, puis on admire le soleil disparaître derrière les montagnes.",
-        'about.p2': "Le soir, le camp s'illumine de lanternes : dîner marocain fait maison, feu de camp, musique et spectacle de feu pour une soirée inoubliable.",
+        'about.p2': "Le soir, le camp s'illumine de lanternes : dîner marocain fait maison, feu de camp, spectacle de feu et — chaque soir — musique live pour une soirée inoubliable.",
         'about.s1': 'min de Marrakech', 'about.s2': 'activités', 'about.s3': 'expérience',
         'act.eyebrow': 'Nos activités', 'act.title': 'Des expériences pour tous les goûts',
         'act.text': "Aventure, détente ou gastronomie — composez votre journée parfaite dans le désert d'Agafay.",
@@ -629,12 +709,12 @@
         'act.camel.t': 'Balades à dos de chameau', 'act.camel.d': 'Une promenade paisible et authentique au rythme des dromadaires, idéale au coucher du soleil.',
         'act.sunset.t': 'Sunset', 'act.sunset.d': "Le moment magique d'Agafay : le ciel s'embrase de rouge et d'or au-dessus des collines. Un spectacle à couper le souffle.",
         'act.dinner.t': 'Dîner marocain', 'act.dinner.d': 'Tajines, couscous et thé à la menthe servis dans notre restaurant berbère traditionnel ou sous les étoiles.',
-        'act.show.t': 'Spectacle & feu de camp', 'act.show.d': 'Spectacle de feu, musique live et veillée autour du feu de camp pour clôturer la journée en beauté.',
+        'act.show.t': "Musique live & feu de camp", 'act.show.d': "Chaque soir : musique live, spectacle de feu et veillée autour du feu de camp sous les étoiles.",
         'day.eyebrow': 'Votre journée', 'day.title': 'Une journée au Tropical Camp', 'day.text': "Un exemple de programme — nous l'adaptons volontiers à vos envies.",
         'day.1.time': 'Après-midi', 'day.1.t': 'Arrivée & piscine', 'day.1.d': 'Transfert depuis Marrakech, thé de bienvenue et détente au bord de la piscine.',
         'day.2.time': "Fin d'après-midi", 'day.2.t': 'Quad ou chameau', 'day.2.d': "Explorez le désert d'Agafay en quad ou à dos de chameau avec nos guides.",
         'day.3.time': 'Coucher du soleil', 'day.3.t': 'Sunset magique', 'day.3.d': "Admirez le ciel s'embraser au-dessus des montagnes de l'Atlas.",
-        'day.4.time': 'Soirée', 'day.4.t': 'Dîner & spectacle', 'day.4.d': 'Dîner marocain, spectacle de feu et soirée autour du feu de camp.',
+        'day.4.time': 'Soirée', 'day.4.t': 'Dîner & spectacle', 'day.4.d': "Dîner marocain, musique live chaque soir, spectacle de feu et veillée autour du feu de camp.",
         'gal.eyebrow': 'Galerie', 'gal.title': "Plongez dans l'ambiance",
         'gal.c1': 'Piscine au sunset', 'gal.c2': 'Spectacle de feu', 'gal.c3': 'Restaurant berbère', 'gal.c4': 'Feu de camp', 'gal.more': 'Plus de photos sur Instagram',
         'rev.eyebrow': 'Avis clients', 'rev.title': 'Ce que disent nos visiteurs', 'rev.based': 'Note moyenne de nos visiteurs',
@@ -650,7 +730,25 @@
         'form.message': 'Message', 'form.messagePh': 'Transfert depuis Marrakech, questions…',
         'form.submit': 'Envoyer via WhatsApp', 'form.note': 'Réponse rapide · Sans engagement', 'form.required': 'Merci de remplir le nom et la date.',
         'wa.hello': 'Bonjour Tropical Camp Agafay ! Je souhaite faire une réservation :', 'wa.default': 'Bonjour Tropical Camp Agafay ! Je voudrais des informations.',
-        'footer.tag': 'Piscine • Quads • Balades à dos de chameau • Sunset • Dîner • Expériences inoubliables', 'footer.rights': 'Tous droits réservés'
+        'footer.tag': "Piscine • Quads • Balades à dos de chameau • Sunset • Dîner • Musique live chaque soir", 'footer.rights': 'Tous droits réservés',
+        'nav.music': "Soirées",
+        'hero.badge4': "Musique live chaque soir",
+        'gal.c5': "Quads & buggys",
+        'gal.c6': "Soirée sous les étoiles",
+        'gal.c7': "Chameaux au coucher du soleil",
+        'gal.c8': "Sunset au camp",
+        'music.eyebrow': "Chaque soir",
+        'music.title': "Musique <em>live</em> tous les soirs",
+        'music.text': "Quand le soleil se couche, le camp s'anime : chaque soir, nos musiciens jouent en live sous les lanternes et les étoiles, autour du feu de camp. Une ambiance chaleureuse et festive que vous n'oublierez pas.",
+        'music.l1.t': "Musique live chaque soir",
+        'music.l1.d': "Musique, chants et percussions autour du feu.",
+        'music.l2.t': "Feu de camp & spectacle de feu",
+        'music.l2.d': "Une soirée magique sous un ciel étoilé.",
+        'music.l3.t': "Ambiance lanternes",
+        'music.l3.d': "Le camp s'illumine de centaines de lumières.",
+        'music.cta': "Réserver ma soirée",
+        'music.sound': "Activer le son",
+        'music.mute': "Couper le son"
       },
       en: {
         'nav.about': 'The camp', 'nav.activities': 'Activities', 'nav.gallery': 'Gallery', 'nav.reviews': 'Reviews', 'nav.contact': 'Contact', 'nav.book': 'Book now',
@@ -661,7 +759,7 @@
         'hero.badge1': '5-star reviews', 'hero.badge2': 'Transfer from Marrakech', 'hero.badge3': 'Unforgettable sunset',
         'about.eyebrow': 'Welcome', 'about.title': 'A unique camp between palm trees and stone dunes',
         'about.p1': 'Tropical Camp Agafay welcomes you to a setting where a tropical vibe meets Berber authenticity. Here time slows down: swim with a desert view, head off on a quad or camel adventure, then watch the sun disappear behind the mountains.',
-        'about.p2': 'At night the camp lights up with lanterns: homemade Moroccan dinner, campfire, music and a fire show for an unforgettable evening.',
+        'about.p2': "At night the camp lights up with lanterns: homemade Moroccan dinner, campfire, fire show and — every evening — live music for an unforgettable night.",
         'about.s1': 'min from Marrakech', 'about.s2': 'activities', 'about.s3': 'experience',
         'act.eyebrow': 'Our activities', 'act.title': 'Experiences for every taste',
         'act.text': 'Adventure, relaxation or gastronomy — create your perfect day in the Agafay Desert.',
@@ -670,12 +768,12 @@
         'act.camel.t': 'Camel rides', 'act.camel.d': 'A peaceful, authentic ride at the pace of the dromedaries — perfect at sunset.',
         'act.sunset.t': 'Sunset', 'act.sunset.d': "Agafay's magic moment: the sky blazes red and gold above the hills. A breathtaking show.",
         'act.dinner.t': 'Moroccan dinner', 'act.dinner.d': 'Tagines, couscous and mint tea served in our traditional Berber restaurant or under the stars.',
-        'act.show.t': 'Show & campfire', 'act.show.d': 'Fire show, live music and an evening around the campfire to end the day in style.',
+        'act.show.t': "Live music & campfire", 'act.show.d': "Every evening: live music, fire show and a night around the campfire under the stars.",
         'day.eyebrow': 'Your day', 'day.title': 'A day at Tropical Camp', 'day.text': 'A sample programme — we are happy to adapt it to your wishes.',
         'day.1.time': 'Afternoon', 'day.1.t': 'Arrival & pool', 'day.1.d': 'Transfer from Marrakech, welcome tea and relaxing by the pool.',
         'day.2.time': 'Late afternoon', 'day.2.t': 'Quad or camel', 'day.2.d': 'Explore the Agafay Desert by quad or on camelback with our guides.',
         'day.3.time': 'Sunset', 'day.3.t': 'Magical sunset', 'day.3.d': 'Watch the sky catch fire above the Atlas Mountains.',
-        'day.4.time': 'Evening', 'day.4.t': 'Dinner & show', 'day.4.d': 'Moroccan dinner, fire show and an evening around the campfire.',
+        'day.4.time': 'Evening', 'day.4.t': 'Dinner & show', 'day.4.d': "Moroccan dinner, live music every evening, fire show and a night around the campfire.",
         'gal.eyebrow': 'Gallery', 'gal.title': 'Soak up the atmosphere',
         'gal.c1': 'Pool at sunset', 'gal.c2': 'Fire show', 'gal.c3': 'Berber restaurant', 'gal.c4': 'Campfire', 'gal.more': 'More photos on Instagram',
         'rev.eyebrow': 'Guest reviews', 'rev.title': 'What our guests say', 'rev.based': 'Average guest rating',
@@ -691,7 +789,25 @@
         'form.message': 'Message', 'form.messagePh': 'Transfer from Marrakech, questions…',
         'form.submit': 'Send via WhatsApp', 'form.note': 'Fast reply · No commitment', 'form.required': 'Please fill in your name and date.',
         'wa.hello': 'Hello Tropical Camp Agafay! I would like to make a booking:', 'wa.default': 'Hello Tropical Camp Agafay! I would like some information.',
-        'footer.tag': 'Pool • Quads • Camel rides • Sunset • Dinner • Unforgettable experiences', 'footer.rights': 'All rights reserved'
+        'footer.tag': "Pool • Quads • Camel rides • Sunset • Dinner • Live music every evening", 'footer.rights': 'All rights reserved',
+        'nav.music': "Evenings",
+        'hero.badge4': "Live music every evening",
+        'gal.c5': "Quads & buggies",
+        'gal.c6': "Night under the stars",
+        'gal.c7': "Camels at sunset",
+        'gal.c8': "Sunset at the camp",
+        'music.eyebrow': "Every evening",
+        'music.title': "<em>Live</em> music every night",
+        'music.text': "When the sun goes down, the camp comes alive: every evening our musicians play live under the lanterns and the stars, around the campfire. A warm, festive atmosphere you will never forget.",
+        'music.l1.t': "Live music every evening",
+        'music.l1.d': "Music, singing and drums around the fire.",
+        'music.l2.t': "Campfire & fire show",
+        'music.l2.d': "A magical night under a starry sky.",
+        'music.l3.t': "Lantern atmosphere",
+        'music.l3.d': "The camp lights up with hundreds of lights.",
+        'music.cta': "Book my evening",
+        'music.sound': "Sound on",
+        'music.mute': "Sound off"
       },
       de: {
         'nav.about': 'Das Camp', 'nav.activities': 'Aktivitäten', 'nav.gallery': 'Galerie', 'nav.reviews': 'Bewertungen', 'nav.contact': 'Kontakt', 'nav.book': 'Buchen',
@@ -702,7 +818,7 @@
         'hero.badge1': '5-Sterne-Bewertungen', 'hero.badge2': 'Transfer ab Marrakesch', 'hero.badge3': 'Unvergesslicher Sunset',
         'about.eyebrow': 'Willkommen', 'about.title': 'Ein einzigartiges Camp zwischen Palmen und Steindünen',
         'about.p1': 'Das Tropical Camp Agafay empfängt Sie in einer Kulisse, in der tropisches Flair auf Berber-Tradition trifft. Hier vergeht die Zeit langsamer: Baden mit Wüstenblick, Abenteuer auf dem Quad oder Kamel und dann zusehen, wie die Sonne hinter den Bergen versinkt.',
-        'about.p2': 'Abends erstrahlt das Camp im Licht der Laternen: hausgemachtes marokkanisches Abendessen, Lagerfeuer, Musik und eine Feuershow für einen unvergesslichen Abend.',
+        'about.p2': "Abends erstrahlt das Camp im Licht der Laternen: hausgemachtes marokkanisches Abendessen, Lagerfeuer, Feuershow und — jeden Abend — Live-Musik für einen unvergesslichen Abend.",
         'about.s1': 'Min. von Marrakesch', 'about.s2': 'Aktivitäten', 'about.s3': 'Erlebnis',
         'act.eyebrow': 'Unsere Aktivitäten', 'act.title': 'Erlebnisse für jeden Geschmack',
         'act.text': 'Abenteuer, Entspannung oder Genuss — stellen Sie Ihren perfekten Tag in der Agafay-Wüste zusammen.',
@@ -711,12 +827,12 @@
         'act.camel.t': 'Kamelritte', 'act.camel.d': 'Ein ruhiger, authentischer Ritt im Rhythmus der Dromedare — ideal bei Sonnenuntergang.',
         'act.sunset.t': 'Sonnenuntergang', 'act.sunset.d': 'Der magische Moment von Agafay: Der Himmel leuchtet rot und golden über den Hügeln. Ein atemberaubendes Schauspiel.',
         'act.dinner.t': 'Marokkanisches Abendessen', 'act.dinner.d': 'Tajine, Couscous und Minztee in unserem traditionellen Berber-Restaurant oder unter den Sternen.',
-        'act.show.t': 'Show & Lagerfeuer', 'act.show.d': 'Feuershow, Live-Musik und ein Abend am Lagerfeuer als krönender Abschluss des Tages.',
+        'act.show.t': "Live-Musik & Lagerfeuer", 'act.show.d': "Jeden Abend: Live-Musik, Feuershow und gemütliche Runde am Lagerfeuer unter den Sternen.",
         'day.eyebrow': 'Ihr Tag', 'day.title': 'Ein Tag im Tropical Camp', 'day.text': 'Ein Beispielprogramm — wir passen es gerne an Ihre Wünsche an.',
         'day.1.time': 'Nachmittag', 'day.1.t': 'Ankunft & Pool', 'day.1.d': 'Transfer ab Marrakesch, Willkommenstee und Entspannung am Pool.',
         'day.2.time': 'Später Nachmittag', 'day.2.t': 'Quad oder Kamel', 'day.2.d': 'Erkunden Sie die Agafay-Wüste mit dem Quad oder auf dem Kamel mit unseren Guides.',
         'day.3.time': 'Sonnenuntergang', 'day.3.t': 'Magischer Sunset', 'day.3.d': 'Erleben Sie, wie der Himmel über dem Atlasgebirge zu glühen beginnt.',
-        'day.4.time': 'Abend', 'day.4.t': 'Dinner & Show', 'day.4.d': 'Marokkanisches Abendessen, Feuershow und Abend am Lagerfeuer.',
+        'day.4.time': 'Abend', 'day.4.t': 'Dinner & Show', 'day.4.d': "Marokkanisches Abendessen, jeden Abend Live-Musik, Feuershow und Abend am Lagerfeuer.",
         'gal.eyebrow': 'Galerie', 'gal.title': 'Tauchen Sie ein in die Atmosphäre',
         'gal.c1': 'Pool bei Sonnenuntergang', 'gal.c2': 'Feuershow', 'gal.c3': 'Berber-Restaurant', 'gal.c4': 'Lagerfeuer', 'gal.more': 'Mehr Fotos auf Instagram',
         'rev.eyebrow': 'Gästebewertungen', 'rev.title': 'Das sagen unsere Gäste', 'rev.based': 'Durchschnittliche Bewertung unserer Gäste',
@@ -732,7 +848,25 @@
         'form.message': 'Nachricht', 'form.messagePh': 'Transfer ab Marrakesch, Fragen…',
         'form.submit': 'Per WhatsApp senden', 'form.note': 'Schnelle Antwort · Unverbindlich', 'form.required': 'Bitte Name und Datum angeben.',
         'wa.hello': 'Hallo Tropical Camp Agafay! Ich möchte gerne buchen:', 'wa.default': 'Hallo Tropical Camp Agafay! Ich hätte gerne Informationen.',
-        'footer.tag': 'Pool • Quads • Kamelritte • Sunset • Abendessen • Unvergessliche Erlebnisse', 'footer.rights': 'Alle Rechte vorbehalten'
+        'footer.tag': "Pool • Quads • Kamelritte • Sunset • Abendessen • Jeden Abend Live-Musik", 'footer.rights': 'Alle Rechte vorbehalten',
+        'nav.music': "Abende",
+        'hero.badge4': "Jeden Abend Live-Musik",
+        'gal.c5': "Quads & Buggys",
+        'gal.c6': "Abend unter Sternen",
+        'gal.c7': "Kamele bei Sonnenuntergang",
+        'gal.c8': "Sunset im Camp",
+        'music.eyebrow': "Jeden Abend",
+        'music.title': "Am Abend immer <em>Live</em>-Musik",
+        'music.text': "Wenn die Sonne untergeht, erwacht das Camp: Jeden Abend spielen unsere Musiker live unter Laternen und Sternen rund um das Lagerfeuer. Eine warme, festliche Stimmung, die Sie nicht vergessen werden.",
+        'music.l1.t': "Jeden Abend Live-Musik",
+        'music.l1.d': "Musik, Gesang und Trommeln am Feuer.",
+        'music.l2.t': "Lagerfeuer & Feuershow",
+        'music.l2.d': "Ein magischer Abend unter dem Sternenhimmel.",
+        'music.l3.t': "Laternen-Atmosphäre",
+        'music.l3.d': "Das Camp leuchtet im Licht hunderter Lampen.",
+        'music.cta': "Meinen Abend buchen",
+        'music.sound': "Ton an",
+        'music.mute': "Ton aus"
       },
       es: {
         'nav.about': 'El campamento', 'nav.activities': 'Actividades', 'nav.gallery': 'Galería', 'nav.reviews': 'Opiniones', 'nav.contact': 'Contacto', 'nav.book': 'Reservar',
@@ -743,7 +877,7 @@
         'hero.badge1': 'Opiniones 5 estrellas', 'hero.badge2': 'Traslado desde Marrakech', 'hero.badge3': 'Atardecer inolvidable',
         'about.eyebrow': 'Bienvenidos', 'about.title': 'Un campamento único entre palmeras y dunas de piedra',
         'about.p1': 'Tropical Camp Agafay te recibe en un entorno donde el ambiente tropical se encuentra con la autenticidad bereber. Aquí el tiempo se detiene: báñate con vistas al desierto, vive la aventura en quad o en camello y contempla cómo el sol desaparece tras las montañas.',
-        'about.p2': 'Por la noche, el campamento se ilumina con faroles: cena marroquí casera, hoguera, música y espectáculo de fuego para una velada inolvidable.',
+        'about.p2': "Por la noche, el campamento se ilumina con faroles: cena marroquí casera, hoguera, espectáculo de fuego y — cada noche — música en vivo para una velada inolvidable.",
         'about.s1': 'min de Marrakech', 'about.s2': 'actividades', 'about.s3': 'experiencia',
         'act.eyebrow': 'Nuestras actividades', 'act.title': 'Experiencias para todos los gustos',
         'act.text': 'Aventura, relax o gastronomía — crea tu día perfecto en el desierto de Agafay.',
@@ -752,12 +886,12 @@
         'act.camel.t': 'Paseos en camello', 'act.camel.d': 'Un paseo tranquilo y auténtico al ritmo de los dromedarios, ideal al atardecer.',
         'act.sunset.t': 'Atardecer', 'act.sunset.d': 'El momento mágico de Agafay: el cielo se tiñe de rojo y oro sobre las colinas. Un espectáculo impresionante.',
         'act.dinner.t': 'Cena marroquí', 'act.dinner.d': 'Tajines, cuscús y té a la menta servidos en nuestro restaurante bereber tradicional o bajo las estrellas.',
-        'act.show.t': 'Espectáculo y hoguera', 'act.show.d': 'Espectáculo de fuego, música en vivo y velada junto a la hoguera para cerrar el día por todo lo alto.',
+        'act.show.t': "Música en vivo y hoguera", 'act.show.d': "Cada noche: música en vivo, espectáculo de fuego y velada junto a la hoguera bajo las estrellas.",
         'day.eyebrow': 'Tu día', 'day.title': 'Un día en Tropical Camp', 'day.text': 'Un programa de ejemplo — lo adaptamos con gusto a tus deseos.',
         'day.1.time': 'Tarde', 'day.1.t': 'Llegada y piscina', 'day.1.d': 'Traslado desde Marrakech, té de bienvenida y relax junto a la piscina.',
         'day.2.time': 'Media tarde', 'day.2.t': 'Quad o camello', 'day.2.d': 'Explora el desierto de Agafay en quad o en camello con nuestros guías.',
         'day.3.time': 'Atardecer', 'day.3.t': 'Puesta de sol mágica', 'day.3.d': 'Contempla cómo el cielo se enciende sobre las montañas del Atlas.',
-        'day.4.time': 'Noche', 'day.4.t': 'Cena y espectáculo', 'day.4.d': 'Cena marroquí, espectáculo de fuego y velada junto a la hoguera.',
+        'day.4.time': 'Noche', 'day.4.t': 'Cena y espectáculo', 'day.4.d': "Cena marroquí, música en vivo cada noche, espectáculo de fuego y velada junto a la hoguera.",
         'gal.eyebrow': 'Galería', 'gal.title': 'Sumérgete en el ambiente',
         'gal.c1': 'Piscina al atardecer', 'gal.c2': 'Espectáculo de fuego', 'gal.c3': 'Restaurante bereber', 'gal.c4': 'Hoguera', 'gal.more': 'Más fotos en Instagram',
         'rev.eyebrow': 'Opiniones', 'rev.title': 'Lo que dicen nuestros visitantes', 'rev.based': 'Valoración media de nuestros visitantes',
@@ -773,7 +907,25 @@
         'form.message': 'Mensaje', 'form.messagePh': 'Traslado desde Marrakech, preguntas…',
         'form.submit': 'Enviar por WhatsApp', 'form.note': 'Respuesta rápida · Sin compromiso', 'form.required': 'Por favor, indica tu nombre y la fecha.',
         'wa.hello': '¡Hola Tropical Camp Agafay! Me gustaría hacer una reserva:', 'wa.default': '¡Hola Tropical Camp Agafay! Me gustaría recibir información.',
-        'footer.tag': 'Piscina • Quads • Paseos en camello • Atardecer • Cena • Experiencias inolvidables', 'footer.rights': 'Todos los derechos reservados'
+        'footer.tag': "Piscina • Quads • Paseos en camello • Atardecer • Cena • Música en vivo cada noche", 'footer.rights': 'Todos los derechos reservados',
+        'nav.music': "Noches",
+        'hero.badge4': "Música en vivo cada noche",
+        'gal.c5': "Quads y buggies",
+        'gal.c6': "Noche bajo las estrellas",
+        'gal.c7': "Camellos al atardecer",
+        'gal.c8': "Atardecer en el campamento",
+        'music.eyebrow': "Cada noche",
+        'music.title': "Música en <em>vivo</em> todas las noches",
+        'music.text': "Cuando se pone el sol, el campamento cobra vida: cada noche nuestros músicos tocan en vivo bajo los faroles y las estrellas, alrededor de la hoguera. Un ambiente cálido y festivo que nunca olvidarás.",
+        'music.l1.t': "Música en vivo cada noche",
+        'music.l1.d': "Música, cantos y percusión junto al fuego.",
+        'music.l2.t': "Hoguera y espectáculo de fuego",
+        'music.l2.d': "Una noche mágica bajo un cielo estrellado.",
+        'music.l3.t': "Ambiente de faroles",
+        'music.l3.d': "El campamento se ilumina con cientos de luces.",
+        'music.cta': "Reservar mi noche",
+        'music.sound': "Activar sonido",
+        'music.mute': "Silenciar"
       }
     };
 
@@ -877,6 +1029,31 @@
       if (e.key === 'ArrowLeft') show(idx - 1);
       if (e.key === 'ArrowRight') show(idx + 1);
     });
+
+    /* Live music video: sound toggle */
+    const video = document.getElementById('musicVideo');
+    const soundBtn = document.getElementById('soundBtn');
+    const ICON_MUTED = '<path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/>';
+    const ICON_SOUND = '<path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/>';
+    function updateSoundBtn() {
+      document.getElementById('soundIcon').innerHTML = video.muted ? ICON_MUTED : ICON_SOUND;
+      const label = soundBtn.querySelector('span');
+      label.dataset.i18n = video.muted ? 'music.sound' : 'music.mute';
+      label.textContent = t(label.dataset.i18n);
+      soundBtn.setAttribute('aria-pressed', !video.muted);
+    }
+    soundBtn.addEventListener('click', () => {
+      video.muted = !video.muted;
+      if (video.paused) video.play().catch(() => {});
+      updateSoundBtn();
+    });
+    /* Play only while visible (saves battery & data on phones) */
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([en]) => {
+        if (en.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      }, { threshold: .25 }).observe(video);
+    }
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
