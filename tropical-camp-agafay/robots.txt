@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tropical-camp-agafay.netlify.app/sitemap.xml

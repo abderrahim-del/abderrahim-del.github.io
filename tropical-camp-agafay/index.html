@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tropical Camp Agafay – Désert d'Agafay, Marrakech</title>
+  <meta name="description" content="Tropical Camp Agafay : piscine, quads, balades à dos de chameau et à cheval, coucher de soleil, dîner et musique live chaque soir dans le désert d'Agafay, près de Marrakech." />
+  <meta property="og:title" content="Tropical Camp Agafay" />
+  <meta property="og:description" content="Piscine • Quads • Chameaux • Sunset • Dîner – Désert d'Agafay, Marrakech" />
+  <meta property="og:image" content="https://tropical-camp-agafay.netlify.app/images/piscine-sunset.jpg" />
+  <meta property="og:url" content="https://tropical-camp-agafay.netlify.app/" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://tropical-camp-agafay.netlify.app/" />
+  <meta name="robots" content="index, follow" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    "name": "Tropical Camp Agafay",
+    "description": "Camp dans le désert d'Agafay près de Marrakech : piscine, quads, balades à dos de chameau et à cheval, coucher de soleil, dîner marocain et musique live chaque soir.",
+    "url": "https://tropical-camp-agafay.netlify.app/",
+    "image": "https://tropical-camp-agafay.netlify.app/images/piscine-sunset.jpg",
+    "logo": "https://tropical-camp-agafay.netlify.app/images/logo.png",
+    "telephone": "+212661240130",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Désert d'Agafay, Marrakech",
+      "addressCountry": "MA"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 31.423958, "longitude": -8.100911 },
+    "hasMap": "https://maps.app.goo.gl/ek1rYvbxgbPD7bxH8",
+    "sameAs": ["https://www.instagram.com/tropicalcampagafay/"],
+    "availableLanguage": ["fr", "en", "de", "es"]
+  }
+  </script>
+  <meta name="theme-color" content="#14110f" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --night:   #14110f;
+      --night-2: #1d1814;
+      --sand:    #f6ecdc;
+      --sand-2:  #efe0c6;
+      --gold:    #d9a441;
+      --gold-2:  #f0c46a;
+      --terra:   #c0622f;
+      --palm:    #2f4a2f;
+      --ink:     #2a211b;
+      --muted:   #7a6a5a;
+      --white:   #ffffff;
+      --serif:   'Cormorant Garamond', Georgia, serif;
+      --sans:    'Jost', system-ui, sans-serif;
+      --radius:  18px;
+      --shadow:  0 18px 40px -18px rgba(40, 25, 10, .35);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      color: var(--ink);
+      background: var(--sand);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    .container { width: min(1180px, 100% - 32px); margin-inline: auto; }
+
+    h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: .7rem;
+      font-size: .78rem; letter-spacing: .28em; text-transform: uppercase;
+      color: var(--terra); font-weight: 500; margin-bottom: 1rem;
+    }
+    .eyebrow::before, .eyebrow::after { content: ''; width: 26px; height: 1px; background: currentColor; opacity: .6; }
+    .section { padding: clamp(4.5rem, 9vw, 7.5rem) 0; }
+    .section-head { text-align: center; max-width: 720px; margin: 0 auto 3.2rem; }
+    .section-head h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 1rem; }
+    .section-head p { color: var(--muted); font-size: 1.08rem; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+      padding: .95rem 1.8rem; border-radius: 999px; border: 1px solid transparent;
+      font: 500 .95rem var(--sans); letter-spacing: .04em; text-decoration: none;
+      cursor: pointer; transition: transform .2s, background .2s, color .2s, box-shadow .2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: var(--gold); color: var(--night); box-shadow: 0 10px 30px -10px rgba(217,164,65,.7); }
+    .btn-gold:hover { background: var(--gold-2); }
+    .btn-ghost { border-color: rgba(255,255,255,.55); color: var(--white); backdrop-filter: blur(6px); background: rgba(255,255,255,.06); }
+    .btn-ghost:hover { background: rgba(255,255,255,.16); }
+    .btn svg { width: 18px; height: 18px; }
+
+    /* ── HEADER ── */
+    header {
+      position: fixed; inset: 0 0 auto; z-index: 50;
+      transition: background .3s, box-shadow .3s, padding .3s;
+      padding: 1.1rem 0;
+    }
+    header.scrolled { background: rgba(20,17,15,.92); backdrop-filter: blur(12px); box-shadow: 0 6px 24px rgba(0,0,0,.25); padding: .6rem 0; }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { display: flex; align-items: center; gap: .75rem; text-decoration: none; color: var(--white); }
+    .brand img { width: 52px; height: 52px; border-radius: 50%; box-shadow: 0 4px 14px rgba(0,0,0,.35); }
+    .brand span { font-family: var(--serif); font-size: 1.35rem; font-weight: 700; letter-spacing: .04em; line-height: 1.05; }
+    .brand small { display: block; font-family: var(--sans); font-size: .62rem; letter-spacing: .32em; font-weight: 400; color: var(--gold-2); }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.88); text-decoration: none; font-size: .92rem; letter-spacing: .03em; transition: color .2s; }
+    .nav-links a:hover { color: var(--gold-2); }
+    .nav-actions { display: flex; align-items: center; gap: .6rem; }
+
+    .lang { position: relative; }
+    .lang-btn {
+      display: flex; align-items: center; gap: .45rem; cursor: pointer;
+      background: rgba(255,255,255,.1); color: var(--white);
+      border: 1px solid rgba(255,255,255,.3); border-radius: 999px;
+      padding: .5rem .85rem; font: 500 .85rem var(--sans);
+    }
+    .lang-btn svg { width: 16px; height: 16px; }
+    .lang-menu {
+      position: absolute; right: 0; top: calc(100% + 8px); min-width: 170px;
+      background: var(--white); border-radius: 14px; box-shadow: var(--shadow);
+      padding: .4rem; list-style: none; opacity: 0; visibility: hidden;
+      transform: translateY(-6px); transition: .2s;
+    }
+    .lang.open .lang-menu { opacity: 1; visibility: visible; transform: none; }
+    .lang-menu button {
+      width: 100%; display: flex; align-items: center; gap: .7rem;
+      padding: .6rem .8rem; border: 0; background: none; border-radius: 10px;
+      font: 400 .95rem var(--sans); color: var(--ink); cursor: pointer; text-align: left;
+    }
+    .lang-menu button:hover, .lang-menu button[aria-current="true"] { background: var(--sand); }
+    .lang-menu button[aria-current="true"] { font-weight: 600; }
+    .flag { font-size: 1.15rem; line-height: 1; }
+
+    .burger { display: none; background: none; border: 0; color: var(--white); cursor: pointer; padding: .4rem; }
+    .burger svg { width: 28px; height: 28px; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; min-height: 100svh; display: grid; align-items: center;
+      color: var(--white); overflow: hidden; isolation: isolate;
+    }
+    .hero-bg { position: absolute; inset: 0; z-index: -2; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 60%; transform: scale(1.06); animation: slowzoom 18s ease-out forwards; }
+    @keyframes slowzoom { to { transform: scale(1); } }
+    .hero::after {
+      content: ''; position: absolute; inset: 0; z-index: -1;
+      background: linear-gradient(180deg, rgba(20,17,15,.55) 0%, rgba(20,17,15,.25) 40%, rgba(20,17,15,.75) 100%);
+    }
+    .hero-content { padding: 8rem 0 6rem; max-width: 760px; }
+    .hero .eyebrow { color: var(--gold-2); }
+    .hero h1 { font-size: clamp(2.8rem, 8vw, 5.6rem); font-weight: 600; margin-bottom: 1.2rem; text-shadow: 0 4px 30px rgba(0,0,0,.35); }
+    .hero h1 em { font-style: italic; color: var(--gold-2); }
+    .hero p { font-size: clamp(1.05rem, 2.2vw, 1.25rem); font-weight: 300; max-width: 600px; margin-bottom: 2.2rem; color: rgba(255,255,255,.92); }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .hero-badges { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; margin-top: 2.6rem; font-size: .9rem; color: rgba(255,255,255,.85); }
+    .hero-badges span { display: inline-flex; align-items: center; gap: .45rem; }
+    .scroll-hint { position: absolute; bottom: 1.6rem; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,.7); animation: bob 2s infinite; }
+    .scroll-hint svg { width: 26px; height: 26px; }
+    @keyframes bob { 50% { transform: translate(-50%, 8px); } }
+
+    /* ── ABOUT ── */
+    .about-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+    .about-media { position: relative; }
+    .about-media .main { border-radius: var(--radius); aspect-ratio: 4/5; object-fit: cover; width: 100%; box-shadow: var(--shadow); }
+    .about-media .float {
+      position: absolute; width: 46%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius);
+      right: -6%; bottom: -8%; border: 6px solid var(--sand); box-shadow: var(--shadow);
+    }
+    .about-text h2 { font-size: clamp(2.1rem, 4.6vw, 3.2rem); margin-bottom: 1.2rem; }
+    .about-text p { color: var(--muted); margin-bottom: 1.1rem; font-size: 1.05rem; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; }
+    .stat { background: var(--white); border-radius: 14px; padding: 1.1rem; text-align: center; box-shadow: 0 8px 24px -16px rgba(40,25,10,.4); }
+    .stat b { display: block; font-family: var(--serif); font-size: 2rem; color: var(--terra); line-height: 1.1; }
+    .stat span { font-size: .82rem; color: var(--muted); }
+
+    /* ── ACTIVITIES ── */
+    .activities { background: var(--sand-2); }
+    .act-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.4rem; }
+    .act-grid > .act { flex: 0 1 calc((100% - 2.8rem) / 3); }
+    .act {
+      background: var(--white); border-radius: var(--radius); padding: 0;
+      display: flex; flex-direction: column;
+      box-shadow: 0 10px 30px -20px rgba(40,25,10,.45); transition: transform .3s, box-shadow .3s;
+      position: relative; overflow: hidden;
+    }
+    .act::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--terra)); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
+    .act:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .act:hover::after { transform: scaleX(1); }
+    .act-img { aspect-ratio: 4/3; overflow: hidden; }
+    .act-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+    .act:hover .act-img img { transform: scale(1.06); }
+    .act-body { padding: 0 1.7rem 2rem; position: relative; }
+    .act-icon {
+      width: 58px; height: 58px; border-radius: 16px; display: grid; place-items: center;
+      background: var(--white); font-size: 1.8rem; margin: -29px 0 1rem;
+      box-shadow: 0 8px 20px -8px rgba(40,25,10,.45); position: relative;
+    }
+    .act h3 { font-size: 1.6rem; margin-bottom: .5rem; }
+    .act p { color: var(--muted); font-size: .98rem; }
+
+    /* ── EXPERIENCE (dark band) ── */
+    .experience { background: var(--night); color: var(--white); }
+    .experience .section-head p { color: rgba(255,255,255,.7); }
+    .experience .eyebrow { color: var(--gold-2); }
+    .timeline { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; counter-reset: step; }
+    .step { border-top: 1px solid rgba(255,255,255,.18); padding-top: 1.4rem; }
+    .step time { font-family: var(--serif); font-size: 1.9rem; color: var(--gold-2); display: block; margin-bottom: .3rem; }
+    .step h3 { font-size: 1.4rem; margin-bottom: .4rem; }
+    .step p { color: rgba(255,255,255,.7); font-size: .95rem; }
+
+    /* ── GALLERY ── */
+    .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 270px; grid-auto-flow: dense; gap: 1rem; }
+    .g-item { position: relative; overflow: hidden; border-radius: var(--radius); cursor: zoom-in; border: 0; padding: 0; background: var(--night); }
+    .g-item.big { grid-column: span 2; grid-row: span 2; }
+    .g-item.wide { grid-column: span 2; }
+    .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s, opacity .3s; }
+    .g-item:hover img { transform: scale(1.06); opacity: .9; }
+    .g-item figcaption {
+      position: absolute; inset: auto 0 0; padding: 2.4rem 1rem 1rem; text-align: left;
+      background: linear-gradient(transparent, rgba(0,0,0,.7)); color: var(--white);
+      font-family: var(--serif); font-size: 1.25rem;
+    }
+    .gallery-more { text-align: center; margin-top: 2.2rem; }
+    .btn-dark { background: var(--night); color: var(--white); }
+    .btn-dark:hover { background: var(--palm); }
+
+    .lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(10,8,6,.94); display: none; place-items: center; padding: 16px; }
+    .lightbox.open { display: grid; }
+    .lightbox img { max-height: 88vh; max-width: min(92vw, 900px); border-radius: 12px; box-shadow: 0 30px 80px rgba(0,0,0,.6); }
+    .lb-btn { position: absolute; background: rgba(255,255,255,.12); color: var(--white); border: 0; width: 48px; height: 48px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; font-size: 1.5rem; }
+    .lb-btn:hover { background: rgba(255,255,255,.25); }
+    .lb-close { top: 16px; right: 16px; }
+    .lb-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+    .lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
+
+    /* ── LIVE MUSIC ── */
+    .music { background: var(--night); color: var(--white); overflow: hidden; }
+    .music-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+    .video-wrap {
+      position: relative; width: min(100%, 360px); margin-inline: auto; aspect-ratio: 9/16;
+      border-radius: 26px; overflow: hidden; background: #000;
+      box-shadow: 0 30px 70px -20px rgba(217,164,65,.45), 0 0 0 1px rgba(255,255,255,.08);
+    }
+    .video-wrap video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .sound-btn {
+      position: absolute; right: 14px; bottom: 14px; display: flex; align-items: center; gap: .45rem;
+      background: rgba(20,17,15,.65); color: var(--white); border: 1px solid rgba(255,255,255,.3);
+      border-radius: 999px; padding: .55rem .95rem; font: 500 .85rem var(--sans); cursor: pointer;
+      backdrop-filter: blur(6px);
+    }
+    .sound-btn:hover { background: rgba(217,164,65,.85); color: var(--night); }
+    .sound-btn svg { width: 18px; height: 18px; }
+    .live-tag {
+      position: absolute; left: 14px; top: 14px; display: inline-flex; align-items: center; gap: .45rem;
+      background: rgba(192,98,47,.92); color: var(--white); border-radius: 999px; padding: .35rem .8rem;
+      font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 600;
+    }
+    .live-tag::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--white); animation: pulse 1.4s infinite; }
+    @keyframes pulse { 50% { opacity: .25; } }
+    .music .eyebrow { color: var(--gold-2); }
+    .music h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); margin-bottom: 1.2rem; }
+    .music h2 em { color: var(--gold-2); }
+    .music-text > p { color: rgba(255,255,255,.75); font-size: 1.08rem; margin-bottom: 1.8rem; }
+    .music-list { list-style: none; display: grid; gap: 1rem; margin-bottom: 2.2rem; }
+    .music-list li { display: flex; gap: 1rem; align-items: flex-start; }
+    .music-list .m-ico { width: 46px; height: 46px; border-radius: 14px; background: rgba(217,164,65,.15); display: grid; place-items: center; font-size: 1.4rem; flex-shrink: 0; }
+    .music-list b { display: block; font-family: var(--serif); font-size: 1.35rem; font-weight: 600; line-height: 1.2; }
+    .music-list span { color: rgba(255,255,255,.65); font-size: .95rem; }
+
+    /* ── REVIEWS ── */
+    .reviews { background: var(--sand-2); }
+    .rating-summary { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.2rem; flex-wrap: wrap; }
+    .rating-summary b { font-family: var(--serif); font-size: 2.6rem; color: var(--ink); line-height: 1; }
+    .stars { color: var(--gold); letter-spacing: .12em; font-size: 1.15rem; }
+    .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+    .rev {
+      background: var(--white); border-radius: var(--radius); padding: 1.8rem;
+      box-shadow: 0 10px 30px -20px rgba(40,25,10,.45); display: flex; flex-direction: column; gap: 1rem;
+    }
+    .rev blockquote { font-size: 1rem; color: var(--ink); flex: 1; position: relative; }
+    .rev blockquote::before { content: '“'; font-family: var(--serif); font-size: 4rem; line-height: .6; color: var(--sand-2); position: absolute; top: .2rem; left: -.3rem; z-index: 0; }
+    .rev blockquote p { position: relative; }
+    .rev-author { display: flex; align-items: center; gap: .8rem; border-top: 1px solid var(--sand-2); padding-top: 1rem; }
+    .avatar { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; font-weight: 600; color: var(--white); flex-shrink: 0; }
+    .rev-author b { display: block; font-weight: 600; font-size: .98rem; }
+    .rev-author small { color: var(--muted); font-size: .82rem; }
+
+    [hidden] { display: none !important; }
+    .rev-src { margin-left: auto; font-size: .75rem; color: var(--muted); }
+    .rev-cta { text-decoration: none; color: inherit; transition: transform .3s, box-shadow .3s; }
+    .rev-cta:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .rev-cta h3 { font-size: 1.6rem; }
+    .rev-cta p { color: var(--muted); flex: 1; }
+    .rev-emoji { font-size: 1.6rem; line-height: 1; }
+    .rev-link { color: var(--terra); font-weight: 600; font-size: .95rem; }
+
+    /* ── BOOKING / CONTACT ── */
+    .booking-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+    .contact-card { background: var(--night); color: var(--white); border-radius: var(--radius); padding: clamp(1.8rem, 4vw, 2.6rem); position: relative; overflow: hidden; }
+    .contact-card::before { content: ''; position: absolute; inset: 0; background: url('images/feu-de-camp.jpg') center/cover; opacity: .18; }
+    .contact-card > * { position: relative; }
+    .contact-card h2 { font-size: clamp(2rem, 4vw, 2.7rem); margin-bottom: .8rem; }
+    .contact-card > p { color: rgba(255,255,255,.75); margin-bottom: 1.8rem; }
+    .c-list { list-style: none; display: grid; gap: 1.1rem; }
+    .c-list li { display: flex; gap: 1rem; align-items: flex-start; }
+    .c-ico { width: 44px; height: 44px; border-radius: 12px; background: rgba(217,164,65,.18); color: var(--gold-2); display: grid; place-items: center; flex-shrink: 0; }
+    .c-ico svg { width: 20px; height: 20px; }
+    .c-list small { display: block; color: rgba(255,255,255,.6); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; }
+    .c-list a, .c-list span { color: var(--white); text-decoration: none; font-size: 1.02rem; }
+    .c-list a:hover { color: var(--gold-2); }
+
+    .form { background: var(--white); border-radius: var(--radius); padding: clamp(1.6rem, 4vw, 2.6rem); box-shadow: var(--shadow); }
+    .form h3 { font-size: 2rem; margin-bottom: .4rem; }
+    .form > p { color: var(--muted); margin-bottom: 1.6rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .field { display: flex; flex-direction: column; gap: .35rem; margin-bottom: 1rem; }
+    .field label { font-size: .85rem; font-weight: 500; color: var(--ink); }
+    .field input, .field select, .field textarea {
+      font: 400 1rem var(--sans); color: var(--ink); background: var(--sand);
+      border: 1px solid transparent; border-radius: 12px; padding: .85rem 1rem; width: 100%;
+      transition: border-color .2s, background .2s;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--gold); background: var(--white); }
+    .field textarea { resize: vertical; min-height: 100px; }
+    .form .btn { width: 100%; margin-top: .4rem; }
+    .btn-wa { background: #25d366; color: var(--white); }
+    .btn-wa:hover { background: #1ebe5b; }
+    .form-note { text-align: center; color: var(--muted); font-size: .82rem; margin-top: .8rem; }
+
+    .map { margin-top: clamp(3rem, 6vw, 4.5rem); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); height: 380px; background: var(--sand-2); }
+    .map iframe { width: 100%; height: 100%; border: 0; filter: sepia(.25) saturate(.9); }
+    .map { position: relative; }
+    .map-btn { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); white-space: nowrap; box-shadow: 0 10px 30px -8px rgba(0,0,0,.45); }
+    .map-btn:hover { transform: translate(-50%, -2px); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--night); color: rgba(255,255,255,.7); padding: 3.5rem 0 2rem; }
+    .foot { display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,.1); }
+    .foot .brand img { width: 64px; height: 64px; }
+    .socials { display: flex; gap: .7rem; }
+    .socials a { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: rgba(255,255,255,.08); color: var(--white); transition: background .2s, color .2s; }
+    .socials a:hover { background: var(--gold); color: var(--night); }
+    .socials svg { width: 20px; height: 20px; }
+    .copy { padding-top: 1.6rem; font-size: .85rem; text-align: center; }
+
+    .wa-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 58px; height: 58px; border-radius: 50%;
+      background: #25d366; color: var(--white); display: grid; place-items: center;
+      box-shadow: 0 10px 30px -6px rgba(37,211,102,.6); transition: transform .2s;
+    }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float svg { width: 30px; height: 30px; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .hero-bg img, .scroll-hint { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .rev-grid { grid-template-columns: repeat(2, 1fr); }
+      .act-grid > .act { flex-basis: calc((100% - 1.4rem) / 2); }
+      .timeline { grid-template-columns: repeat(2, 1fr); gap: 2rem 1.4rem; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 240px; }
+    }
+    @media (max-width: 880px) {
+      .burger { display: block; }
+      .nav-links {
+        position: fixed; inset: 0 0 0 auto; width: min(320px, 85vw); flex-direction: column; align-items: flex-start;
+        gap: 1.6rem; padding: 6.5rem 2rem 2rem; background: var(--night);
+        transform: translateX(100%); transition: transform .35s ease; box-shadow: -20px 0 40px rgba(0,0,0,.4);
+      }
+      .nav-links.open { transform: none; }
+      .nav-links a { font-size: 1.15rem; }
+      .nav-book { display: none; }
+      .about-grid, .booking-grid, .music-grid { grid-template-columns: 1fr; }
+      .about-media { max-width: 520px; margin: 0 auto 2.5rem; width: 100%; }
+      .about-media .float { right: -2%; }
+    }
+    @media (max-width: 600px) {
+      .brand span { font-size: 1.1rem; }
+      .brand img { width: 44px; height: 44px; }
+      .rev-grid, .timeline { grid-template-columns: 1fr; }
+      .act-grid > .act { flex-basis: 100%; }
+      .gallery-grid { gap: .6rem; grid-auto-rows: 190px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+      .stats { gap: .6rem; }
+      .stat { padding: .9rem .4rem; }
+      .stat b { font-size: 1.6rem; }
+      .hero-cta .btn { flex: 1 1 100%; }
+      .map { height: 300px; }
+      .foot { flex-direction: column; text-align: center; }
+      .lb-prev, .lb-next { top: auto; bottom: 20px; transform: none; }
+      .lb-prev { left: calc(50% - 60px); } .lb-next { right: calc(50% - 60px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER ── -->
+  <header id="top">
+    <div class="container nav">
+      <a href="#accueil" class="brand" aria-label="Tropical Camp Agafay">
+        <img src="images/logo.png" alt="Logo Tropical Camp Agafay" width="52" height="52" />
+        <span>Tropical Camp<small>AGAFAY</small></span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" data-i18n="nav.about">Le camp</a></li>
+        <li><a href="#activites" data-i18n="nav.activities">Activités</a></li>
+        <li><a href="#galerie" data-i18n="nav.gallery">Galerie</a></li>
+        <li><a href="#musique" data-i18n="nav.music">Soirées</a></li>
+        <li><a href="#avis" data-i18n="nav.reviews">Avis</a></li>
+        <li><a href="#reservation" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="lang" id="lang">
+          <button class="lang-btn" id="langBtn" aria-haspopup="true" aria-expanded="false" aria-label="Langue / Language">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+            <span id="langCurrent">FR</span>
+          </button>
+          <ul class="lang-menu" role="menu">
+            <li><button role="menuitem" data-lang="fr"><span class="flag">🇫🇷</span> Français</button></li>
+            <li><button role="menuitem" data-lang="en"><span class="flag">🇬🇧</span> English</button></li>
+            <li><button role="menuitem" data-lang="de"><span class="flag">🇩🇪</span> Deutsch</button></li>
+            <li><button role="menuitem" data-lang="es"><span class="flag">🇪🇸</span> Español</button></li>
+          </ul>
+        </div>
+        <a href="#reservation" class="btn btn-gold nav-book" style="padding:.6rem 1.2rem" data-i18n="nav.book">Réserver</a>
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="accueil">
+    <div class="hero-bg"><img src="images/piscine-sunset.jpg" alt="Piscine du Tropical Camp au coucher du soleil, désert d'Agafay" fetchpriority="high" /></div>
+    <div class="container">
+      <div class="hero-content">
+        <span class="eyebrow" data-i18n="hero.eyebrow">Désert d'Agafay · Marrakech</span>
+        <h1 data-i18n-html="hero.title">Votre oasis <em>tropical</em> au cœur du désert</h1>
+        <p data-i18n="hero.text">Piscine face aux montagnes de l'Atlas, quads, balades à dos de chameau, coucher de soleil magique et dîner sous les étoiles — à seulement 40 minutes de Marrakech.</p>
+        <div class="hero-cta">
+          <a href="#reservation" class="btn btn-gold" data-i18n="hero.cta1">Réserver votre journée</a>
+          <a href="#activites" class="btn btn-ghost" data-i18n="hero.cta2">Découvrir les activités</a>
+        </div>
+        <div class="hero-badges">
+          <span>🏊 <b data-i18n="hero.badge1">Piscine face au désert</b></span>
+          <span>🚐 <span data-i18n="hero.badge2">Transfert depuis Marrakech</span></span>
+          <span>🌅 <span data-i18n="hero.badge3">Sunset inoubliable</span></span>
+          <span>🎶 <span data-i18n="hero.badge4">Musique live chaque soir</span></span>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-hint" aria-label="Scroll"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <div class="about-media reveal">
+        <img class="main" src="images/restaurant.jpg" alt="Restaurant traditionnel berbère du Tropical Camp" loading="lazy" />
+        <img class="float" src="images/feu-de-camp.jpg" alt="Feu de camp sous les étoiles" loading="lazy" />
+      </div>
+      <div class="about-text reveal">
+        <span class="eyebrow" data-i18n="about.eyebrow">Bienvenue</span>
+        <h2 data-i18n="about.title">Un camp unique entre palmiers et dunes de pierre</h2>
+        <p data-i18n="about.p1">Le Tropical Camp Agafay vous accueille dans un décor où l'ambiance tropicale rencontre l'authenticité berbère. Ici, le temps ralentit : on se baigne face au désert, on part à l'aventure en quad ou à dos de chameau, puis on admire le soleil disparaître derrière les montagnes.</p>
+        <p data-i18n="about.p2">Le soir, le camp s'illumine de lanternes : dîner marocain fait maison, feu de camp, musique et spectacle de feu pour une soirée inoubliable.</p>
+        <div class="stats">
+          <div class="stat"><b>40</b><span data-i18n="about.s1">min de Marrakech</span></div>
+          <div class="stat"><b>7+</b><span data-i18n="about.s2">activités</span></div>
+          <div class="stat"><b>7/7</b><span data-i18n="about.s3">soirées musicales</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ACTIVITIES ── -->
+  <section class="section activities" id="activites">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="act.eyebrow">Nos activités</span>
+        <h2 data-i18n="act.title">Des expériences pour tous les goûts</h2>
+        <p data-i18n="act.text">Aventure, détente ou gastronomie — composez votre journée parfaite dans le désert d'Agafay.</p>
+      </div>
+      <div class="act-grid">
+        <article class="act reveal"><div class="act-img"><img src="images/piscine-coucher.jpg" alt="Piscine face au désert au coucher du soleil" loading="lazy" /></div><div class="act-body"><div class="act-icon">🏊</div><h3 data-i18n="act.pool.t">Piscine</h3><p data-i18n="act.pool.d">Une grande piscine avec vue panoramique sur le désert et l'Atlas. Transats, parasols et rafraîchissements.</p></div></article>
+        <article class="act reveal"><div class="act-img"><img src="images/quads.jpg" alt="Quads et buggys dans le désert d'Agafay" loading="lazy" style="object-position:center 70%" /></div><div class="act-body"><div class="act-icon">🏍️</div><h3 data-i18n="act.quad.t">Quads</h3><p data-i18n="act.quad.d">Partez à l'assaut des pistes du désert de pierre avec nos guides. Sensations garanties, débutants bienvenus.</p></div></article>
+        <article class="act reveal"><div class="act-img"><img src="images/chameaux.jpg" alt="Caravane de chameaux au coucher du soleil" loading="lazy" /></div><div class="act-body"><div class="act-icon">🐪</div><h3 data-i18n="act.camel.t">Balades à dos de chameau</h3><p data-i18n="act.camel.d">Une promenade paisible et authentique au rythme des dromadaires, idéale au coucher du soleil.</p></div></article>
+        <article class="act reveal"><div class="act-img"><img src="images/cheval-sunset.jpg" alt="Balade à cheval au coucher du soleil dans le désert d'Agafay" loading="lazy" style="object-position:center 40%" /></div><div class="act-body"><div class="act-icon">🐎</div><h3 data-i18n="act.horse.t">Balades à cheval</h3><p data-i18n="act.horse.d">Partez à cheval à travers les collines du désert d'Agafay avec nos guides — une expérience inoubliable, surtout au coucher du soleil.</p></div></article>
+        <article class="act reveal"><div class="act-img"><img src="images/sunset-camp.jpg" alt="Coucher de soleil sur le camp" loading="lazy" style="object-position:center 55%" /></div><div class="act-body"><div class="act-icon">🌅</div><h3 data-i18n="act.sunset.t">Sunset</h3><p data-i18n="act.sunset.d">Le moment magique d'Agafay : le ciel s'embrase de rouge et d'or au-dessus des collines. Un spectacle à couper le souffle.</p></div></article>
+        <article class="act reveal"><div class="act-img"><img src="images/restaurant.jpg" alt="Restaurant berbère traditionnel" loading="lazy" /></div><div class="act-body"><div class="act-icon">🍽️</div><h3 data-i18n="act.dinner.t">Dîner marocain</h3><p data-i18n="act.dinner.d">Tajines, couscous et thé à la menthe servis dans notre restaurant berbère traditionnel ou sous les étoiles.</p></div></article>
+        <article class="act reveal"><div class="act-img"><img src="images/soiree-musique.jpg" alt="Soirée musicale autour du feu de camp" loading="lazy" style="object-position:center 60%" /></div><div class="act-body"><div class="act-icon">🎶</div><h3 data-i18n="act.show.t">Musique live & feu de camp</h3><p data-i18n="act.show.d">Chaque soir : musique live, spectacle de feu et veillée autour du feu de camp sous les étoiles.</p></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── A DAY AT THE CAMP ── -->
+  <section class="section experience">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="day.eyebrow">Votre journée</span>
+        <h2 data-i18n="day.title">Une journée au Tropical Camp</h2>
+        <p data-i18n="day.text">Un exemple de programme — nous l'adaptons volontiers à vos envies.</p>
+      </div>
+      <div class="timeline">
+        <div class="step reveal"><time data-i18n="day.1.time">Après-midi</time><h3 data-i18n="day.1.t">Arrivée & piscine</h3><p data-i18n="day.1.d">Transfert depuis Marrakech, thé de bienvenue et détente au bord de la piscine.</p></div>
+        <div class="step reveal"><time data-i18n="day.2.time">Fin d'après-midi</time><h3 data-i18n="day.2.t">Quad ou chameau</h3><p data-i18n="day.2.d">Explorez le désert d'Agafay en quad ou à dos de chameau avec nos guides.</p></div>
+        <div class="step reveal"><time data-i18n="day.3.time">Coucher du soleil</time><h3 data-i18n="day.3.t">Sunset magique</h3><p data-i18n="day.3.d">Admirez le ciel s'embraser au-dessus des montagnes de l'Atlas.</p></div>
+        <div class="step reveal"><time data-i18n="day.4.time">Soirée</time><h3 data-i18n="day.4.t">Dîner & spectacle</h3><p data-i18n="day.4.d">Dîner marocain, spectacle de feu et soirée autour du feu de camp.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GALLERY ── -->
+  <section class="section" id="galerie">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="gal.eyebrow">Galerie</span>
+        <h2 data-i18n="gal.title">Plongez dans l'ambiance</h2>
+      </div>
+      <div class="gallery-grid">
+        <figure class="g-item big reveal"><img src="images/feu-spectacle.jpg" alt="Spectacle de feu le soir" loading="lazy" /><figcaption data-i18n="gal.c2">Spectacle de feu</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/piscine-coucher.jpg" alt="Piscine au coucher du soleil" loading="lazy" /><figcaption data-i18n="gal.c1">Piscine au sunset</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/quads.jpg" alt="Quads et buggys" loading="lazy" /><figcaption data-i18n="gal.c5">Quads & buggys</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/soiree-musique.jpg" alt="Soirée musicale sous les étoiles" loading="lazy" /><figcaption data-i18n="gal.c6">Soirée sous les étoiles</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/restaurant.jpg" alt="Restaurant berbère" loading="lazy" /><figcaption data-i18n="gal.c3">Restaurant berbère</figcaption></figure>
+        <figure class="g-item wide reveal"><img src="images/chameaux.jpg" alt="Chameaux au coucher du soleil" loading="lazy" /><figcaption data-i18n="gal.c7">Chameaux au coucher du soleil</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/sunset-camp.jpg" alt="Coucher de soleil sur le camp" loading="lazy" /><figcaption data-i18n="gal.c8">Sunset au camp</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/feu-de-camp.jpg" alt="Feu de camp" loading="lazy" /><figcaption data-i18n="gal.c4">Feu de camp</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/cheval-sunset.jpg" alt="Cavalier au coucher du soleil" loading="lazy" /><figcaption data-i18n="gal.c9">Balade à cheval au sunset</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/chevaux-coeur.jpg" alt="Chevaux du Tropical Camp" loading="lazy" /><figcaption data-i18n="gal.c10">Nos chevaux</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/cheval-quads.jpg" alt="Chevaux et quads dans le désert" loading="lazy" /><figcaption data-i18n="gal.c11">À cheval dans le désert</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/chevaux-desert.jpg" alt="Chevaux sellés dans le désert d'Agafay" loading="lazy" /><figcaption data-i18n="gal.c12">Prêts pour l'aventure</figcaption></figure>
+      </div>
+      <div class="gallery-more">
+        <a href="https://www.instagram.com/tropicalcampagafay/" target="_blank" rel="noopener" class="btn btn-dark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          <span data-i18n="gal.more">Plus de photos sur Instagram</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LIVE MUSIC EVERY EVENING ── -->
+  <section class="section music" id="musique">
+    <div class="container music-grid">
+      <div class="video-wrap reveal">
+        <video id="musicVideo" poster="images/musique-live-poster.jpg"
+          autoplay muted loop playsinline preload="metadata" aria-label="Musique live le soir au Tropical Camp">
+          <source src="videos/musique-live.mp4" type="video/mp4" />
+          <source src="videos/musique-live.webm" type="video/webm" />
+        </video>
+        <span class="live-tag">Live</span>
+        <button class="sound-btn" id="soundBtn" type="button" aria-pressed="false">
+          <svg id="soundIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg>
+          <span data-i18n="music.sound">Activer le son</span>
+        </button>
+      </div>
+      <div class="music-text reveal">
+        <span class="eyebrow" data-i18n="music.eyebrow">Chaque soir</span>
+        <h2 data-i18n-html="music.title">Musique <em>live</em> tous les soirs</h2>
+        <p data-i18n="music.text">Quand le soleil se couche, le camp s'anime : chaque soir, nos musiciens jouent en live sous les lanternes et les étoiles, autour du feu de camp. Une ambiance chaleureuse et festive que vous n'oublierez pas.</p>
+        <ul class="music-list">
+          <li><div class="m-ico">🎶</div><div><b data-i18n="music.l1.t">Musique live chaque soir</b><span data-i18n="music.l1.d">Musique, chants et percussions autour du feu.</span></div></li>
+          <li><div class="m-ico">🔥</div><div><b data-i18n="music.l2.t">Feu de camp & spectacle de feu</b><span data-i18n="music.l2.d">Une soirée magique sous un ciel étoilé.</span></div></li>
+          <li><div class="m-ico">🏮</div><div><b data-i18n="music.l3.t">Ambiance lanternes</b><span data-i18n="music.l3.d">Le camp s'illumine de centaines de lumières.</span></div></li>
+        </ul>
+        <a href="#reservation" class="btn btn-gold" data-i18n="music.cta">Réserver ma soirée</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <button class="lb-btn lb-close" id="lbClose" aria-label="Fermer">✕</button>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Précédent">‹</button>
+    <img id="lbImg" src="" alt="" />
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Suivant">›</button>
+  </div>
+
+  <!-- ── REVIEWS: invite guests to leave a review ──
+       Quand vous aurez de vrais avis (Google, Instagram, WhatsApp…), ils pourront être ajoutés ici. -->
+  <section class="section reviews" id="avis">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow" data-i18n="rev.eyebrow">Votre avis compte</span>
+        <h2 data-i18n="rev.title">Vous êtes déjà venus chez nous ?</h2>
+        <p data-i18n="rev.text">Partagez votre expérience ! Votre avis aide d'autres voyageurs à découvrir le Tropical Camp Agafay.</p>
+        <div class="rating-summary" id="ratingSummary" hidden>
+          <b id="ratingAvg"></b>
+          <div><div class="stars" id="ratingStars"></div><small id="ratingCount"></small></div>
+        </div>
+      </div>
+      <!-- Avis réels : remplis automatiquement depuis la liste REVIEWS dans le script en bas de page -->
+      <div class="rev-grid" id="reviewList" hidden style="margin-bottom:1.4rem"></div>
+      <div class="rev-grid">
+        <a class="rev rev-cta reveal" href="https://maps.app.goo.gl/ek1rYvbxgbPD7bxH8" target="_blank" rel="noopener">
+          <div class="stars">★★★★★</div>
+          <h3 data-i18n="rev.g.t">Laissez un avis sur Google</h3>
+          <p data-i18n="rev.g.d">Ouvrez notre fiche Google Maps et donnez-nous quelques étoiles et un petit mot.</p>
+          <span class="rev-link" data-i18n="rev.g.cta">Écrire un avis →</span>
+        </a>
+        <a class="rev rev-cta reveal" href="https://www.instagram.com/tropicalcampagafay/" target="_blank" rel="noopener">
+          <div class="rev-emoji">📸</div>
+          <h3 data-i18n="rev.i.t">Partagez vos photos</h3>
+          <p data-i18n="rev.i.d">Publiez vos plus beaux souvenirs et identifiez-nous sur Instagram : @tropicalcampagafay</p>
+          <span class="rev-link" data-i18n="rev.i.cta">Voir notre Instagram →</span>
+        </a>
+        <a class="rev rev-cta wa-link reveal" href="#">
+          <div class="rev-emoji">💬</div>
+          <h3 data-i18n="rev.w.t">Écrivez-nous</h3>
+          <p data-i18n="rev.w.d">Une remarque, un compliment, une suggestion ? Envoyez-nous un message sur WhatsApp.</p>
+          <span class="rev-link" data-i18n="rev.w.cta">Message WhatsApp →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BOOKING / CONTACT ── -->
+  <section class="section" id="reservation">
+    <div class="container">
+      <div class="booking-grid">
+        <div class="contact-card reveal">
+          <span class="eyebrow" style="color:var(--gold-2)" data-i18n="contact.eyebrow">Contact</span>
+          <h2 data-i18n="contact.title">Réservez votre aventure</h2>
+          <p data-i18n="contact.text">Écrivez-nous pour réserver ou pour toute question. Nous vous répondons rapidement.</p>
+          <ul class="c-list">
+            <li>
+              <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+              <div><small data-i18n="contact.address">Adresse</small><a href="https://maps.app.goo.gl/ek1rYvbxgbPD7bxH8" target="_blank" rel="noopener" data-i18n="contact.addressVal">Désert d'Agafay, Marrakech, Maroc</a></div>
+            </li>
+            <li>
+              <div class="c-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></div>
+              <div><small>WhatsApp</small><a href="#" class="wa-link" id="waDisplay">+212 6 61 24 01 30</a></div>
+            </li>
+            <li>
+              <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+              <div><small data-i18n="contact.phone">Téléphone</small><a href="tel:+212661240130">+212 6 61 24 01 30</a></div>
+            </li>
+            <li>
+              <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></div>
+              <div><small>Instagram</small><a href="https://www.instagram.com/tropicalcampagafay/" target="_blank" rel="noopener">@tropicalcampagafay</a></div>
+            </li>
+            <li>
+              <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+              <div><small data-i18n="contact.hours">Horaires</small><span data-i18n="contact.hoursVal">Tous les jours · 10h – 23h</span></div>
+            </li>
+          </ul>
+        </div>
+
+        <form class="form reveal" id="bookingForm" novalidate>
+          <h3 data-i18n="form.title">Demande de réservation</h3>
+          <p data-i18n="form.text">Remplissez le formulaire — il s'ouvrira directement dans WhatsApp.</p>
+          <div class="form-row">
+            <div class="field"><label for="fName" data-i18n="form.name">Nom</label><input id="fName" name="name" required autocomplete="name" /></div>
+            <div class="field"><label for="fPhone" data-i18n="form.phone">Téléphone</label><input id="fPhone" name="phone" type="tel" autocomplete="tel" /></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="fDate" data-i18n="form.date">Date</label><input id="fDate" name="date" type="date" required /></div>
+            <div class="field"><label for="fGuests" data-i18n="form.guests">Personnes</label><input id="fGuests" name="guests" type="number" min="1" value="2" required /></div>
+          </div>
+          <div class="field">
+            <label for="fActivity" data-i18n="form.activity">Activité souhaitée</label>
+            <select id="fActivity" name="activity">
+              <option data-i18n="form.opt.full">Journée complète (piscine + activités + dîner)</option>
+              <option data-i18n="form.opt.pool">Piscine & détente</option>
+              <option data-i18n="form.opt.quad">Quad</option>
+              <option data-i18n="form.opt.camel">Balade à dos de chameau</option>
+              <option data-i18n="form.opt.horse">Balade à cheval</option>
+              <option data-i18n="form.opt.dinner">Sunset & dîner spectacle</option>
+            </select>
+          </div>
+          <div class="field"><label for="fMsg" data-i18n="form.message">Message</label><textarea id="fMsg" name="message" data-i18n-placeholder="form.messagePh" placeholder="Transfert depuis Marrakech, questions…"></textarea></div>
+          <button type="submit" class="btn btn-wa">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+            <span data-i18n="form.submit">Envoyer via WhatsApp</span>
+          </button>
+          <p class="form-note" data-i18n="form.note">Réponse rapide · Sans engagement</p>
+        </form>
+      </div>
+
+      <div class="map reveal">
+        <iframe title="Carte – Désert d'Agafay" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=31.423958,-8.100911&z=12&output=embed"></iframe>
+        <a href="https://maps.app.goo.gl/ek1rYvbxgbPD7bxH8" target="_blank" rel="noopener" class="btn btn-gold map-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span data-i18n="contact.directions">Itinéraire sur Google Maps</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <a href="#accueil" class="brand">
+          <img src="images/logo.png" alt="Tropical Camp Agafay" width="64" height="64" loading="lazy" />
+          <span>Tropical Camp<small>AGAFAY</small></span>
+        </a>
+        <p data-i18n="footer.tag" style="max-width:380px">Piscine • Quads • Chameaux • Chevaux • Sunset • Dîner • Expériences inoubliables</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/tropicalcampagafay/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="tel:+212661240130" aria-label="Téléphone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
+          <a href="#" class="wa-link" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></a>
+        </div>
+      </div>
+      <p class="copy">© <span id="year"></span> Tropical Camp Agafay · <span data-i18n="footer.rights">Tous droits réservés</span></p>
+    </div>
+  </footer>
+
+  <a href="#" class="wa-float wa-link" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+  </a>
+
+  <script>
+    /* ═══════════ CONFIGURATION ═══════════
+       Numéro WhatsApp / téléphone du camp (format international, sans + ni espaces). */
+    const WHATSAPP_NUMBER = '212661240130';
+    const WHATSAPP_DISPLAY = '+212 6 61 24 01 30';
+
+    /* ═══════════ AVIS CLIENTS ═══════════
+       Ajoutez ici UNIQUEMENT de vrais avis de vos clients (Google, WhatsApp, Instagram…).
+       Tant que la liste est vide, la section affiche seulement l'invitation à laisser un avis.
+       Exemple de format (à copier entre les crochets, une ligne par avis) :
+         { name: 'Prénom N.', country: '🇫🇷 Paris', stars: 5, text: 'Texte de l’avis…', source: 'Google' },
+    */
+    const REVIEWS = [
+    ];
+
+    /* ═══════════ TRADUCTIONS ═══════════ */
+    const I18N = {
+      fr: {
+        'nav.about': 'Le camp', 'nav.activities': 'Activités', 'nav.gallery': 'Galerie', 'nav.reviews': 'Avis', 'nav.contact': 'Contact', 'nav.book': 'Réserver',
+        'hero.eyebrow': "Désert d'Agafay · Marrakech",
+        'hero.title': 'Votre oasis <em>tropical</em> au cœur du désert',
+        'hero.text': "Piscine face aux montagnes de l'Atlas, quads, balades à dos de chameau, coucher de soleil magique et dîner sous les étoiles — à seulement 40 minutes de Marrakech.",
+        'hero.cta1': 'Réserver votre journée', 'hero.cta2': 'Découvrir les activités',
+        'hero.badge1': "Piscine face au désert", 'hero.badge2': 'Transfert depuis Marrakech', 'hero.badge3': 'Sunset inoubliable',
+        'about.eyebrow': 'Bienvenue', 'about.title': 'Un camp unique entre palmiers et dunes de pierre',
+        'about.p1': "Le Tropical Camp Agafay vous accueille dans un décor où l'ambiance tropicale rencontre l'authenticité berbère. Ici, le temps ralentit : on se baigne face au désert, on part à l'aventure en quad ou à dos de chameau, puis on admire le soleil disparaître derrière les montagnes.",
+        'about.p2': "Le soir, le camp s'illumine de lanternes : dîner marocain fait maison, feu de camp, spectacle de feu et — chaque soir — musique live pour une soirée inoubliable.",
+        'about.s1': 'min de Marrakech', 'about.s2': "activités", 'about.s3': "soirées musicales",
+        'act.eyebrow': 'Nos activités', 'act.title': 'Des expériences pour tous les goûts',
+        'act.text': "Aventure, détente ou gastronomie — composez votre journée parfaite dans le désert d'Agafay.",
+        'act.pool.t': 'Piscine', 'act.pool.d': "Une grande piscine avec vue panoramique sur le désert et l'Atlas. Transats, parasols et rafraîchissements.",
+        'act.quad.t': 'Quads', 'act.quad.d': 'Partez à l\'assaut des pistes du désert de pierre avec nos guides. Sensations garanties, débutants bienvenus.',
+        'act.camel.t': 'Balades à dos de chameau', 'act.camel.d': 'Une promenade paisible et authentique au rythme des dromadaires, idéale au coucher du soleil.',
+        'act.sunset.t': 'Sunset', 'act.sunset.d': "Le moment magique d'Agafay : le ciel s'embrase de rouge et d'or au-dessus des collines. Un spectacle à couper le souffle.",
+        'act.dinner.t': 'Dîner marocain', 'act.dinner.d': 'Tajines, couscous et thé à la menthe servis dans notre restaurant berbère traditionnel ou sous les étoiles.',
+        'act.show.t': "Musique live & feu de camp", 'act.show.d': "Chaque soir : musique live, spectacle de feu et veillée autour du feu de camp sous les étoiles.",
+        'day.eyebrow': 'Votre journée', 'day.title': 'Une journée au Tropical Camp', 'day.text': "Un exemple de programme — nous l'adaptons volontiers à vos envies.",
+        'day.1.time': 'Après-midi', 'day.1.t': 'Arrivée & piscine', 'day.1.d': 'Transfert depuis Marrakech, thé de bienvenue et détente au bord de la piscine.',
+        'day.2.time': "Fin d'après-midi", 'day.2.t': "Quad, chameau ou cheval", 'day.2.d': "Explorez le désert d'Agafay en quad, à dos de chameau ou à cheval avec nos guides.",
+        'day.3.time': 'Coucher du soleil', 'day.3.t': 'Sunset magique', 'day.3.d': "Admirez le ciel s'embraser au-dessus des montagnes de l'Atlas.",
+        'day.4.time': 'Soirée', 'day.4.t': 'Dîner & spectacle', 'day.4.d': "Dîner marocain, musique live chaque soir, spectacle de feu et veillée autour du feu de camp.",
+        'gal.eyebrow': 'Galerie', 'gal.title': "Plongez dans l'ambiance",
+        'gal.c1': 'Piscine au sunset', 'gal.c2': 'Spectacle de feu', 'gal.c3': 'Restaurant berbère', 'gal.c4': 'Feu de camp', 'gal.more': 'Plus de photos sur Instagram',
+        'rev.one': 'avis', 'rev.many': 'avis', 'rev.eyebrow': "Votre avis compte", 'rev.title': "Vous êtes déjà venus chez nous ?",
+        'contact.eyebrow': 'Contact', 'contact.title': 'Réservez votre aventure',
+        'contact.text': 'Écrivez-nous pour réserver ou pour toute question. Nous vous répondons rapidement.',
+        'contact.phone': 'Téléphone', 'contact.directions': 'Itinéraire sur Google Maps', 'contact.address': 'Adresse', 'contact.addressVal': "Désert d'Agafay, Marrakech, Maroc",
+        'contact.hours': 'Horaires', 'contact.hoursVal': 'Tous les jours · 10h – 23h',
+        'form.title': 'Demande de réservation', 'form.text': "Remplissez le formulaire — il s'ouvrira directement dans WhatsApp.",
+        'form.name': 'Nom', 'form.phone': 'Téléphone', 'form.date': 'Date', 'form.guests': 'Personnes', 'form.activity': 'Activité souhaitée',
+        'form.opt.full': 'Journée complète (piscine + activités + dîner)', 'form.opt.pool': 'Piscine & détente', 'form.opt.quad': 'Quad',
+        'form.opt.camel': 'Balade à dos de chameau', 'form.opt.dinner': 'Sunset & dîner spectacle',
+        'form.message': 'Message', 'form.messagePh': 'Transfert depuis Marrakech, questions…',
+        'form.submit': 'Envoyer via WhatsApp', 'form.note': 'Réponse rapide · Sans engagement', 'form.required': 'Merci de remplir le nom et la date.',
+        'wa.hello': 'Bonjour Tropical Camp Agafay ! Je souhaite faire une réservation :', 'wa.default': 'Bonjour Tropical Camp Agafay ! Je voudrais des informations.',
+        'footer.tag': "Piscine • Quads • Chameaux • Chevaux • Sunset • Dîner • Musique live chaque soir", 'footer.rights': 'Tous droits réservés',
+        'nav.music': "Soirées",
+        'hero.badge4': "Musique live chaque soir",
+        'gal.c5': "Quads & buggys",
+        'gal.c6': "Soirée sous les étoiles",
+        'gal.c7': "Chameaux au coucher du soleil",
+        'gal.c8': "Sunset au camp",
+        'music.eyebrow': "Chaque soir",
+        'music.title': "Musique <em>live</em> tous les soirs",
+        'music.text': "Quand le soleil se couche, le camp s'anime : chaque soir, nos musiciens jouent en live sous les lanternes et les étoiles, autour du feu de camp. Une ambiance chaleureuse et festive que vous n'oublierez pas.",
+        'music.l1.t': "Musique live chaque soir",
+        'music.l1.d': "Musique, chants et percussions autour du feu.",
+        'music.l2.t': "Feu de camp & spectacle de feu",
+        'music.l2.d': "Une soirée magique sous un ciel étoilé.",
+        'music.l3.t': "Ambiance lanternes",
+        'music.l3.d': "Le camp s'illumine de centaines de lumières.",
+        'music.cta': "Réserver ma soirée",
+        'music.sound': "Activer le son",
+        'music.mute': "Couper le son",
+        'rev.text': "Partagez votre expérience ! Votre avis aide d'autres voyageurs à découvrir le Tropical Camp Agafay.",
+        'rev.g.t': "Laissez un avis sur Google",
+        'rev.g.d': "Ouvrez notre fiche Google Maps et donnez-nous quelques étoiles et un petit mot.",
+        'rev.g.cta': "Écrire un avis →",
+        'rev.i.t': "Partagez vos photos",
+        'rev.i.d': "Publiez vos plus beaux souvenirs et identifiez-nous sur Instagram : @tropicalcampagafay",
+        'rev.i.cta': "Voir notre Instagram →",
+        'rev.w.t': "Écrivez-nous",
+        'rev.w.d': "Une remarque, un compliment, une suggestion ? Envoyez-nous un message sur WhatsApp.",
+        'rev.w.cta': "Message WhatsApp →",
+        'act.horse.t': "Balades à cheval",
+        'act.horse.d': "Partez à cheval à travers les collines du désert d'Agafay avec nos guides — une expérience inoubliable, surtout au coucher du soleil.",
+        'form.opt.horse': "Balade à cheval",
+        'gal.c9': "Balade à cheval au sunset",
+        'gal.c10': "Nos chevaux",
+        'gal.c11': "À cheval dans le désert",
+        'gal.c12': "Prêts pour l'aventure"
+      },
+      en: {
+        'nav.about': 'The camp', 'nav.activities': 'Activities', 'nav.gallery': 'Gallery', 'nav.reviews': 'Reviews', 'nav.contact': 'Contact', 'nav.book': 'Book now',
+        'hero.eyebrow': 'Agafay Desert · Marrakech',
+        'hero.title': 'Your <em>tropical</em> oasis in the heart of the desert',
+        'hero.text': 'A pool facing the Atlas Mountains, quad biking, camel rides, a magical sunset and dinner under the stars — just 40 minutes from Marrakech.',
+        'hero.cta1': 'Book your day', 'hero.cta2': 'Discover activities',
+        'hero.badge1': "Pool facing the desert", 'hero.badge2': 'Transfer from Marrakech', 'hero.badge3': 'Unforgettable sunset',
+        'about.eyebrow': 'Welcome', 'about.title': 'A unique camp between palm trees and stone dunes',
+        'about.p1': 'Tropical Camp Agafay welcomes you to a setting where a tropical vibe meets Berber authenticity. Here time slows down: swim with a desert view, head off on a quad or camel adventure, then watch the sun disappear behind the mountains.',
+        'about.p2': "At night the camp lights up with lanterns: homemade Moroccan dinner, campfire, fire show and — every evening — live music for an unforgettable night.",
+        'about.s1': 'min from Marrakech', 'about.s2': 'activities', 'about.s3': "music evenings",
+        'act.eyebrow': 'Our activities', 'act.title': 'Experiences for every taste',
+        'act.text': 'Adventure, relaxation or gastronomy — create your perfect day in the Agafay Desert.',
+        'act.pool.t': 'Swimming pool', 'act.pool.d': 'A large pool with panoramic views of the desert and the Atlas. Sun loungers, parasols and refreshments.',
+        'act.quad.t': 'Quad biking', 'act.quad.d': 'Ride the tracks of the stone desert with our guides. Thrills guaranteed, beginners welcome.',
+        'act.camel.t': 'Camel rides', 'act.camel.d': 'A peaceful, authentic ride at the pace of the dromedaries — perfect at sunset.',
+        'act.sunset.t': 'Sunset', 'act.sunset.d': "Agafay's magic moment: the sky blazes red and gold above the hills. A breathtaking show.",
+        'act.dinner.t': 'Moroccan dinner', 'act.dinner.d': 'Tagines, couscous and mint tea served in our traditional Berber restaurant or under the stars.',
+        'act.show.t': "Live music & campfire", 'act.show.d': "Every evening: live music, fire show and a night around the campfire under the stars.",
+        'day.eyebrow': 'Your day', 'day.title': 'A day at Tropical Camp', 'day.text': 'A sample programme — we are happy to adapt it to your wishes.',
+        'day.1.time': 'Afternoon', 'day.1.t': 'Arrival & pool', 'day.1.d': 'Transfer from Marrakech, welcome tea and relaxing by the pool.',
+        'day.2.time': 'Late afternoon', 'day.2.t': "Quad, camel or horse", 'day.2.d': "Explore the Agafay Desert by quad, on camelback or on horseback with our guides.",
+        'day.3.time': 'Sunset', 'day.3.t': 'Magical sunset', 'day.3.d': 'Watch the sky catch fire above the Atlas Mountains.',
+        'day.4.time': 'Evening', 'day.4.t': 'Dinner & show', 'day.4.d': "Moroccan dinner, live music every evening, fire show and a night around the campfire.",
+        'gal.eyebrow': 'Gallery', 'gal.title': 'Soak up the atmosphere',
+        'gal.c1': 'Pool at sunset', 'gal.c2': 'Fire show', 'gal.c3': 'Berber restaurant', 'gal.c4': 'Campfire', 'gal.more': 'More photos on Instagram',
+        'rev.one': 'review', 'rev.many': 'reviews', 'rev.eyebrow': "Your review matters", 'rev.title': "Have you already visited us?",
+        'contact.eyebrow': 'Contact', 'contact.title': 'Book your adventure',
+        'contact.text': 'Write to us to book or for any question. We reply quickly.',
+        'contact.phone': 'Phone', 'contact.directions': 'Directions on Google Maps', 'contact.address': 'Address', 'contact.addressVal': 'Agafay Desert, Marrakech, Morocco',
+        'contact.hours': 'Opening hours', 'contact.hoursVal': 'Every day · 10am – 11pm',
+        'form.title': 'Booking request', 'form.text': 'Fill in the form — it will open directly in WhatsApp.',
+        'form.name': 'Name', 'form.phone': 'Phone', 'form.date': 'Date', 'form.guests': 'Guests', 'form.activity': 'Preferred activity',
+        'form.opt.full': 'Full day (pool + activities + dinner)', 'form.opt.pool': 'Pool & relaxation', 'form.opt.quad': 'Quad biking',
+        'form.opt.camel': 'Camel ride', 'form.opt.dinner': 'Sunset & dinner show',
+        'form.message': 'Message', 'form.messagePh': 'Transfer from Marrakech, questions…',
+        'form.submit': 'Send via WhatsApp', 'form.note': 'Fast reply · No commitment', 'form.required': 'Please fill in your name and date.',
+        'wa.hello': 'Hello Tropical Camp Agafay! I would like to make a booking:', 'wa.default': 'Hello Tropical Camp Agafay! I would like some information.',
+        'footer.tag': "Pool • Quads • Camels • Horses • Sunset • Dinner • Live music every evening", 'footer.rights': 'All rights reserved',
+        'nav.music': "Evenings",
+        'hero.badge4': "Live music every evening",
+        'gal.c5': "Quads & buggies",
+        'gal.c6': "Night under the stars",
+        'gal.c7': "Camels at sunset",
+        'gal.c8': "Sunset at the camp",
+        'music.eyebrow': "Every evening",
+        'music.title': "<em>Live</em> music every night",
+        'music.text': "When the sun goes down, the camp comes alive: every evening our musicians play live under the lanterns and the stars, around the campfire. A warm, festive atmosphere you will never forget.",
+        'music.l1.t': "Live music every evening",
+        'music.l1.d': "Music, singing and drums around the fire.",
+        'music.l2.t': "Campfire & fire show",
+        'music.l2.d': "A magical night under a starry sky.",
+        'music.l3.t': "Lantern atmosphere",
+        'music.l3.d': "The camp lights up with hundreds of lights.",
+        'music.cta': "Book my evening",
+        'music.sound': "Sound on",
+        'music.mute': "Sound off",
+        'rev.text': "Share your experience! Your review helps other travellers discover Tropical Camp Agafay.",
+        'rev.g.t': "Leave a Google review",
+        'rev.g.d': "Open our Google Maps listing and give us a few stars and a few words.",
+        'rev.g.cta': "Write a review →",
+        'rev.i.t': "Share your photos",
+        'rev.i.d': "Post your best memories and tag us on Instagram: @tropicalcampagafay",
+        'rev.i.cta': "See our Instagram →",
+        'rev.w.t': "Write to us",
+        'rev.w.d': "A comment, a compliment, a suggestion? Send us a message on WhatsApp.",
+        'rev.w.cta': "WhatsApp message →",
+        'act.horse.t': "Horse riding",
+        'act.horse.d': "Ride through the hills of the Agafay Desert with our guides — an unforgettable experience, especially at sunset.",
+        'form.opt.horse': "Horse riding",
+        'gal.c9': "Horse ride at sunset",
+        'gal.c10': "Our horses",
+        'gal.c11': "Riding in the desert",
+        'gal.c12': "Ready for adventure"
+      },
+      de: {
+        'nav.about': 'Das Camp', 'nav.activities': 'Aktivitäten', 'nav.gallery': 'Galerie', 'nav.reviews': 'Bewertungen', 'nav.contact': 'Kontakt', 'nav.book': 'Buchen',
+        'hero.eyebrow': 'Agafay-Wüste · Marrakesch',
+        'hero.title': 'Ihre <em>tropische</em> Oase mitten in der Wüste',
+        'hero.text': 'Pool mit Blick auf das Atlasgebirge, Quad-Touren, Kamelritte, ein magischer Sonnenuntergang und Abendessen unter den Sternen — nur 40 Minuten von Marrakesch.',
+        'hero.cta1': 'Jetzt Tag buchen', 'hero.cta2': 'Aktivitäten entdecken',
+        'hero.badge1': "Pool mit Wüstenblick", 'hero.badge2': 'Transfer ab Marrakesch', 'hero.badge3': 'Unvergesslicher Sunset',
+        'about.eyebrow': 'Willkommen', 'about.title': 'Ein einzigartiges Camp zwischen Palmen und Steindünen',
+        'about.p1': 'Das Tropical Camp Agafay empfängt Sie in einer Kulisse, in der tropisches Flair auf Berber-Tradition trifft. Hier vergeht die Zeit langsamer: Baden mit Wüstenblick, Abenteuer auf dem Quad oder Kamel und dann zusehen, wie die Sonne hinter den Bergen versinkt.',
+        'about.p2': "Abends erstrahlt das Camp im Licht der Laternen: hausgemachtes marokkanisches Abendessen, Lagerfeuer, Feuershow und — jeden Abend — Live-Musik für einen unvergesslichen Abend.",
+        'about.s1': 'Min. von Marrakesch', 'about.s2': 'Aktivitäten', 'about.s3': "Musikabende",
+        'act.eyebrow': 'Unsere Aktivitäten', 'act.title': 'Erlebnisse für jeden Geschmack',
+        'act.text': 'Abenteuer, Entspannung oder Genuss — stellen Sie Ihren perfekten Tag in der Agafay-Wüste zusammen.',
+        'act.pool.t': 'Pool', 'act.pool.d': 'Ein großer Pool mit Panoramablick auf die Wüste und den Atlas. Liegen, Sonnenschirme und Erfrischungen.',
+        'act.quad.t': 'Quad-Touren', 'act.quad.d': 'Erobern Sie mit unseren Guides die Pisten der Steinwüste. Nervenkitzel garantiert, Anfänger willkommen.',
+        'act.camel.t': 'Kamelritte', 'act.camel.d': 'Ein ruhiger, authentischer Ritt im Rhythmus der Dromedare — ideal bei Sonnenuntergang.',
+        'act.sunset.t': 'Sonnenuntergang', 'act.sunset.d': 'Der magische Moment von Agafay: Der Himmel leuchtet rot und golden über den Hügeln. Ein atemberaubendes Schauspiel.',
+        'act.dinner.t': 'Marokkanisches Abendessen', 'act.dinner.d': 'Tajine, Couscous und Minztee in unserem traditionellen Berber-Restaurant oder unter den Sternen.',
+        'act.show.t': "Live-Musik & Lagerfeuer", 'act.show.d': "Jeden Abend: Live-Musik, Feuershow und gemütliche Runde am Lagerfeuer unter den Sternen.",
+        'day.eyebrow': 'Ihr Tag', 'day.title': 'Ein Tag im Tropical Camp', 'day.text': 'Ein Beispielprogramm — wir passen es gerne an Ihre Wünsche an.',
+        'day.1.time': 'Nachmittag', 'day.1.t': 'Ankunft & Pool', 'day.1.d': 'Transfer ab Marrakesch, Willkommenstee und Entspannung am Pool.',
+        'day.2.time': 'Später Nachmittag', 'day.2.t': "Quad, Kamel oder Pferd", 'day.2.d': "Erkunden Sie die Agafay-Wüste mit dem Quad, auf dem Kamel oder zu Pferd mit unseren Guides.",
+        'day.3.time': 'Sonnenuntergang', 'day.3.t': 'Magischer Sunset', 'day.3.d': 'Erleben Sie, wie der Himmel über dem Atlasgebirge zu glühen beginnt.',
+        'day.4.time': 'Abend', 'day.4.t': 'Dinner & Show', 'day.4.d': "Marokkanisches Abendessen, jeden Abend Live-Musik, Feuershow und Abend am Lagerfeuer.",
+        'gal.eyebrow': 'Galerie', 'gal.title': 'Tauchen Sie ein in die Atmosphäre',
+        'gal.c1': 'Pool bei Sonnenuntergang', 'gal.c2': 'Feuershow', 'gal.c3': 'Berber-Restaurant', 'gal.c4': 'Lagerfeuer', 'gal.more': 'Mehr Fotos auf Instagram',
+        'rev.one': 'Bewertung', 'rev.many': 'Bewertungen', 'rev.eyebrow': "Ihre Meinung zählt", 'rev.title': "Waren Sie schon bei uns?",
+        'contact.eyebrow': 'Kontakt', 'contact.title': 'Buchen Sie Ihr Abenteuer',
+        'contact.text': 'Schreiben Sie uns für eine Buchung oder bei Fragen. Wir antworten schnell.',
+        'contact.phone': 'Telefon', 'contact.directions': 'Route in Google Maps', 'contact.address': 'Adresse', 'contact.addressVal': 'Agafay-Wüste, Marrakesch, Marokko',
+        'contact.hours': 'Öffnungszeiten', 'contact.hoursVal': 'Täglich · 10 – 23 Uhr',
+        'form.title': 'Buchungsanfrage', 'form.text': 'Füllen Sie das Formular aus — es öffnet sich direkt in WhatsApp.',
+        'form.name': 'Name', 'form.phone': 'Telefon', 'form.date': 'Datum', 'form.guests': 'Personen', 'form.activity': 'Gewünschte Aktivität',
+        'form.opt.full': 'Ganzer Tag (Pool + Aktivitäten + Abendessen)', 'form.opt.pool': 'Pool & Entspannung', 'form.opt.quad': 'Quad-Tour',
+        'form.opt.camel': 'Kamelritt', 'form.opt.dinner': 'Sunset & Dinner-Show',
+        'form.message': 'Nachricht', 'form.messagePh': 'Transfer ab Marrakesch, Fragen…',
+        'form.submit': 'Per WhatsApp senden', 'form.note': 'Schnelle Antwort · Unverbindlich', 'form.required': 'Bitte Name und Datum angeben.',
+        'wa.hello': 'Hallo Tropical Camp Agafay! Ich möchte gerne buchen:', 'wa.default': 'Hallo Tropical Camp Agafay! Ich hätte gerne Informationen.',
+        'footer.tag': "Pool • Quads • Kamele • Pferde • Sunset • Abendessen • Jeden Abend Live-Musik", 'footer.rights': 'Alle Rechte vorbehalten',
+        'nav.music': "Abende",
+        'hero.badge4': "Jeden Abend Live-Musik",
+        'gal.c5': "Quads & Buggys",
+        'gal.c6': "Abend unter Sternen",
+        'gal.c7': "Kamele bei Sonnenuntergang",
+        'gal.c8': "Sunset im Camp",
+        'music.eyebrow': "Jeden Abend",
+        'music.title': "Am Abend immer <em>Live</em>-Musik",
+        'music.text': "Wenn die Sonne untergeht, erwacht das Camp: Jeden Abend spielen unsere Musiker live unter Laternen und Sternen rund um das Lagerfeuer. Eine warme, festliche Stimmung, die Sie nicht vergessen werden.",
+        'music.l1.t': "Jeden Abend Live-Musik",
+        'music.l1.d': "Musik, Gesang und Trommeln am Feuer.",
+        'music.l2.t': "Lagerfeuer & Feuershow",
+        'music.l2.d': "Ein magischer Abend unter dem Sternenhimmel.",
+        'music.l3.t': "Laternen-Atmosphäre",
+        'music.l3.d': "Das Camp leuchtet im Licht hunderter Lampen.",
+        'music.cta': "Meinen Abend buchen",
+        'music.sound': "Ton an",
+        'music.mute': "Ton aus",
+        'rev.text': "Teilen Sie Ihr Erlebnis! Ihre Bewertung hilft anderen Reisenden, das Tropical Camp Agafay zu entdecken.",
+        'rev.g.t': "Bewertung bei Google",
+        'rev.g.d': "Öffnen Sie unseren Google-Maps-Eintrag und geben Sie uns ein paar Sterne und ein paar Worte.",
+        'rev.g.cta': "Bewertung schreiben →",
+        'rev.i.t': "Teilen Sie Ihre Fotos",
+        'rev.i.d': "Posten Sie Ihre schönsten Erinnerungen und markieren Sie uns auf Instagram: @tropicalcampagafay",
+        'rev.i.cta': "Zu unserem Instagram →",
+        'rev.w.t': "Schreiben Sie uns",
+        'rev.w.d': "Eine Anmerkung, ein Lob, ein Vorschlag? Schicken Sie uns eine Nachricht per WhatsApp.",
+        'rev.w.cta': "WhatsApp-Nachricht →",
+        'act.horse.t': "Ausritte zu Pferd",
+        'act.horse.d': "Reiten Sie mit unseren Guides durch die Hügel der Agafay-Wüste — ein unvergessliches Erlebnis, besonders bei Sonnenuntergang.",
+        'form.opt.horse': "Ausritt zu Pferd",
+        'gal.c9': "Ausritt bei Sonnenuntergang",
+        'gal.c10': "Unsere Pferde",
+        'gal.c11': "Zu Pferd durch die Wüste",
+        'gal.c12': "Bereit für das Abenteuer"
+      },
+      es: {
+        'nav.about': 'El campamento', 'nav.activities': 'Actividades', 'nav.gallery': 'Galería', 'nav.reviews': 'Opiniones', 'nav.contact': 'Contacto', 'nav.book': 'Reservar',
+        'hero.eyebrow': 'Desierto de Agafay · Marrakech',
+        'hero.title': 'Tu oasis <em>tropical</em> en el corazón del desierto',
+        'hero.text': 'Piscina frente a las montañas del Atlas, quads, paseos en camello, una puesta de sol mágica y cena bajo las estrellas — a solo 40 minutos de Marrakech.',
+        'hero.cta1': 'Reserva tu día', 'hero.cta2': 'Descubrir actividades',
+        'hero.badge1': "Piscina frente al desierto", 'hero.badge2': 'Traslado desde Marrakech', 'hero.badge3': 'Atardecer inolvidable',
+        'about.eyebrow': 'Bienvenidos', 'about.title': 'Un campamento único entre palmeras y dunas de piedra',
+        'about.p1': 'Tropical Camp Agafay te recibe en un entorno donde el ambiente tropical se encuentra con la autenticidad bereber. Aquí el tiempo se detiene: báñate con vistas al desierto, vive la aventura en quad o en camello y contempla cómo el sol desaparece tras las montañas.',
+        'about.p2': "Por la noche, el campamento se ilumina con faroles: cena marroquí casera, hoguera, espectáculo de fuego y — cada noche — música en vivo para una velada inolvidable.",
+        'about.s1': 'min de Marrakech', 'about.s2': 'actividades', 'about.s3': "noches musicales",
+        'act.eyebrow': 'Nuestras actividades', 'act.title': 'Experiencias para todos los gustos',
+        'act.text': 'Aventura, relax o gastronomía — crea tu día perfecto en el desierto de Agafay.',
+        'act.pool.t': 'Piscina', 'act.pool.d': 'Una gran piscina con vistas panorámicas al desierto y al Atlas. Tumbonas, sombrillas y bebidas.',
+        'act.quad.t': 'Quads', 'act.quad.d': 'Recorre las pistas del desierto de piedra con nuestros guías. Emoción garantizada, principiantes bienvenidos.',
+        'act.camel.t': 'Paseos en camello', 'act.camel.d': 'Un paseo tranquilo y auténtico al ritmo de los dromedarios, ideal al atardecer.',
+        'act.sunset.t': 'Atardecer', 'act.sunset.d': 'El momento mágico de Agafay: el cielo se tiñe de rojo y oro sobre las colinas. Un espectáculo impresionante.',
+        'act.dinner.t': 'Cena marroquí', 'act.dinner.d': 'Tajines, cuscús y té a la menta servidos en nuestro restaurante bereber tradicional o bajo las estrellas.',
+        'act.show.t': "Música en vivo y hoguera", 'act.show.d': "Cada noche: música en vivo, espectáculo de fuego y velada junto a la hoguera bajo las estrellas.",
+        'day.eyebrow': 'Tu día', 'day.title': 'Un día en Tropical Camp', 'day.text': 'Un programa de ejemplo — lo adaptamos con gusto a tus deseos.',
+        'day.1.time': 'Tarde', 'day.1.t': 'Llegada y piscina', 'day.1.d': 'Traslado desde Marrakech, té de bienvenida y relax junto a la piscina.',
+        'day.2.time': 'Media tarde', 'day.2.t': "Quad, camello o caballo", 'day.2.d': "Explora el desierto de Agafay en quad, en camello o a caballo con nuestros guías.",
+        'day.3.time': 'Atardecer', 'day.3.t': 'Puesta de sol mágica', 'day.3.d': 'Contempla cómo el cielo se enciende sobre las montañas del Atlas.',
+        'day.4.time': 'Noche', 'day.4.t': 'Cena y espectáculo', 'day.4.d': "Cena marroquí, música en vivo cada noche, espectáculo de fuego y velada junto a la hoguera.",
+        'gal.eyebrow': 'Galería', 'gal.title': 'Sumérgete en el ambiente',
+        'gal.c1': 'Piscina al atardecer', 'gal.c2': 'Espectáculo de fuego', 'gal.c3': 'Restaurante bereber', 'gal.c4': 'Hoguera', 'gal.more': 'Más fotos en Instagram',
+        'rev.one': 'opinión', 'rev.many': 'opiniones', 'rev.eyebrow': "Tu opinión cuenta", 'rev.title': "¿Ya nos has visitado?",
+        'contact.eyebrow': 'Contacto', 'contact.title': 'Reserva tu aventura',
+        'contact.text': 'Escríbenos para reservar o para cualquier pregunta. Respondemos rápidamente.',
+        'contact.phone': 'Teléfono', 'contact.directions': 'Cómo llegar en Google Maps', 'contact.address': 'Dirección', 'contact.addressVal': 'Desierto de Agafay, Marrakech, Marruecos',
+        'contact.hours': 'Horario', 'contact.hoursVal': 'Todos los días · 10:00 – 23:00',
+        'form.title': 'Solicitud de reserva', 'form.text': 'Rellena el formulario — se abrirá directamente en WhatsApp.',
+        'form.name': 'Nombre', 'form.phone': 'Teléfono', 'form.date': 'Fecha', 'form.guests': 'Personas', 'form.activity': 'Actividad deseada',
+        'form.opt.full': 'Día completo (piscina + actividades + cena)', 'form.opt.pool': 'Piscina y relax', 'form.opt.quad': 'Quad',
+        'form.opt.camel': 'Paseo en camello', 'form.opt.dinner': 'Atardecer y cena espectáculo',
+        'form.message': 'Mensaje', 'form.messagePh': 'Traslado desde Marrakech, preguntas…',
+        'form.submit': 'Enviar por WhatsApp', 'form.note': 'Respuesta rápida · Sin compromiso', 'form.required': 'Por favor, indica tu nombre y la fecha.',
+        'wa.hello': '¡Hola Tropical Camp Agafay! Me gustaría hacer una reserva:', 'wa.default': '¡Hola Tropical Camp Agafay! Me gustaría recibir información.',
+        'footer.tag': "Piscina • Quads • Camellos • Caballos • Atardecer • Cena • Música en vivo cada noche", 'footer.rights': 'Todos los derechos reservados',
+        'nav.music': "Noches",
+        'hero.badge4': "Música en vivo cada noche",
+        'gal.c5': "Quads y buggies",
+        'gal.c6': "Noche bajo las estrellas",
+        'gal.c7': "Camellos al atardecer",
+        'gal.c8': "Atardecer en el campamento",
+        'music.eyebrow': "Cada noche",
+        'music.title': "Música en <em>vivo</em> todas las noches",
+        'music.text': "Cuando se pone el sol, el campamento cobra vida: cada noche nuestros músicos tocan en vivo bajo los faroles y las estrellas, alrededor de la hoguera. Un ambiente cálido y festivo que nunca olvidarás.",
+        'music.l1.t': "Música en vivo cada noche",
+        'music.l1.d': "Música, cantos y percusión junto al fuego.",
+        'music.l2.t': "Hoguera y espectáculo de fuego",
+        'music.l2.d': "Una noche mágica bajo un cielo estrellado.",
+        'music.l3.t': "Ambiente de faroles",
+        'music.l3.d': "El campamento se ilumina con cientos de luces.",
+        'music.cta': "Reservar mi noche",
+        'music.sound': "Activar sonido",
+        'music.mute': "Silenciar",
+        'rev.text': "¡Comparte tu experiencia! Tu opinión ayuda a otros viajeros a descubrir Tropical Camp Agafay.",
+        'rev.g.t': "Deja una reseña en Google",
+        'rev.g.d': "Abre nuestra ficha de Google Maps y danos unas estrellas y unas palabras.",
+        'rev.g.cta': "Escribir una reseña →",
+        'rev.i.t': "Comparte tus fotos",
+        'rev.i.d': "Publica tus mejores recuerdos y etiquétanos en Instagram: @tropicalcampagafay",
+        'rev.i.cta': "Ver nuestro Instagram →",
+        'rev.w.t': "Escríbenos",
+        'rev.w.d': "¿Un comentario, un cumplido, una sugerencia? Envíanos un mensaje por WhatsApp.",
+        'rev.w.cta': "Mensaje de WhatsApp →",
+        'act.horse.t': "Paseos a caballo",
+        'act.horse.d': "Recorre a caballo las colinas del desierto de Agafay con nuestros guías — una experiencia inolvidable, sobre todo al atardecer.",
+        'form.opt.horse': "Paseo a caballo",
+        'gal.c9': "Paseo a caballo al atardecer",
+        'gal.c10': "Nuestros caballos",
+        'gal.c11': "A caballo por el desierto",
+        'gal.c12': "Listos para la aventura"
+      }
+    };
+
+    const LABELS = { fr: 'FR', en: 'EN', de: 'DE', es: 'ES' };
+    let currentLang = 'fr';
+    const t = (key) => (I18N[currentLang] && I18N[currentLang][key]) || I18N.fr[key] || key;
+
+    function setLang(lang) {
+      if (!I18N[lang]) lang = 'fr';
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { el.placeholder = t(el.dataset.i18nPlaceholder); });
+      document.getElementById('langCurrent').textContent = LABELS[lang];
+      document.querySelectorAll('.lang-menu button').forEach(b => b.setAttribute('aria-current', b.dataset.lang === lang));
+      updateWaLinks();
+      if (typeof updateRatingCount === 'function') updateRatingCount();
+      try { localStorage.setItem('tca-lang', lang); } catch (e) {}
+    }
+
+    /* Language menu */
+    const langEl = document.getElementById('lang');
+    const langBtn = document.getElementById('langBtn');
+    langBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = langEl.classList.toggle('open');
+      langBtn.setAttribute('aria-expanded', open);
+    });
+    document.querySelectorAll('.lang-menu button').forEach(b => b.addEventListener('click', () => {
+      setLang(b.dataset.lang);
+      langEl.classList.remove('open');
+      langBtn.setAttribute('aria-expanded', false);
+    }));
+    document.addEventListener('click', () => { langEl.classList.remove('open'); langBtn.setAttribute('aria-expanded', false); });
+
+    /* WhatsApp links */
+    const waUrl = (text) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    function updateWaLinks() {
+      document.querySelectorAll('.wa-link').forEach(a => { a.href = waUrl(t('wa.default')); a.target = '_blank'; a.rel = 'noopener'; });
+    }
+    document.getElementById('waDisplay').textContent = WHATSAPP_DISPLAY;
+
+    /* Booking form → WhatsApp */
+    const form = document.getElementById('bookingForm');
+    const dateInput = document.getElementById('fDate');
+    dateInput.min = new Date().toISOString().split('T')[0];
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const d = Object.fromEntries(new FormData(form));
+      if (!d.name.trim() || !d.date) { alert(t('form.required')); return; }
+      const lines = [
+        t('wa.hello'), '',
+        `• ${t('form.name')}: ${d.name}`,
+        d.phone ? `• ${t('form.phone')}: ${d.phone}` : null,
+        `• ${t('form.date')}: ${d.date}`,
+        `• ${t('form.guests')}: ${d.guests}`,
+        `• ${t('form.activity')}: ${d.activity}`,
+        d.message ? `• ${t('form.message')}: ${d.message}` : null
+      ].filter(Boolean);
+      window.open(waUrl(lines.join('\n')), '_blank', 'noopener');
+    });
+
+    /* Mobile menu */
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { navLinks.classList.remove('open'); burger.setAttribute('aria-expanded', false); }));
+
+    /* Header on scroll */
+    const header = document.getElementById('top');
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+    /* Reveal on scroll */
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => entries.forEach(en => {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      }), { threshold: .12 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    } else {
+      document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+    }
+
+    /* Reviews */
+    function renderReviews() {
+      const list = document.getElementById('reviewList');
+      if (!REVIEWS.length) return;
+      const colors = ['#c0622f', '#2f4a2f', '#d9a441', '#8a5a3c', '#5d7a4f', '#a2472a'];
+      list.innerHTML = '';
+      REVIEWS.forEach((r, i) => {
+        const n = Math.max(1, Math.min(5, Math.round(r.stars || 5)));
+        const card = document.createElement('article');
+        card.className = 'rev reveal in';
+        card.innerHTML = '<div class="stars"></div><blockquote><p></p></blockquote>' +
+          '<div class="rev-author"><div class="avatar"></div><div><b></b><small></small></div><span class="rev-src"></span></div>';
+        card.querySelector('.stars').textContent = '★'.repeat(n) + '☆'.repeat(5 - n);
+        card.querySelector('blockquote p').textContent = r.text || '';
+        const av = card.querySelector('.avatar');
+        av.textContent = (r.name || '?').trim().charAt(0).toUpperCase();
+        av.style.background = colors[i % colors.length];
+        card.querySelector('.rev-author b').textContent = r.name || '';
+        card.querySelector('.rev-author small').textContent = r.country || '';
+        card.querySelector('.rev-src').textContent = r.source || '';
+        list.appendChild(card);
+      });
+      list.hidden = false;
+      const avg = REVIEWS.reduce((a, r) => a + (r.stars || 5), 0) / REVIEWS.length;
+      document.getElementById('ratingAvg').textContent = avg.toFixed(1);
+      document.getElementById('ratingStars').textContent = '★'.repeat(Math.round(avg)) + '☆'.repeat(5 - Math.round(avg));
+      document.getElementById('ratingCount').dataset.count = REVIEWS.length;
+      updateRatingCount();
+      document.getElementById('ratingSummary').hidden = false;
+    }
+    function updateRatingCount() {
+      const el = document.getElementById('ratingCount');
+      if (el.dataset.count) el.textContent = el.dataset.count + ' ' + t(el.dataset.count === '1' ? 'rev.one' : 'rev.many');
+    }
+    renderReviews();
+
+    /* Lightbox */
+    const items = [...document.querySelectorAll('.g-item')];
+    const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lbImg');
+    let idx = 0;
+    const show = (i) => { idx = (i + items.length) % items.length; const img = items[idx].querySelector('img'); lbImg.src = img.src; lbImg.alt = img.alt; };
+    items.forEach((it, i) => it.addEventListener('click', () => { show(i); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }));
+    const closeLb = () => { lb.classList.remove('open'); document.body.style.overflow = ''; };
+    document.getElementById('lbClose').onclick = closeLb;
+    document.getElementById('lbPrev').onclick = (e) => { e.stopPropagation(); show(idx - 1); };
+    document.getElementById('lbNext').onclick = (e) => { e.stopPropagation(); show(idx + 1); };
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+    document.addEventListener('keydown', (e) => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLb();
+      if (e.key === 'ArrowLeft') show(idx - 1);
+      if (e.key === 'ArrowRight') show(idx + 1);
+    });
+
+    /* Live music video: sound toggle */
+    const video = document.getElementById('musicVideo');
+    const soundBtn = document.getElementById('soundBtn');
+    const ICON_MUTED = '<path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/>';
+    const ICON_SOUND = '<path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/>';
+    function updateSoundBtn() {
+      document.getElementById('soundIcon').innerHTML = video.muted ? ICON_MUTED : ICON_SOUND;
+      const label = soundBtn.querySelector('span');
+      label.dataset.i18n = video.muted ? 'music.sound' : 'music.mute';
+      label.textContent = t(label.dataset.i18n);
+      soundBtn.setAttribute('aria-pressed', !video.muted);
+    }
+    soundBtn.addEventListener('click', () => {
+      video.muted = !video.muted;
+      if (video.paused) video.play().catch(() => {});
+      updateSoundBtn();
+    });
+    /* Play only while visible (saves battery & data on phones) */
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([en]) => {
+        if (en.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      }, { threshold: .25 }).observe(video);
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* Initial language: ?lang= → saved choice → French */
+    let initial = new URLSearchParams(location.search).get('lang');
+    if (!initial) { try { initial = localStorage.getItem('tca-lang'); } catch (e) {} }
+    setLang(initial || 'fr');
+  </script>
+</body>
+</html>
