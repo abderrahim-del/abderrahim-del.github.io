@@ -4,10 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tropical Camp Agafay – Désert d'Agafay, Marrakech</title>
-  <meta name="description" content="Tropical Camp Agafay : piscine, quads, balades à dos de chameau, coucher de soleil, dîner et spectacles dans le désert d'Agafay, à 40 min de Marrakech." />
+  <meta name="description" content="Tropical Camp Agafay : piscine, quads, balades à dos de chameau et à cheval, coucher de soleil, dîner et musique live chaque soir dans le désert d'Agafay, près de Marrakech." />
   <meta property="og:title" content="Tropical Camp Agafay" />
   <meta property="og:description" content="Piscine • Quads • Chameaux • Sunset • Dîner – Désert d'Agafay, Marrakech" />
-  <meta property="og:image" content="images/piscine-sunset.jpg" />
+  <meta property="og:image" content="https://tropical-camp-agafay.netlify.app/images/piscine-sunset.jpg" />
+  <meta property="og:url" content="https://tropical-camp-agafay.netlify.app/" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://tropical-camp-agafay.netlify.app/" />
+  <meta name="robots" content="index, follow" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    "name": "Tropical Camp Agafay",
+    "description": "Camp dans le désert d'Agafay près de Marrakech : piscine, quads, balades à dos de chameau et à cheval, coucher de soleil, dîner marocain et musique live chaque soir.",
+    "url": "https://tropical-camp-agafay.netlify.app/",
+    "image": "https://tropical-camp-agafay.netlify.app/images/piscine-sunset.jpg",
+    "logo": "https://tropical-camp-agafay.netlify.app/images/logo.png",
+    "telephone": "+212661240130",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Désert d'Agafay, Marrakech",
+      "addressCountry": "MA"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 31.423958, "longitude": -8.100911 },
+    "hasMap": "https://maps.app.goo.gl/ek1rYvbxgbPD7bxH8",
+    "sameAs": ["https://www.instagram.com/tropicalcampagafay/"],
+    "availableLanguage": ["fr", "en", "de", "es"]
+  }
+  </script>
   <meta name="theme-color" content="#14110f" />
   <link rel="icon" type="image/png" href="images/logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -157,7 +182,8 @@
 
     /* ── ACTIVITIES ── */
     .activities { background: var(--sand-2); }
-    .act-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+    .act-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.4rem; }
+    .act-grid > .act { flex: 0 1 calc((100% - 2.8rem) / 3); }
     .act {
       background: var(--white); border-radius: var(--radius); padding: 0;
       display: flex; flex-direction: column;
@@ -343,7 +369,8 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
-      .act-grid, .rev-grid { grid-template-columns: repeat(2, 1fr); }
+      .rev-grid { grid-template-columns: repeat(2, 1fr); }
+      .act-grid > .act { flex-basis: calc((100% - 1.4rem) / 2); }
       .timeline { grid-template-columns: repeat(2, 1fr); gap: 2rem 1.4rem; }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 240px; }
     }
@@ -364,7 +391,8 @@
     @media (max-width: 600px) {
       .brand span { font-size: 1.1rem; }
       .brand img { width: 44px; height: 44px; }
-      .act-grid, .rev-grid, .timeline { grid-template-columns: 1fr; }
+      .rev-grid, .timeline { grid-template-columns: 1fr; }
+      .act-grid > .act { flex-basis: 100%; }
       .gallery-grid { gap: .6rem; grid-auto-rows: 190px; }
       .form-row { grid-template-columns: 1fr; gap: 0; }
       .stats { gap: .6rem; }
@@ -424,7 +452,7 @@
     <div class="container">
       <div class="hero-content">
         <span class="eyebrow" data-i18n="hero.eyebrow">Désert d'Agafay · Marrakech</span>
-        <h1 data-i18n-html="hero.title">Votre oasis <em>tropicale</em> au cœur du désert</h1>
+        <h1 data-i18n-html="hero.title">Votre oasis <em>tropical</em> au cœur du désert</h1>
         <p data-i18n="hero.text">Piscine face aux montagnes de l'Atlas, quads, balades à dos de chameau, coucher de soleil magique et dîner sous les étoiles — à seulement 40 minutes de Marrakech.</p>
         <div class="hero-cta">
           <a href="#reservation" class="btn btn-gold" data-i18n="hero.cta1">Réserver votre journée</a>
@@ -455,7 +483,7 @@
         <p data-i18n="about.p2">Le soir, le camp s'illumine de lanternes : dîner marocain fait maison, feu de camp, musique et spectacle de feu pour une soirée inoubliable.</p>
         <div class="stats">
           <div class="stat"><b>40</b><span data-i18n="about.s1">min de Marrakech</span></div>
-          <div class="stat"><b>6+</b><span data-i18n="about.s2">activités</span></div>
+          <div class="stat"><b>7+</b><span data-i18n="about.s2">activités</span></div>
           <div class="stat"><b>7/7</b><span data-i18n="about.s3">soirées musicales</span></div>
         </div>
       </div>
@@ -474,6 +502,7 @@
         <article class="act reveal"><div class="act-img"><img src="images/piscine-coucher.jpg" alt="Piscine face au désert au coucher du soleil" loading="lazy" /></div><div class="act-body"><div class="act-icon">🏊</div><h3 data-i18n="act.pool.t">Piscine</h3><p data-i18n="act.pool.d">Une grande piscine avec vue panoramique sur le désert et l'Atlas. Transats, parasols et rafraîchissements.</p></div></article>
         <article class="act reveal"><div class="act-img"><img src="images/quads.jpg" alt="Quads et buggys dans le désert d'Agafay" loading="lazy" style="object-position:center 70%" /></div><div class="act-body"><div class="act-icon">🏍️</div><h3 data-i18n="act.quad.t">Quads</h3><p data-i18n="act.quad.d">Partez à l'assaut des pistes du désert de pierre avec nos guides. Sensations garanties, débutants bienvenus.</p></div></article>
         <article class="act reveal"><div class="act-img"><img src="images/chameaux.jpg" alt="Caravane de chameaux au coucher du soleil" loading="lazy" /></div><div class="act-body"><div class="act-icon">🐪</div><h3 data-i18n="act.camel.t">Balades à dos de chameau</h3><p data-i18n="act.camel.d">Une promenade paisible et authentique au rythme des dromadaires, idéale au coucher du soleil.</p></div></article>
+        <article class="act reveal"><div class="act-img"><img src="images/cheval-sunset.jpg" alt="Balade à cheval au coucher du soleil dans le désert d'Agafay" loading="lazy" style="object-position:center 40%" /></div><div class="act-body"><div class="act-icon">🐎</div><h3 data-i18n="act.horse.t">Balades à cheval</h3><p data-i18n="act.horse.d">Partez à cheval à travers les collines du désert d'Agafay avec nos guides — une expérience inoubliable, surtout au coucher du soleil.</p></div></article>
         <article class="act reveal"><div class="act-img"><img src="images/sunset-camp.jpg" alt="Coucher de soleil sur le camp" loading="lazy" style="object-position:center 55%" /></div><div class="act-body"><div class="act-icon">🌅</div><h3 data-i18n="act.sunset.t">Sunset</h3><p data-i18n="act.sunset.d">Le moment magique d'Agafay : le ciel s'embrase de rouge et d'or au-dessus des collines. Un spectacle à couper le souffle.</p></div></article>
         <article class="act reveal"><div class="act-img"><img src="images/restaurant.jpg" alt="Restaurant berbère traditionnel" loading="lazy" /></div><div class="act-body"><div class="act-icon">🍽️</div><h3 data-i18n="act.dinner.t">Dîner marocain</h3><p data-i18n="act.dinner.d">Tajines, couscous et thé à la menthe servis dans notre restaurant berbère traditionnel ou sous les étoiles.</p></div></article>
         <article class="act reveal"><div class="act-img"><img src="images/soiree-musique.jpg" alt="Soirée musicale autour du feu de camp" loading="lazy" style="object-position:center 60%" /></div><div class="act-body"><div class="act-icon">🎶</div><h3 data-i18n="act.show.t">Musique live & feu de camp</h3><p data-i18n="act.show.d">Chaque soir : musique live, spectacle de feu et veillée autour du feu de camp sous les étoiles.</p></div></article>
@@ -514,6 +543,10 @@
         <figure class="g-item wide reveal"><img src="images/chameaux.jpg" alt="Chameaux au coucher du soleil" loading="lazy" /><figcaption data-i18n="gal.c7">Chameaux au coucher du soleil</figcaption></figure>
         <figure class="g-item reveal"><img src="images/sunset-camp.jpg" alt="Coucher de soleil sur le camp" loading="lazy" /><figcaption data-i18n="gal.c8">Sunset au camp</figcaption></figure>
         <figure class="g-item reveal"><img src="images/feu-de-camp.jpg" alt="Feu de camp" loading="lazy" /><figcaption data-i18n="gal.c4">Feu de camp</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/cheval-sunset.jpg" alt="Cavalier au coucher du soleil" loading="lazy" /><figcaption data-i18n="gal.c9">Balade à cheval au sunset</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/chevaux-coeur.jpg" alt="Chevaux du Tropical Camp" loading="lazy" /><figcaption data-i18n="gal.c10">Nos chevaux</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/cheval-quads.jpg" alt="Chevaux et quads dans le désert" loading="lazy" /><figcaption data-i18n="gal.c11">À cheval dans le désert</figcaption></figure>
+        <figure class="g-item reveal"><img src="images/chevaux-desert.jpg" alt="Chevaux sellés dans le désert d'Agafay" loading="lazy" /><figcaption data-i18n="gal.c12">Prêts pour l'aventure</figcaption></figure>
       </div>
       <div class="gallery-more">
         <a href="https://www.instagram.com/tropicalcampagafay/" target="_blank" rel="noopener" class="btn btn-dark">
@@ -648,6 +681,7 @@
               <option data-i18n="form.opt.pool">Piscine & détente</option>
               <option data-i18n="form.opt.quad">Quad</option>
               <option data-i18n="form.opt.camel">Balade à dos de chameau</option>
+              <option data-i18n="form.opt.horse">Balade à cheval</option>
               <option data-i18n="form.opt.dinner">Sunset & dîner spectacle</option>
             </select>
           </div>
@@ -679,7 +713,7 @@
           <img src="images/logo.png" alt="Tropical Camp Agafay" width="64" height="64" loading="lazy" />
           <span>Tropical Camp<small>AGAFAY</small></span>
         </a>
-        <p data-i18n="footer.tag" style="max-width:380px">Piscine • Quads • Balades à dos de chameau • Sunset • Dîner • Expériences inoubliables</p>
+        <p data-i18n="footer.tag" style="max-width:380px">Piscine • Quads • Chameaux • Chevaux • Sunset • Dîner • Expériences inoubliables</p>
         <div class="socials">
           <a href="https://www.instagram.com/tropicalcampagafay/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
           <a href="tel:+212661240130" aria-label="Téléphone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
@@ -714,14 +748,14 @@
       fr: {
         'nav.about': 'Le camp', 'nav.activities': 'Activités', 'nav.gallery': 'Galerie', 'nav.reviews': 'Avis', 'nav.contact': 'Contact', 'nav.book': 'Réserver',
         'hero.eyebrow': "Désert d'Agafay · Marrakech",
-        'hero.title': 'Votre oasis <em>tropicale</em> au cœur du désert',
+        'hero.title': 'Votre oasis <em>tropical</em> au cœur du désert',
         'hero.text': "Piscine face aux montagnes de l'Atlas, quads, balades à dos de chameau, coucher de soleil magique et dîner sous les étoiles — à seulement 40 minutes de Marrakech.",
         'hero.cta1': 'Réserver votre journée', 'hero.cta2': 'Découvrir les activités',
         'hero.badge1': "Piscine face au désert", 'hero.badge2': 'Transfert depuis Marrakech', 'hero.badge3': 'Sunset inoubliable',
         'about.eyebrow': 'Bienvenue', 'about.title': 'Un camp unique entre palmiers et dunes de pierre',
         'about.p1': "Le Tropical Camp Agafay vous accueille dans un décor où l'ambiance tropicale rencontre l'authenticité berbère. Ici, le temps ralentit : on se baigne face au désert, on part à l'aventure en quad ou à dos de chameau, puis on admire le soleil disparaître derrière les montagnes.",
         'about.p2': "Le soir, le camp s'illumine de lanternes : dîner marocain fait maison, feu de camp, spectacle de feu et — chaque soir — musique live pour une soirée inoubliable.",
-        'about.s1': 'min de Marrakech', 'about.s2': 'activités', 'about.s3': "soirées musicales",
+        'about.s1': 'min de Marrakech', 'about.s2': "activités", 'about.s3': "soirées musicales",
         'act.eyebrow': 'Nos activités', 'act.title': 'Des expériences pour tous les goûts',
         'act.text': "Aventure, détente ou gastronomie — composez votre journée parfaite dans le désert d'Agafay.",
         'act.pool.t': 'Piscine', 'act.pool.d': "Une grande piscine avec vue panoramique sur le désert et l'Atlas. Transats, parasols et rafraîchissements.",
@@ -732,7 +766,7 @@
         'act.show.t': "Musique live & feu de camp", 'act.show.d': "Chaque soir : musique live, spectacle de feu et veillée autour du feu de camp sous les étoiles.",
         'day.eyebrow': 'Votre journée', 'day.title': 'Une journée au Tropical Camp', 'day.text': "Un exemple de programme — nous l'adaptons volontiers à vos envies.",
         'day.1.time': 'Après-midi', 'day.1.t': 'Arrivée & piscine', 'day.1.d': 'Transfert depuis Marrakech, thé de bienvenue et détente au bord de la piscine.',
-        'day.2.time': "Fin d'après-midi", 'day.2.t': 'Quad ou chameau', 'day.2.d': "Explorez le désert d'Agafay en quad ou à dos de chameau avec nos guides.",
+        'day.2.time': "Fin d'après-midi", 'day.2.t': "Quad, chameau ou cheval", 'day.2.d': "Explorez le désert d'Agafay en quad, à dos de chameau ou à cheval avec nos guides.",
         'day.3.time': 'Coucher du soleil', 'day.3.t': 'Sunset magique', 'day.3.d': "Admirez le ciel s'embraser au-dessus des montagnes de l'Atlas.",
         'day.4.time': 'Soirée', 'day.4.t': 'Dîner & spectacle', 'day.4.d': "Dîner marocain, musique live chaque soir, spectacle de feu et veillée autour du feu de camp.",
         'gal.eyebrow': 'Galerie', 'gal.title': "Plongez dans l'ambiance",
@@ -749,7 +783,7 @@
         'form.message': 'Message', 'form.messagePh': 'Transfert depuis Marrakech, questions…',
         'form.submit': 'Envoyer via WhatsApp', 'form.note': 'Réponse rapide · Sans engagement', 'form.required': 'Merci de remplir le nom et la date.',
         'wa.hello': 'Bonjour Tropical Camp Agafay ! Je souhaite faire une réservation :', 'wa.default': 'Bonjour Tropical Camp Agafay ! Je voudrais des informations.',
-        'footer.tag': "Piscine • Quads • Balades à dos de chameau • Sunset • Dîner • Musique live chaque soir", 'footer.rights': 'Tous droits réservés',
+        'footer.tag': "Piscine • Quads • Chameaux • Chevaux • Sunset • Dîner • Musique live chaque soir", 'footer.rights': 'Tous droits réservés',
         'nav.music': "Soirées",
         'hero.badge4': "Musique live chaque soir",
         'gal.c5': "Quads & buggys",
@@ -777,7 +811,14 @@
         'rev.i.cta': "Voir notre Instagram →",
         'rev.w.t': "Écrivez-nous",
         'rev.w.d': "Une remarque, un compliment, une suggestion ? Envoyez-nous un message sur WhatsApp.",
-        'rev.w.cta': "Message WhatsApp →"
+        'rev.w.cta': "Message WhatsApp →",
+        'act.horse.t': "Balades à cheval",
+        'act.horse.d': "Partez à cheval à travers les collines du désert d'Agafay avec nos guides — une expérience inoubliable, surtout au coucher du soleil.",
+        'form.opt.horse': "Balade à cheval",
+        'gal.c9': "Balade à cheval au sunset",
+        'gal.c10': "Nos chevaux",
+        'gal.c11': "À cheval dans le désert",
+        'gal.c12': "Prêts pour l'aventure"
       },
       en: {
         'nav.about': 'The camp', 'nav.activities': 'Activities', 'nav.gallery': 'Gallery', 'nav.reviews': 'Reviews', 'nav.contact': 'Contact', 'nav.book': 'Book now',
@@ -800,7 +841,7 @@
         'act.show.t': "Live music & campfire", 'act.show.d': "Every evening: live music, fire show and a night around the campfire under the stars.",
         'day.eyebrow': 'Your day', 'day.title': 'A day at Tropical Camp', 'day.text': 'A sample programme — we are happy to adapt it to your wishes.',
         'day.1.time': 'Afternoon', 'day.1.t': 'Arrival & pool', 'day.1.d': 'Transfer from Marrakech, welcome tea and relaxing by the pool.',
-        'day.2.time': 'Late afternoon', 'day.2.t': 'Quad or camel', 'day.2.d': 'Explore the Agafay Desert by quad or on camelback with our guides.',
+        'day.2.time': 'Late afternoon', 'day.2.t': "Quad, camel or horse", 'day.2.d': "Explore the Agafay Desert by quad, on camelback or on horseback with our guides.",
         'day.3.time': 'Sunset', 'day.3.t': 'Magical sunset', 'day.3.d': 'Watch the sky catch fire above the Atlas Mountains.',
         'day.4.time': 'Evening', 'day.4.t': 'Dinner & show', 'day.4.d': "Moroccan dinner, live music every evening, fire show and a night around the campfire.",
         'gal.eyebrow': 'Gallery', 'gal.title': 'Soak up the atmosphere',
@@ -817,7 +858,7 @@
         'form.message': 'Message', 'form.messagePh': 'Transfer from Marrakech, questions…',
         'form.submit': 'Send via WhatsApp', 'form.note': 'Fast reply · No commitment', 'form.required': 'Please fill in your name and date.',
         'wa.hello': 'Hello Tropical Camp Agafay! I would like to make a booking:', 'wa.default': 'Hello Tropical Camp Agafay! I would like some information.',
-        'footer.tag': "Pool • Quads • Camel rides • Sunset • Dinner • Live music every evening", 'footer.rights': 'All rights reserved',
+        'footer.tag': "Pool • Quads • Camels • Horses • Sunset • Dinner • Live music every evening", 'footer.rights': 'All rights reserved',
         'nav.music': "Evenings",
         'hero.badge4': "Live music every evening",
         'gal.c5': "Quads & buggies",
@@ -845,7 +886,14 @@
         'rev.i.cta': "See our Instagram →",
         'rev.w.t': "Write to us",
         'rev.w.d': "A comment, a compliment, a suggestion? Send us a message on WhatsApp.",
-        'rev.w.cta': "WhatsApp message →"
+        'rev.w.cta': "WhatsApp message →",
+        'act.horse.t': "Horse riding",
+        'act.horse.d': "Ride through the hills of the Agafay Desert with our guides — an unforgettable experience, especially at sunset.",
+        'form.opt.horse': "Horse riding",
+        'gal.c9': "Horse ride at sunset",
+        'gal.c10': "Our horses",
+        'gal.c11': "Riding in the desert",
+        'gal.c12': "Ready for adventure"
       },
       de: {
         'nav.about': 'Das Camp', 'nav.activities': 'Aktivitäten', 'nav.gallery': 'Galerie', 'nav.reviews': 'Bewertungen', 'nav.contact': 'Kontakt', 'nav.book': 'Buchen',
@@ -868,7 +916,7 @@
         'act.show.t': "Live-Musik & Lagerfeuer", 'act.show.d': "Jeden Abend: Live-Musik, Feuershow und gemütliche Runde am Lagerfeuer unter den Sternen.",
         'day.eyebrow': 'Ihr Tag', 'day.title': 'Ein Tag im Tropical Camp', 'day.text': 'Ein Beispielprogramm — wir passen es gerne an Ihre Wünsche an.',
         'day.1.time': 'Nachmittag', 'day.1.t': 'Ankunft & Pool', 'day.1.d': 'Transfer ab Marrakesch, Willkommenstee und Entspannung am Pool.',
-        'day.2.time': 'Später Nachmittag', 'day.2.t': 'Quad oder Kamel', 'day.2.d': 'Erkunden Sie die Agafay-Wüste mit dem Quad oder auf dem Kamel mit unseren Guides.',
+        'day.2.time': 'Später Nachmittag', 'day.2.t': "Quad, Kamel oder Pferd", 'day.2.d': "Erkunden Sie die Agafay-Wüste mit dem Quad, auf dem Kamel oder zu Pferd mit unseren Guides.",
         'day.3.time': 'Sonnenuntergang', 'day.3.t': 'Magischer Sunset', 'day.3.d': 'Erleben Sie, wie der Himmel über dem Atlasgebirge zu glühen beginnt.',
         'day.4.time': 'Abend', 'day.4.t': 'Dinner & Show', 'day.4.d': "Marokkanisches Abendessen, jeden Abend Live-Musik, Feuershow und Abend am Lagerfeuer.",
         'gal.eyebrow': 'Galerie', 'gal.title': 'Tauchen Sie ein in die Atmosphäre',
@@ -885,7 +933,7 @@
         'form.message': 'Nachricht', 'form.messagePh': 'Transfer ab Marrakesch, Fragen…',
         'form.submit': 'Per WhatsApp senden', 'form.note': 'Schnelle Antwort · Unverbindlich', 'form.required': 'Bitte Name und Datum angeben.',
         'wa.hello': 'Hallo Tropical Camp Agafay! Ich möchte gerne buchen:', 'wa.default': 'Hallo Tropical Camp Agafay! Ich hätte gerne Informationen.',
-        'footer.tag': "Pool • Quads • Kamelritte • Sunset • Abendessen • Jeden Abend Live-Musik", 'footer.rights': 'Alle Rechte vorbehalten',
+        'footer.tag': "Pool • Quads • Kamele • Pferde • Sunset • Abendessen • Jeden Abend Live-Musik", 'footer.rights': 'Alle Rechte vorbehalten',
         'nav.music': "Abende",
         'hero.badge4': "Jeden Abend Live-Musik",
         'gal.c5': "Quads & Buggys",
@@ -913,7 +961,14 @@
         'rev.i.cta': "Zu unserem Instagram →",
         'rev.w.t': "Schreiben Sie uns",
         'rev.w.d': "Eine Anmerkung, ein Lob, ein Vorschlag? Schicken Sie uns eine Nachricht per WhatsApp.",
-        'rev.w.cta': "WhatsApp-Nachricht →"
+        'rev.w.cta': "WhatsApp-Nachricht →",
+        'act.horse.t': "Ausritte zu Pferd",
+        'act.horse.d': "Reiten Sie mit unseren Guides durch die Hügel der Agafay-Wüste — ein unvergessliches Erlebnis, besonders bei Sonnenuntergang.",
+        'form.opt.horse': "Ausritt zu Pferd",
+        'gal.c9': "Ausritt bei Sonnenuntergang",
+        'gal.c10': "Unsere Pferde",
+        'gal.c11': "Zu Pferd durch die Wüste",
+        'gal.c12': "Bereit für das Abenteuer"
       },
       es: {
         'nav.about': 'El campamento', 'nav.activities': 'Actividades', 'nav.gallery': 'Galería', 'nav.reviews': 'Opiniones', 'nav.contact': 'Contacto', 'nav.book': 'Reservar',
@@ -936,7 +991,7 @@
         'act.show.t': "Música en vivo y hoguera", 'act.show.d': "Cada noche: música en vivo, espectáculo de fuego y velada junto a la hoguera bajo las estrellas.",
         'day.eyebrow': 'Tu día', 'day.title': 'Un día en Tropical Camp', 'day.text': 'Un programa de ejemplo — lo adaptamos con gusto a tus deseos.',
         'day.1.time': 'Tarde', 'day.1.t': 'Llegada y piscina', 'day.1.d': 'Traslado desde Marrakech, té de bienvenida y relax junto a la piscina.',
-        'day.2.time': 'Media tarde', 'day.2.t': 'Quad o camello', 'day.2.d': 'Explora el desierto de Agafay en quad o en camello con nuestros guías.',
+        'day.2.time': 'Media tarde', 'day.2.t': "Quad, camello o caballo", 'day.2.d': "Explora el desierto de Agafay en quad, en camello o a caballo con nuestros guías.",
         'day.3.time': 'Atardecer', 'day.3.t': 'Puesta de sol mágica', 'day.3.d': 'Contempla cómo el cielo se enciende sobre las montañas del Atlas.',
         'day.4.time': 'Noche', 'day.4.t': 'Cena y espectáculo', 'day.4.d': "Cena marroquí, música en vivo cada noche, espectáculo de fuego y velada junto a la hoguera.",
         'gal.eyebrow': 'Galería', 'gal.title': 'Sumérgete en el ambiente',
@@ -953,7 +1008,7 @@
         'form.message': 'Mensaje', 'form.messagePh': 'Traslado desde Marrakech, preguntas…',
         'form.submit': 'Enviar por WhatsApp', 'form.note': 'Respuesta rápida · Sin compromiso', 'form.required': 'Por favor, indica tu nombre y la fecha.',
         'wa.hello': '¡Hola Tropical Camp Agafay! Me gustaría hacer una reserva:', 'wa.default': '¡Hola Tropical Camp Agafay! Me gustaría recibir información.',
-        'footer.tag': "Piscina • Quads • Paseos en camello • Atardecer • Cena • Música en vivo cada noche", 'footer.rights': 'Todos los derechos reservados',
+        'footer.tag': "Piscina • Quads • Camellos • Caballos • Atardecer • Cena • Música en vivo cada noche", 'footer.rights': 'Todos los derechos reservados',
         'nav.music': "Noches",
         'hero.badge4': "Música en vivo cada noche",
         'gal.c5': "Quads y buggies",
@@ -981,7 +1036,14 @@
         'rev.i.cta': "Ver nuestro Instagram →",
         'rev.w.t': "Escríbenos",
         'rev.w.d': "¿Un comentario, un cumplido, una sugerencia? Envíanos un mensaje por WhatsApp.",
-        'rev.w.cta': "Mensaje de WhatsApp →"
+        'rev.w.cta': "Mensaje de WhatsApp →",
+        'act.horse.t': "Paseos a caballo",
+        'act.horse.d': "Recorre a caballo las colinas del desierto de Agafay con nuestros guías — una experiencia inolvidable, sobre todo al atardecer.",
+        'form.opt.horse': "Paseo a caballo",
+        'gal.c9': "Paseo a caballo al atardecer",
+        'gal.c10': "Nuestros caballos",
+        'gal.c11': "A caballo por el desierto",
+        'gal.c12': "Listos para la aventura"
       }
     };
 
