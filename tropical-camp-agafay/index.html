@@ -301,6 +301,9 @@
 
     .map { margin-top: clamp(3rem, 6vw, 4.5rem); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); height: 380px; background: var(--sand-2); }
     .map iframe { width: 100%; height: 100%; border: 0; filter: sepia(.25) saturate(.9); }
+    .map { position: relative; }
+    .map-btn { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); white-space: nowrap; box-shadow: 0 10px 30px -8px rgba(0,0,0,.45); }
+    .map-btn:hover { transform: translate(-50%, -2px); }
 
     /* ── FOOTER ── */
     footer { background: var(--night); color: rgba(255,255,255,.7); padding: 3.5rem 0 2rem; }
@@ -607,7 +610,7 @@
           <ul class="c-list">
             <li>
               <div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
-              <div><small data-i18n="contact.address">Adresse</small><span data-i18n="contact.addressVal">Désert d'Agafay, Marrakech, Maroc</span></div>
+              <div><small data-i18n="contact.address">Adresse</small><a href="https://maps.app.goo.gl/ek1rYvbxgbPD7bxH8" target="_blank" rel="noopener" data-i18n="contact.addressVal">Désert d'Agafay, Marrakech, Maroc</a></div>
             </li>
             <li>
               <div class="c-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></div>
@@ -661,6 +664,10 @@
       <div class="map reveal">
         <iframe title="Carte – Désert d'Agafay" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
           src="https://maps.google.com/maps?q=Agafay%20Desert%2C%20Marrakech&z=11&output=embed"></iframe>
+        <a href="https://maps.app.goo.gl/ek1rYvbxgbPD7bxH8" target="_blank" rel="noopener" class="btn btn-gold map-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span data-i18n="contact.directions">Itinéraire sur Google Maps</span>
+        </a>
       </div>
     </div>
   </section>
@@ -726,7 +733,7 @@
         'rev.couple': 'En couple', 'rev.friends': 'Entre amis', 'rev.family': 'En famille',
         'contact.eyebrow': 'Contact', 'contact.title': 'Réservez votre aventure',
         'contact.text': 'Écrivez-nous pour réserver ou pour toute question. Nous vous répondons rapidement.',
-        'contact.phone': 'Téléphone', 'contact.address': 'Adresse', 'contact.addressVal': "Désert d'Agafay, Marrakech, Maroc",
+        'contact.phone': 'Téléphone', 'contact.directions': 'Itinéraire sur Google Maps', 'contact.address': 'Adresse', 'contact.addressVal': "Désert d'Agafay, Marrakech, Maroc",
         'contact.hours': 'Horaires', 'contact.hoursVal': 'Tous les jours · 10h – 23h',
         'form.title': 'Demande de réservation', 'form.text': "Remplissez le formulaire — il s'ouvrira directement dans WhatsApp.",
         'form.name': 'Nom', 'form.phone': 'Téléphone', 'form.date': 'Date', 'form.guests': 'Personnes', 'form.activity': 'Activité souhaitée',
@@ -785,7 +792,7 @@
         'rev.couple': 'Couple', 'rev.friends': 'Friends', 'rev.family': 'Family',
         'contact.eyebrow': 'Contact', 'contact.title': 'Book your adventure',
         'contact.text': 'Write to us to book or for any question. We reply quickly.',
-        'contact.phone': 'Phone', 'contact.address': 'Address', 'contact.addressVal': 'Agafay Desert, Marrakech, Morocco',
+        'contact.phone': 'Phone', 'contact.directions': 'Directions on Google Maps', 'contact.address': 'Address', 'contact.addressVal': 'Agafay Desert, Marrakech, Morocco',
         'contact.hours': 'Opening hours', 'contact.hoursVal': 'Every day · 10am – 11pm',
         'form.title': 'Booking request', 'form.text': 'Fill in the form — it will open directly in WhatsApp.',
         'form.name': 'Name', 'form.phone': 'Phone', 'form.date': 'Date', 'form.guests': 'Guests', 'form.activity': 'Preferred activity',
@@ -844,7 +851,7 @@
         'rev.couple': 'Als Paar', 'rev.friends': 'Mit Freunden', 'rev.family': 'Mit Familie',
         'contact.eyebrow': 'Kontakt', 'contact.title': 'Buchen Sie Ihr Abenteuer',
         'contact.text': 'Schreiben Sie uns für eine Buchung oder bei Fragen. Wir antworten schnell.',
-        'contact.phone': 'Telefon', 'contact.address': 'Adresse', 'contact.addressVal': 'Agafay-Wüste, Marrakesch, Marokko',
+        'contact.phone': 'Telefon', 'contact.directions': 'Route in Google Maps', 'contact.address': 'Adresse', 'contact.addressVal': 'Agafay-Wüste, Marrakesch, Marokko',
         'contact.hours': 'Öffnungszeiten', 'contact.hoursVal': 'Täglich · 10 – 23 Uhr',
         'form.title': 'Buchungsanfrage', 'form.text': 'Füllen Sie das Formular aus — es öffnet sich direkt in WhatsApp.',
         'form.name': 'Name', 'form.phone': 'Telefon', 'form.date': 'Datum', 'form.guests': 'Personen', 'form.activity': 'Gewünschte Aktivität',
@@ -903,7 +910,7 @@
         'rev.couple': 'En pareja', 'rev.friends': 'Con amigos', 'rev.family': 'En familia',
         'contact.eyebrow': 'Contacto', 'contact.title': 'Reserva tu aventura',
         'contact.text': 'Escríbenos para reservar o para cualquier pregunta. Respondemos rápidamente.',
-        'contact.phone': 'Teléfono', 'contact.address': 'Dirección', 'contact.addressVal': 'Desierto de Agafay, Marrakech, Marruecos',
+        'contact.phone': 'Teléfono', 'contact.directions': 'Cómo llegar en Google Maps', 'contact.address': 'Dirección', 'contact.addressVal': 'Desierto de Agafay, Marrakech, Marruecos',
         'contact.hours': 'Horario', 'contact.hoursVal': 'Todos los días · 10:00 – 23:00',
         'form.title': 'Solicitud de reserva', 'form.text': 'Rellena el formulario — se abrirá directamente en WhatsApp.',
         'form.name': 'Nombre', 'form.phone': 'Teléfono', 'form.date': 'Fecha', 'form.guests': 'Personas', 'form.activity': 'Actividad deseada',
