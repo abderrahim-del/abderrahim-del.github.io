@@ -266,6 +266,13 @@
     .rev-author b { display: block; font-weight: 600; font-size: .98rem; }
     .rev-author small { color: var(--muted); font-size: .82rem; }
 
+    .rev-cta { text-decoration: none; color: inherit; transition: transform .3s, box-shadow .3s; }
+    .rev-cta:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .rev-cta h3 { font-size: 1.6rem; }
+    .rev-cta p { color: var(--muted); flex: 1; }
+    .rev-emoji { font-size: 1.6rem; line-height: 1; }
+    .rev-link { color: var(--terra); font-weight: 600; font-size: .95rem; }
+
     /* ── BOOKING / CONTACT ── */
     .booking-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
     .contact-card { background: var(--night); color: var(--white); border-radius: var(--radius); padding: clamp(1.8rem, 4vw, 2.6rem); position: relative; overflow: hidden; }
@@ -422,7 +429,7 @@
           <a href="#activites" class="btn btn-ghost" data-i18n="hero.cta2">Découvrir les activités</a>
         </div>
         <div class="hero-badges">
-          <span>★★★★★ <b data-i18n="hero.badge1">Avis 5 étoiles</b></span>
+          <span>🏊 <b data-i18n="hero.badge1">Piscine face au désert</b></span>
           <span>🚐 <span data-i18n="hero.badge2">Transfert depuis Marrakech</span></span>
           <span>🌅 <span data-i18n="hero.badge3">Sunset inoubliable</span></span>
           <span>🎶 <span data-i18n="hero.badge4">Musique live chaque soir</span></span>
@@ -447,7 +454,7 @@
         <div class="stats">
           <div class="stat"><b>40</b><span data-i18n="about.s1">min de Marrakech</span></div>
           <div class="stat"><b>6+</b><span data-i18n="about.s2">activités</span></div>
-          <div class="stat"><b>5★</b><span data-i18n="about.s3">expérience</span></div>
+          <div class="stat"><b>7/7</b><span data-i18n="about.s3">soirées musicales</span></div>
         </div>
       </div>
     </div>
@@ -551,50 +558,34 @@
     <button class="lb-btn lb-next" id="lbNext" aria-label="Suivant">›</button>
   </div>
 
-  <!-- ── REVIEWS ──
-       ⚠️ EXEMPLES : remplacez ces avis par de vrais avis de vos clients
-       (Google, TripAdvisor, Instagram…) avant la mise en ligne. -->
+  <!-- ── REVIEWS: invite guests to leave a review ──
+       Quand vous aurez de vrais avis (Google, Instagram, WhatsApp…), ils pourront être ajoutés ici. -->
   <section class="section reviews" id="avis">
     <div class="container">
       <div class="section-head reveal">
-        <span class="eyebrow" data-i18n="rev.eyebrow">Avis clients</span>
-        <h2 data-i18n="rev.title">Ce que disent nos visiteurs</h2>
-        <div class="rating-summary">
-          <b>4.9</b>
-          <div><div class="stars">★★★★★</div><small data-i18n="rev.based">Note moyenne de nos visiteurs</small></div>
-        </div>
+        <span class="eyebrow" data-i18n="rev.eyebrow">Votre avis compte</span>
+        <h2 data-i18n="rev.title">Vous êtes déjà venus chez nous ?</h2>
+        <p data-i18n="rev.text">Partagez votre expérience ! Votre avis aide d'autres voyageurs à découvrir le Tropical Camp Agafay.</p>
       </div>
       <div class="rev-grid">
-        <article class="rev reveal">
+        <a class="rev rev-cta reveal" href="https://maps.app.goo.gl/ek1rYvbxgbPD7bxH8" target="_blank" rel="noopener">
           <div class="stars">★★★★★</div>
-          <blockquote><p>Une journée parfaite ! La piscine face au désert est incroyable et le coucher de soleil restera gravé dans nos mémoires. Le dîner était délicieux et l'équipe adorable.</p></blockquote>
-          <div class="rev-author"><div class="avatar" style="background:#c0622f">S</div><div><b>Sophie L.</b><small>🇫🇷 Paris · <span data-i18n="rev.couple">En couple</span></small></div></div>
-        </article>
-        <article class="rev reveal">
-          <div class="stars">★★★★★</div>
-          <blockquote><p>Absolutely magical place! The quad ride was so much fun and the fire show at night was unbelievable. Best experience of our trip to Morocco.</p></blockquote>
-          <div class="rev-author"><div class="avatar" style="background:#2f4a2f">J</div><div><b>James & Emma</b><small>🇬🇧 London · <span data-i18n="rev.friends">Entre amis</span></small></div></div>
-        </article>
-        <article class="rev reveal">
-          <div class="stars">★★★★★</div>
-          <blockquote><p>Wunderschönes Camp mitten in der Agafay-Wüste. Kamelritt bei Sonnenuntergang, leckere Tajine und ein Lagerfeuer unter Sternen – einfach traumhaft. Sehr empfehlenswert!</p></blockquote>
-          <div class="rev-author"><div class="avatar" style="background:#d9a441">M</div><div><b>Markus H.</b><small>🇩🇪 München · <span data-i18n="rev.family">En famille</span></small></div></div>
-        </article>
-        <article class="rev reveal">
-          <div class="stars">★★★★★</div>
-          <blockquote><p>¡Un lugar increíble! La piscina con vistas al desierto, el paseo en camello y la cena marroquí fueron espectaculares. El personal muy amable. ¡Volveremos!</p></blockquote>
-          <div class="rev-author"><div class="avatar" style="background:#8a5a3c">L</div><div><b>Lucía G.</b><small>🇪🇸 Madrid · <span data-i18n="rev.couple">En couple</span></small></div></div>
-        </article>
-        <article class="rev reveal">
-          <div class="stars">★★★★★</div>
-          <blockquote><p>Endroit magnifique et très bien décoré. Les enfants ont adoré la piscine et les chameaux. Le spectacle de feu le soir était le clou de la journée.</p></blockquote>
-          <div class="rev-author"><div class="avatar" style="background:#5d7a4f">K</div><div><b>Karim B.</b><small>🇲🇦 Casablanca · <span data-i18n="rev.family">En famille</span></small></div></div>
-        </article>
-        <article class="rev reveal">
-          <div class="stars">★★★★★</div>
-          <blockquote><p>We came for the sunset and stayed for dinner. The atmosphere with all the lanterns is stunning, the food was fresh and the staff made us feel at home.</p></blockquote>
-          <div class="rev-author"><div class="avatar" style="background:#a2472a">A</div><div><b>Anna K.</b><small>🇳🇱 Amsterdam · <span data-i18n="rev.friends">Entre amis</span></small></div></div>
-        </article>
+          <h3 data-i18n="rev.g.t">Laissez un avis sur Google</h3>
+          <p data-i18n="rev.g.d">Ouvrez notre fiche Google Maps et donnez-nous quelques étoiles et un petit mot.</p>
+          <span class="rev-link" data-i18n="rev.g.cta">Écrire un avis →</span>
+        </a>
+        <a class="rev rev-cta reveal" href="https://www.instagram.com/tropicalcampagafay/" target="_blank" rel="noopener">
+          <div class="rev-emoji">📸</div>
+          <h3 data-i18n="rev.i.t">Partagez vos photos</h3>
+          <p data-i18n="rev.i.d">Publiez vos plus beaux souvenirs et identifiez-nous sur Instagram : @tropicalcampagafay</p>
+          <span class="rev-link" data-i18n="rev.i.cta">Voir notre Instagram →</span>
+        </a>
+        <a class="rev rev-cta wa-link reveal" href="#">
+          <div class="rev-emoji">💬</div>
+          <h3 data-i18n="rev.w.t">Écrivez-nous</h3>
+          <p data-i18n="rev.w.d">Une remarque, un compliment, une suggestion ? Envoyez-nous un message sur WhatsApp.</p>
+          <span class="rev-link" data-i18n="rev.w.cta">Message WhatsApp →</span>
+        </a>
       </div>
     </div>
   </section>
@@ -709,11 +700,11 @@
         'hero.title': 'Votre oasis <em>tropicale</em> au cœur du désert',
         'hero.text': "Piscine face aux montagnes de l'Atlas, quads, balades à dos de chameau, coucher de soleil magique et dîner sous les étoiles — à seulement 40 minutes de Marrakech.",
         'hero.cta1': 'Réserver votre journée', 'hero.cta2': 'Découvrir les activités',
-        'hero.badge1': 'Avis 5 étoiles', 'hero.badge2': 'Transfert depuis Marrakech', 'hero.badge3': 'Sunset inoubliable',
+        'hero.badge1': "Piscine face au désert", 'hero.badge2': 'Transfert depuis Marrakech', 'hero.badge3': 'Sunset inoubliable',
         'about.eyebrow': 'Bienvenue', 'about.title': 'Un camp unique entre palmiers et dunes de pierre',
         'about.p1': "Le Tropical Camp Agafay vous accueille dans un décor où l'ambiance tropicale rencontre l'authenticité berbère. Ici, le temps ralentit : on se baigne face au désert, on part à l'aventure en quad ou à dos de chameau, puis on admire le soleil disparaître derrière les montagnes.",
         'about.p2': "Le soir, le camp s'illumine de lanternes : dîner marocain fait maison, feu de camp, spectacle de feu et — chaque soir — musique live pour une soirée inoubliable.",
-        'about.s1': 'min de Marrakech', 'about.s2': 'activités', 'about.s3': 'expérience',
+        'about.s1': 'min de Marrakech', 'about.s2': 'activités', 'about.s3': "soirées musicales",
         'act.eyebrow': 'Nos activités', 'act.title': 'Des expériences pour tous les goûts',
         'act.text': "Aventure, détente ou gastronomie — composez votre journée parfaite dans le désert d'Agafay.",
         'act.pool.t': 'Piscine', 'act.pool.d': "Une grande piscine avec vue panoramique sur le désert et l'Atlas. Transats, parasols et rafraîchissements.",
@@ -729,8 +720,7 @@
         'day.4.time': 'Soirée', 'day.4.t': 'Dîner & spectacle', 'day.4.d': "Dîner marocain, musique live chaque soir, spectacle de feu et veillée autour du feu de camp.",
         'gal.eyebrow': 'Galerie', 'gal.title': "Plongez dans l'ambiance",
         'gal.c1': 'Piscine au sunset', 'gal.c2': 'Spectacle de feu', 'gal.c3': 'Restaurant berbère', 'gal.c4': 'Feu de camp', 'gal.more': 'Plus de photos sur Instagram',
-        'rev.eyebrow': 'Avis clients', 'rev.title': 'Ce que disent nos visiteurs', 'rev.based': 'Note moyenne de nos visiteurs',
-        'rev.couple': 'En couple', 'rev.friends': 'Entre amis', 'rev.family': 'En famille',
+        'rev.eyebrow': "Votre avis compte", 'rev.title': "Vous êtes déjà venus chez nous ?",
         'contact.eyebrow': 'Contact', 'contact.title': 'Réservez votre aventure',
         'contact.text': 'Écrivez-nous pour réserver ou pour toute question. Nous vous répondons rapidement.',
         'contact.phone': 'Téléphone', 'contact.directions': 'Itinéraire sur Google Maps', 'contact.address': 'Adresse', 'contact.addressVal': "Désert d'Agafay, Marrakech, Maroc",
@@ -760,7 +750,17 @@
         'music.l3.d': "Le camp s'illumine de centaines de lumières.",
         'music.cta': "Réserver ma soirée",
         'music.sound': "Activer le son",
-        'music.mute': "Couper le son"
+        'music.mute': "Couper le son",
+        'rev.text': "Partagez votre expérience ! Votre avis aide d'autres voyageurs à découvrir le Tropical Camp Agafay.",
+        'rev.g.t': "Laissez un avis sur Google",
+        'rev.g.d': "Ouvrez notre fiche Google Maps et donnez-nous quelques étoiles et un petit mot.",
+        'rev.g.cta': "Écrire un avis →",
+        'rev.i.t': "Partagez vos photos",
+        'rev.i.d': "Publiez vos plus beaux souvenirs et identifiez-nous sur Instagram : @tropicalcampagafay",
+        'rev.i.cta': "Voir notre Instagram →",
+        'rev.w.t': "Écrivez-nous",
+        'rev.w.d': "Une remarque, un compliment, une suggestion ? Envoyez-nous un message sur WhatsApp.",
+        'rev.w.cta': "Message WhatsApp →"
       },
       en: {
         'nav.about': 'The camp', 'nav.activities': 'Activities', 'nav.gallery': 'Gallery', 'nav.reviews': 'Reviews', 'nav.contact': 'Contact', 'nav.book': 'Book now',
@@ -768,11 +768,11 @@
         'hero.title': 'Your <em>tropical</em> oasis in the heart of the desert',
         'hero.text': 'A pool facing the Atlas Mountains, quad biking, camel rides, a magical sunset and dinner under the stars — just 40 minutes from Marrakech.',
         'hero.cta1': 'Book your day', 'hero.cta2': 'Discover activities',
-        'hero.badge1': '5-star reviews', 'hero.badge2': 'Transfer from Marrakech', 'hero.badge3': 'Unforgettable sunset',
+        'hero.badge1': "Pool facing the desert", 'hero.badge2': 'Transfer from Marrakech', 'hero.badge3': 'Unforgettable sunset',
         'about.eyebrow': 'Welcome', 'about.title': 'A unique camp between palm trees and stone dunes',
         'about.p1': 'Tropical Camp Agafay welcomes you to a setting where a tropical vibe meets Berber authenticity. Here time slows down: swim with a desert view, head off on a quad or camel adventure, then watch the sun disappear behind the mountains.',
         'about.p2': "At night the camp lights up with lanterns: homemade Moroccan dinner, campfire, fire show and — every evening — live music for an unforgettable night.",
-        'about.s1': 'min from Marrakech', 'about.s2': 'activities', 'about.s3': 'experience',
+        'about.s1': 'min from Marrakech', 'about.s2': 'activities', 'about.s3': "music evenings",
         'act.eyebrow': 'Our activities', 'act.title': 'Experiences for every taste',
         'act.text': 'Adventure, relaxation or gastronomy — create your perfect day in the Agafay Desert.',
         'act.pool.t': 'Swimming pool', 'act.pool.d': 'A large pool with panoramic views of the desert and the Atlas. Sun loungers, parasols and refreshments.',
@@ -788,8 +788,7 @@
         'day.4.time': 'Evening', 'day.4.t': 'Dinner & show', 'day.4.d': "Moroccan dinner, live music every evening, fire show and a night around the campfire.",
         'gal.eyebrow': 'Gallery', 'gal.title': 'Soak up the atmosphere',
         'gal.c1': 'Pool at sunset', 'gal.c2': 'Fire show', 'gal.c3': 'Berber restaurant', 'gal.c4': 'Campfire', 'gal.more': 'More photos on Instagram',
-        'rev.eyebrow': 'Guest reviews', 'rev.title': 'What our guests say', 'rev.based': 'Average guest rating',
-        'rev.couple': 'Couple', 'rev.friends': 'Friends', 'rev.family': 'Family',
+        'rev.eyebrow': "Your review matters", 'rev.title': "Have you already visited us?",
         'contact.eyebrow': 'Contact', 'contact.title': 'Book your adventure',
         'contact.text': 'Write to us to book or for any question. We reply quickly.',
         'contact.phone': 'Phone', 'contact.directions': 'Directions on Google Maps', 'contact.address': 'Address', 'contact.addressVal': 'Agafay Desert, Marrakech, Morocco',
@@ -819,7 +818,17 @@
         'music.l3.d': "The camp lights up with hundreds of lights.",
         'music.cta': "Book my evening",
         'music.sound': "Sound on",
-        'music.mute': "Sound off"
+        'music.mute': "Sound off",
+        'rev.text': "Share your experience! Your review helps other travellers discover Tropical Camp Agafay.",
+        'rev.g.t': "Leave a Google review",
+        'rev.g.d': "Open our Google Maps listing and give us a few stars and a few words.",
+        'rev.g.cta': "Write a review →",
+        'rev.i.t': "Share your photos",
+        'rev.i.d': "Post your best memories and tag us on Instagram: @tropicalcampagafay",
+        'rev.i.cta': "See our Instagram →",
+        'rev.w.t': "Write to us",
+        'rev.w.d': "A comment, a compliment, a suggestion? Send us a message on WhatsApp.",
+        'rev.w.cta': "WhatsApp message →"
       },
       de: {
         'nav.about': 'Das Camp', 'nav.activities': 'Aktivitäten', 'nav.gallery': 'Galerie', 'nav.reviews': 'Bewertungen', 'nav.contact': 'Kontakt', 'nav.book': 'Buchen',
@@ -827,11 +836,11 @@
         'hero.title': 'Ihre <em>tropische</em> Oase mitten in der Wüste',
         'hero.text': 'Pool mit Blick auf das Atlasgebirge, Quad-Touren, Kamelritte, ein magischer Sonnenuntergang und Abendessen unter den Sternen — nur 40 Minuten von Marrakesch.',
         'hero.cta1': 'Jetzt Tag buchen', 'hero.cta2': 'Aktivitäten entdecken',
-        'hero.badge1': '5-Sterne-Bewertungen', 'hero.badge2': 'Transfer ab Marrakesch', 'hero.badge3': 'Unvergesslicher Sunset',
+        'hero.badge1': "Pool mit Wüstenblick", 'hero.badge2': 'Transfer ab Marrakesch', 'hero.badge3': 'Unvergesslicher Sunset',
         'about.eyebrow': 'Willkommen', 'about.title': 'Ein einzigartiges Camp zwischen Palmen und Steindünen',
         'about.p1': 'Das Tropical Camp Agafay empfängt Sie in einer Kulisse, in der tropisches Flair auf Berber-Tradition trifft. Hier vergeht die Zeit langsamer: Baden mit Wüstenblick, Abenteuer auf dem Quad oder Kamel und dann zusehen, wie die Sonne hinter den Bergen versinkt.',
         'about.p2': "Abends erstrahlt das Camp im Licht der Laternen: hausgemachtes marokkanisches Abendessen, Lagerfeuer, Feuershow und — jeden Abend — Live-Musik für einen unvergesslichen Abend.",
-        'about.s1': 'Min. von Marrakesch', 'about.s2': 'Aktivitäten', 'about.s3': 'Erlebnis',
+        'about.s1': 'Min. von Marrakesch', 'about.s2': 'Aktivitäten', 'about.s3': "Musikabende",
         'act.eyebrow': 'Unsere Aktivitäten', 'act.title': 'Erlebnisse für jeden Geschmack',
         'act.text': 'Abenteuer, Entspannung oder Genuss — stellen Sie Ihren perfekten Tag in der Agafay-Wüste zusammen.',
         'act.pool.t': 'Pool', 'act.pool.d': 'Ein großer Pool mit Panoramablick auf die Wüste und den Atlas. Liegen, Sonnenschirme und Erfrischungen.',
@@ -847,8 +856,7 @@
         'day.4.time': 'Abend', 'day.4.t': 'Dinner & Show', 'day.4.d': "Marokkanisches Abendessen, jeden Abend Live-Musik, Feuershow und Abend am Lagerfeuer.",
         'gal.eyebrow': 'Galerie', 'gal.title': 'Tauchen Sie ein in die Atmosphäre',
         'gal.c1': 'Pool bei Sonnenuntergang', 'gal.c2': 'Feuershow', 'gal.c3': 'Berber-Restaurant', 'gal.c4': 'Lagerfeuer', 'gal.more': 'Mehr Fotos auf Instagram',
-        'rev.eyebrow': 'Gästebewertungen', 'rev.title': 'Das sagen unsere Gäste', 'rev.based': 'Durchschnittliche Bewertung unserer Gäste',
-        'rev.couple': 'Als Paar', 'rev.friends': 'Mit Freunden', 'rev.family': 'Mit Familie',
+        'rev.eyebrow': "Ihre Meinung zählt", 'rev.title': "Waren Sie schon bei uns?",
         'contact.eyebrow': 'Kontakt', 'contact.title': 'Buchen Sie Ihr Abenteuer',
         'contact.text': 'Schreiben Sie uns für eine Buchung oder bei Fragen. Wir antworten schnell.',
         'contact.phone': 'Telefon', 'contact.directions': 'Route in Google Maps', 'contact.address': 'Adresse', 'contact.addressVal': 'Agafay-Wüste, Marrakesch, Marokko',
@@ -878,7 +886,17 @@
         'music.l3.d': "Das Camp leuchtet im Licht hunderter Lampen.",
         'music.cta': "Meinen Abend buchen",
         'music.sound': "Ton an",
-        'music.mute': "Ton aus"
+        'music.mute': "Ton aus",
+        'rev.text': "Teilen Sie Ihr Erlebnis! Ihre Bewertung hilft anderen Reisenden, das Tropical Camp Agafay zu entdecken.",
+        'rev.g.t': "Bewertung bei Google",
+        'rev.g.d': "Öffnen Sie unseren Google-Maps-Eintrag und geben Sie uns ein paar Sterne und ein paar Worte.",
+        'rev.g.cta': "Bewertung schreiben →",
+        'rev.i.t': "Teilen Sie Ihre Fotos",
+        'rev.i.d': "Posten Sie Ihre schönsten Erinnerungen und markieren Sie uns auf Instagram: @tropicalcampagafay",
+        'rev.i.cta': "Zu unserem Instagram →",
+        'rev.w.t': "Schreiben Sie uns",
+        'rev.w.d': "Eine Anmerkung, ein Lob, ein Vorschlag? Schicken Sie uns eine Nachricht per WhatsApp.",
+        'rev.w.cta': "WhatsApp-Nachricht →"
       },
       es: {
         'nav.about': 'El campamento', 'nav.activities': 'Actividades', 'nav.gallery': 'Galería', 'nav.reviews': 'Opiniones', 'nav.contact': 'Contacto', 'nav.book': 'Reservar',
@@ -886,11 +904,11 @@
         'hero.title': 'Tu oasis <em>tropical</em> en el corazón del desierto',
         'hero.text': 'Piscina frente a las montañas del Atlas, quads, paseos en camello, una puesta de sol mágica y cena bajo las estrellas — a solo 40 minutos de Marrakech.',
         'hero.cta1': 'Reserva tu día', 'hero.cta2': 'Descubrir actividades',
-        'hero.badge1': 'Opiniones 5 estrellas', 'hero.badge2': 'Traslado desde Marrakech', 'hero.badge3': 'Atardecer inolvidable',
+        'hero.badge1': "Piscina frente al desierto", 'hero.badge2': 'Traslado desde Marrakech', 'hero.badge3': 'Atardecer inolvidable',
         'about.eyebrow': 'Bienvenidos', 'about.title': 'Un campamento único entre palmeras y dunas de piedra',
         'about.p1': 'Tropical Camp Agafay te recibe en un entorno donde el ambiente tropical se encuentra con la autenticidad bereber. Aquí el tiempo se detiene: báñate con vistas al desierto, vive la aventura en quad o en camello y contempla cómo el sol desaparece tras las montañas.',
         'about.p2': "Por la noche, el campamento se ilumina con faroles: cena marroquí casera, hoguera, espectáculo de fuego y — cada noche — música en vivo para una velada inolvidable.",
-        'about.s1': 'min de Marrakech', 'about.s2': 'actividades', 'about.s3': 'experiencia',
+        'about.s1': 'min de Marrakech', 'about.s2': 'actividades', 'about.s3': "noches musicales",
         'act.eyebrow': 'Nuestras actividades', 'act.title': 'Experiencias para todos los gustos',
         'act.text': 'Aventura, relax o gastronomía — crea tu día perfecto en el desierto de Agafay.',
         'act.pool.t': 'Piscina', 'act.pool.d': 'Una gran piscina con vistas panorámicas al desierto y al Atlas. Tumbonas, sombrillas y bebidas.',
@@ -906,8 +924,7 @@
         'day.4.time': 'Noche', 'day.4.t': 'Cena y espectáculo', 'day.4.d': "Cena marroquí, música en vivo cada noche, espectáculo de fuego y velada junto a la hoguera.",
         'gal.eyebrow': 'Galería', 'gal.title': 'Sumérgete en el ambiente',
         'gal.c1': 'Piscina al atardecer', 'gal.c2': 'Espectáculo de fuego', 'gal.c3': 'Restaurante bereber', 'gal.c4': 'Hoguera', 'gal.more': 'Más fotos en Instagram',
-        'rev.eyebrow': 'Opiniones', 'rev.title': 'Lo que dicen nuestros visitantes', 'rev.based': 'Valoración media de nuestros visitantes',
-        'rev.couple': 'En pareja', 'rev.friends': 'Con amigos', 'rev.family': 'En familia',
+        'rev.eyebrow': "Tu opinión cuenta", 'rev.title': "¿Ya nos has visitado?",
         'contact.eyebrow': 'Contacto', 'contact.title': 'Reserva tu aventura',
         'contact.text': 'Escríbenos para reservar o para cualquier pregunta. Respondemos rápidamente.',
         'contact.phone': 'Teléfono', 'contact.directions': 'Cómo llegar en Google Maps', 'contact.address': 'Dirección', 'contact.addressVal': 'Desierto de Agafay, Marrakech, Marruecos',
@@ -937,7 +954,17 @@
         'music.l3.d': "El campamento se ilumina con cientos de luces.",
         'music.cta': "Reservar mi noche",
         'music.sound': "Activar sonido",
-        'music.mute': "Silenciar"
+        'music.mute': "Silenciar",
+        'rev.text': "¡Comparte tu experiencia! Tu opinión ayuda a otros viajeros a descubrir Tropical Camp Agafay.",
+        'rev.g.t': "Deja una reseña en Google",
+        'rev.g.d': "Abre nuestra ficha de Google Maps y danos unas estrellas y unas palabras.",
+        'rev.g.cta': "Escribir una reseña →",
+        'rev.i.t': "Comparte tus fotos",
+        'rev.i.d': "Publica tus mejores recuerdos y etiquétanos en Instagram: @tropicalcampagafay",
+        'rev.i.cta': "Ver nuestro Instagram →",
+        'rev.w.t': "Escríbenos",
+        'rev.w.d': "¿Un comentario, un cumplido, una sugerencia? Envíanos un mensaje por WhatsApp.",
+        'rev.w.cta': "Mensaje de WhatsApp →"
       }
     };
 
