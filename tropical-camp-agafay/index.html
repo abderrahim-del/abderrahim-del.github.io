@@ -266,6 +266,8 @@
     .rev-author b { display: block; font-weight: 600; font-size: .98rem; }
     .rev-author small { color: var(--muted); font-size: .82rem; }
 
+    [hidden] { display: none !important; }
+    .rev-src { margin-left: auto; font-size: .75rem; color: var(--muted); }
     .rev-cta { text-decoration: none; color: inherit; transition: transform .3s, box-shadow .3s; }
     .rev-cta:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
     .rev-cta h3 { font-size: 1.6rem; }
@@ -566,7 +568,13 @@
         <span class="eyebrow" data-i18n="rev.eyebrow">Votre avis compte</span>
         <h2 data-i18n="rev.title">Vous êtes déjà venus chez nous ?</h2>
         <p data-i18n="rev.text">Partagez votre expérience ! Votre avis aide d'autres voyageurs à découvrir le Tropical Camp Agafay.</p>
+        <div class="rating-summary" id="ratingSummary" hidden>
+          <b id="ratingAvg"></b>
+          <div><div class="stars" id="ratingStars"></div><small id="ratingCount"></small></div>
+        </div>
       </div>
+      <!-- Avis réels : remplis automatiquement depuis la liste REVIEWS dans le script en bas de page -->
+      <div class="rev-grid" id="reviewList" hidden style="margin-bottom:1.4rem"></div>
       <div class="rev-grid">
         <a class="rev rev-cta reveal" href="https://maps.app.goo.gl/ek1rYvbxgbPD7bxH8" target="_blank" rel="noopener">
           <div class="stars">★★★★★</div>
@@ -692,6 +700,15 @@
     const WHATSAPP_NUMBER = '212661240130';
     const WHATSAPP_DISPLAY = '+212 6 61 24 01 30';
 
+    /* ═══════════ AVIS CLIENTS ═══════════
+       Ajoutez ici UNIQUEMENT de vrais avis de vos clients (Google, WhatsApp, Instagram…).
+       Tant que la liste est vide, la section affiche seulement l'invitation à laisser un avis.
+       Exemple de format (à copier entre les crochets, une ligne par avis) :
+         { name: 'Prénom N.', country: '🇫🇷 Paris', stars: 5, text: 'Texte de l’avis…', source: 'Google' },
+    */
+    const REVIEWS = [
+    ];
+
     /* ═══════════ TRADUCTIONS ═══════════ */
     const I18N = {
       fr: {
@@ -720,7 +737,7 @@
         'day.4.time': 'Soirée', 'day.4.t': 'Dîner & spectacle', 'day.4.d': "Dîner marocain, musique live chaque soir, spectacle de feu et veillée autour du feu de camp.",
         'gal.eyebrow': 'Galerie', 'gal.title': "Plongez dans l'ambiance",
         'gal.c1': 'Piscine au sunset', 'gal.c2': 'Spectacle de feu', 'gal.c3': 'Restaurant berbère', 'gal.c4': 'Feu de camp', 'gal.more': 'Plus de photos sur Instagram',
-        'rev.eyebrow': "Votre avis compte", 'rev.title': "Vous êtes déjà venus chez nous ?",
+        'rev.one': 'avis', 'rev.many': 'avis', 'rev.eyebrow': "Votre avis compte", 'rev.title': "Vous êtes déjà venus chez nous ?",
         'contact.eyebrow': 'Contact', 'contact.title': 'Réservez votre aventure',
         'contact.text': 'Écrivez-nous pour réserver ou pour toute question. Nous vous répondons rapidement.',
         'contact.phone': 'Téléphone', 'contact.directions': 'Itinéraire sur Google Maps', 'contact.address': 'Adresse', 'contact.addressVal': "Désert d'Agafay, Marrakech, Maroc",
@@ -788,7 +805,7 @@
         'day.4.time': 'Evening', 'day.4.t': 'Dinner & show', 'day.4.d': "Moroccan dinner, live music every evening, fire show and a night around the campfire.",
         'gal.eyebrow': 'Gallery', 'gal.title': 'Soak up the atmosphere',
         'gal.c1': 'Pool at sunset', 'gal.c2': 'Fire show', 'gal.c3': 'Berber restaurant', 'gal.c4': 'Campfire', 'gal.more': 'More photos on Instagram',
-        'rev.eyebrow': "Your review matters", 'rev.title': "Have you already visited us?",
+        'rev.one': 'review', 'rev.many': 'reviews', 'rev.eyebrow': "Your review matters", 'rev.title': "Have you already visited us?",
         'contact.eyebrow': 'Contact', 'contact.title': 'Book your adventure',
         'contact.text': 'Write to us to book or for any question. We reply quickly.',
         'contact.phone': 'Phone', 'contact.directions': 'Directions on Google Maps', 'contact.address': 'Address', 'contact.addressVal': 'Agafay Desert, Marrakech, Morocco',
@@ -856,7 +873,7 @@
         'day.4.time': 'Abend', 'day.4.t': 'Dinner & Show', 'day.4.d': "Marokkanisches Abendessen, jeden Abend Live-Musik, Feuershow und Abend am Lagerfeuer.",
         'gal.eyebrow': 'Galerie', 'gal.title': 'Tauchen Sie ein in die Atmosphäre',
         'gal.c1': 'Pool bei Sonnenuntergang', 'gal.c2': 'Feuershow', 'gal.c3': 'Berber-Restaurant', 'gal.c4': 'Lagerfeuer', 'gal.more': 'Mehr Fotos auf Instagram',
-        'rev.eyebrow': "Ihre Meinung zählt", 'rev.title': "Waren Sie schon bei uns?",
+        'rev.one': 'Bewertung', 'rev.many': 'Bewertungen', 'rev.eyebrow': "Ihre Meinung zählt", 'rev.title': "Waren Sie schon bei uns?",
         'contact.eyebrow': 'Kontakt', 'contact.title': 'Buchen Sie Ihr Abenteuer',
         'contact.text': 'Schreiben Sie uns für eine Buchung oder bei Fragen. Wir antworten schnell.',
         'contact.phone': 'Telefon', 'contact.directions': 'Route in Google Maps', 'contact.address': 'Adresse', 'contact.addressVal': 'Agafay-Wüste, Marrakesch, Marokko',
@@ -924,7 +941,7 @@
         'day.4.time': 'Noche', 'day.4.t': 'Cena y espectáculo', 'day.4.d': "Cena marroquí, música en vivo cada noche, espectáculo de fuego y velada junto a la hoguera.",
         'gal.eyebrow': 'Galería', 'gal.title': 'Sumérgete en el ambiente',
         'gal.c1': 'Piscina al atardecer', 'gal.c2': 'Espectáculo de fuego', 'gal.c3': 'Restaurante bereber', 'gal.c4': 'Hoguera', 'gal.more': 'Más fotos en Instagram',
-        'rev.eyebrow': "Tu opinión cuenta", 'rev.title': "¿Ya nos has visitado?",
+        'rev.one': 'opinión', 'rev.many': 'opiniones', 'rev.eyebrow': "Tu opinión cuenta", 'rev.title': "¿Ya nos has visitado?",
         'contact.eyebrow': 'Contacto', 'contact.title': 'Reserva tu aventura',
         'contact.text': 'Escríbenos para reservar o para cualquier pregunta. Respondemos rápidamente.',
         'contact.phone': 'Teléfono', 'contact.directions': 'Cómo llegar en Google Maps', 'contact.address': 'Dirección', 'contact.addressVal': 'Desierto de Agafay, Marrakech, Marruecos',
@@ -982,6 +999,7 @@
       document.getElementById('langCurrent').textContent = LABELS[lang];
       document.querySelectorAll('.lang-menu button').forEach(b => b.setAttribute('aria-current', b.dataset.lang === lang));
       updateWaLinks();
+      if (typeof updateRatingCount === 'function') updateRatingCount();
       try { localStorage.setItem('tca-lang', lang); } catch (e) {}
     }
 
@@ -1050,6 +1068,42 @@
     } else {
       document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
     }
+
+    /* Reviews */
+    function renderReviews() {
+      const list = document.getElementById('reviewList');
+      if (!REVIEWS.length) return;
+      const colors = ['#c0622f', '#2f4a2f', '#d9a441', '#8a5a3c', '#5d7a4f', '#a2472a'];
+      list.innerHTML = '';
+      REVIEWS.forEach((r, i) => {
+        const n = Math.max(1, Math.min(5, Math.round(r.stars || 5)));
+        const card = document.createElement('article');
+        card.className = 'rev reveal in';
+        card.innerHTML = '<div class="stars"></div><blockquote><p></p></blockquote>' +
+          '<div class="rev-author"><div class="avatar"></div><div><b></b><small></small></div><span class="rev-src"></span></div>';
+        card.querySelector('.stars').textContent = '★'.repeat(n) + '☆'.repeat(5 - n);
+        card.querySelector('blockquote p').textContent = r.text || '';
+        const av = card.querySelector('.avatar');
+        av.textContent = (r.name || '?').trim().charAt(0).toUpperCase();
+        av.style.background = colors[i % colors.length];
+        card.querySelector('.rev-author b').textContent = r.name || '';
+        card.querySelector('.rev-author small').textContent = r.country || '';
+        card.querySelector('.rev-src').textContent = r.source || '';
+        list.appendChild(card);
+      });
+      list.hidden = false;
+      const avg = REVIEWS.reduce((a, r) => a + (r.stars || 5), 0) / REVIEWS.length;
+      document.getElementById('ratingAvg').textContent = avg.toFixed(1);
+      document.getElementById('ratingStars').textContent = '★'.repeat(Math.round(avg)) + '☆'.repeat(5 - Math.round(avg));
+      document.getElementById('ratingCount').dataset.count = REVIEWS.length;
+      updateRatingCount();
+      document.getElementById('ratingSummary').hidden = false;
+    }
+    function updateRatingCount() {
+      const el = document.getElementById('ratingCount');
+      if (el.dataset.count) el.textContent = el.dataset.count + ' ' + t(el.dataset.count === '1' ? 'rev.one' : 'rev.many');
+    }
+    renderReviews();
 
     /* Lightbox */
     const items = [...document.querySelectorAll('.g-item')];
